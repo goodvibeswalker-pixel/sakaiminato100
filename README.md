@@ -34,7 +34,6 @@
 ├── index.html
 ├── styles.css
 ├── script.js
-├── sakaiminato-city-sea-mountain.jpg
 ├── README.md
 └── .nojekyll
 ```
