@@ -48,7 +48,7 @@
 公開URLの例:
 
 ```text
-https://kazuya-chinen.github.io/sakaiminato100/
+https://goodvibeswalker-pixel.github.io/sakaiminato100/
 ```
 
 ## 出典・参考
