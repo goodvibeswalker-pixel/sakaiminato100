@@ -275,20 +275,21 @@ h3 {
 
 .theme-layout {
   display: grid;
-  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr);
-  gap: 18px;
+  grid-template-columns: 1fr;
+  gap: 20px;
   align-items: start;
 }
 
 .theme-list {
   display: grid;
-  gap: 14px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .theme-card {
   display: grid;
   gap: 10px;
-  min-height: 220px;
+  min-height: 210px;
   padding: 18px;
 }
 
@@ -296,6 +297,7 @@ h3 {
   width: 100%;
   border: 1px solid var(--line);
   color: inherit;
+  font: inherit;
   text-align: left;
   cursor: pointer;
 }
@@ -331,7 +333,7 @@ h3 {
 
 .theme-title {
   display: block;
-  font-size: 21px;
+  font-size: 19px;
   font-weight: 900;
   line-height: 1.35;
 }
@@ -400,7 +402,7 @@ h3 {
 }
 
 .detail-header {
-  max-width: 760px;
+  max-width: 920px;
 }
 
 .detail-header h3 {
@@ -453,7 +455,7 @@ h3 {
 
 .detail-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
   margin-top: 26px;
 }
@@ -560,8 +562,12 @@ h3 {
 }
 
 @media (max-width: 1080px) {
+  .theme-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .detail-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .population-facts {
@@ -603,8 +609,8 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .theme-layout {
-    grid-template-columns: 1fr;
+  .theme-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .site-footer {
@@ -629,6 +635,11 @@ h3 {
 
   .theme-card {
     min-height: 0;
+  }
+
+  .theme-list,
+  .detail-grid {
+    grid-template-columns: 1fr;
   }
 
   .button {
