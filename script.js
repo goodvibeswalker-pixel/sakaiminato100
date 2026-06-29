@@ -7,12 +7,44 @@ const themeDetails = {
     facts: [
       ["31,714人", "総人口", "2026年5月末"],
       ["15,456世帯", "世帯数", "2026年5月末"],
-      ["29.11km²", "面積", "2019年10月1日現在"],
+      ["34.0%", "65歳以上", "2026年5月末"],
     ],
+    populationArticle: {
+      townRanking: [
+        ["外江町", 3831, -2],
+        ["渡町", 3589, 3],
+        ["上道町", 3376, 1],
+        ["中野町", 2173, 1],
+        ["竹内町", 2029, 2],
+        ["夕日ヶ丘1丁目", 1348, -3],
+        ["誠道町", 1089, -2],
+        ["小篠津町", 1030, 0],
+      ],
+      ageGroups: [
+        ["0-14歳", 3462, "10.9%"],
+        ["15-64歳", 17464, "55.1%"],
+        ["65歳以上", 10788, "34.0%"],
+        ["75歳以上", 6424, "20.3%"],
+      ],
+      trend: [
+        ["2021年度末", 33011],
+        ["2022年度末", 32774],
+        ["2023年度末", 32525],
+        ["2024年度末", 32159],
+        ["2025年度末", 31765],
+        ["2026年5月", 31714],
+      ],
+      notes: [
+        "人口が多い町は外江町・渡町・上道町で、上位3町だけで約1.08万人、全体の約34%を占めます。",
+        "65歳以上は10,788人で34.0%。75歳以上も6,424人、20.3%に達しており、医療・福祉・移動支援の重要度が高い構造です。",
+        "2021年度末から2026年5月までに、総人口は33,011人から31,714人へ減少。約1,300人規模の変化が起きています。",
+      ],
+      source: "境港市公式 月別住民基本台帳登録数・人口集計（2026年5月末）",
+    },
     sections: [
       {
         heading: "このテーマで伝えること",
-        body: "境港市の人口がどのように変化しているのかを見ながら、まちの規模、暮らしの単位、将来必要になる支援や仕事を考えます。数字を入口に、現場で感じる暮らしの実感とつなげていきます。",
+        body: "境港市の人口がどこに集まり、どの年齢層が厚く、ここ数年でどう変化しているのかを見ます。人口は単なる人数ではなく、子育て、医療、交通、商業、防災を考えるための地図です。",
       },
       {
         heading: "見るポイント",
@@ -24,11 +56,11 @@ const themeDetails = {
       },
       {
         heading: "考察",
-        body: "2026年5月末の人口31,714人、世帯数15,456世帯を見ると、1世帯あたりの人数はおよそ2.05人です。人口そのものだけでなく、世帯が小さくなっている可能性にも注目すると、単身高齢者、子育て世帯、移動手段、見守り、住宅政策などを一体で考える必要が見えてきます。",
+        body: "2026年5月末の人口31,714人、世帯数15,456世帯を見ると、1世帯あたりの人数はおよそ2.05人です。町別では人口の多い地域がはっきりしている一方、年齢別では高齢化率の高さが見えます。人口減少だけを課題にするのではなく、どの地域に暮らしの機能を残し、どこに移動・見守り・子育て支援を厚くするかを具体的に考える段階に来ています。",
       },
       {
-        heading: "次の更新で入れたい内容",
-        body: "町別人口、年齢別人口、過去数年の推移グラフを追加し、「どこで、どんな変化が起きているか」が一目でわかる記事に育てます。",
+        heading: "次に見る問い",
+        body: "町別の増減を数か月単位で追うと、住宅地、港周辺、中心部で違う動きが見える可能性があります。今後は町別の前月比だけでなく、数年単位の増減も重ねて見ていきます。",
       },
     ],
   },
@@ -166,6 +198,10 @@ function renderDetail(theme) {
     })
     .join("");
 
+  const populationArticle = theme.populationArticle
+    ? renderPopulationArticle(theme.populationArticle)
+    : "";
+
   themeDetail.innerHTML = `
     <div class="detail-header">
       <p class="section-kicker">Theme ${theme.id} / ${theme.category}</p>
@@ -173,7 +209,111 @@ function renderDetail(theme) {
       <p>${theme.lead}</p>
       ${factMarkup}
     </div>
+    ${populationArticle}
     <div class="detail-grid">${sections}</div>
+  `;
+}
+
+function renderPopulationArticle(article) {
+  const maxTown = Math.max(...article.townRanking.map(([, value]) => value));
+  const maxTrend = Math.max(...article.trend.map(([, value]) => value));
+  const minTrend = Math.min(...article.trend.map(([, value]) => value));
+  const rangeTrend = maxTrend - minTrend || 1;
+
+  const townRows = article.townRanking
+    .map(([name, population, change]) => {
+      const width = Math.round((population / maxTown) * 100);
+      const changeLabel = change > 0 ? `+${change}` : `${change}`;
+      return `
+        <tr>
+          <th scope="row">${name}</th>
+          <td>${population.toLocaleString()}人</td>
+          <td class="${change < 0 ? "is-minus" : change > 0 ? "is-plus" : ""}">${changeLabel}</td>
+          <td><span class="mini-bar" style="--bar:${width}%"></span></td>
+        </tr>
+      `;
+    })
+    .join("");
+
+  const ageBars = article.ageGroups
+    .map(([label, value, ratio]) => {
+      const width = label === "75歳以上" ? Math.round((value / 31714) * 100) : Number.parseFloat(ratio);
+      return `
+        <div class="age-row">
+          <span>${label}</span>
+          <strong>${value.toLocaleString()}人</strong>
+          <em>${ratio}</em>
+          <i style="--bar:${width}%"></i>
+        </div>
+      `;
+    })
+    .join("");
+
+  const trendBars = article.trend
+    .map(([label, value]) => {
+      const height = 34 + Math.round(((value - minTrend) / rangeTrend) * 66);
+      return `
+        <div class="trend-column">
+          <span class="trend-value">${value.toLocaleString()}</span>
+          <i style="--bar:${height}%"></i>
+          <span class="trend-label">${label}</span>
+        </div>
+      `;
+    })
+    .join("");
+
+  const notes = article.notes.map((note) => `<li>${note}</li>`).join("");
+
+  return `
+    <div class="population-article">
+      <section class="population-panel town-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Town</p>
+          <h4>町別人口 上位8町</h4>
+          <p>2026年5月末時点。前月比も合わせて見ると、どこに小さな変化が出ているかが見えます。</p>
+        </div>
+        <div class="table-wrap">
+          <table class="town-table">
+            <thead>
+              <tr>
+                <th>町名</th>
+                <th>人口</th>
+                <th>前月比</th>
+                <th>規模</th>
+              </tr>
+            </thead>
+            <tbody>${townRows}</tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="population-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Age</p>
+          <h4>年齢別人口の見取り図</h4>
+          <p>高齢者層の厚さと、子ども世代の規模を並べて確認します。</p>
+        </div>
+        <div class="age-chart">${ageBars}</div>
+      </section>
+
+      <section class="population-panel trend-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Trend</p>
+          <h4>過去数年の人口推移</h4>
+          <p>年度末人口を中心に、直近の2026年5月末までをつないでいます。</p>
+        </div>
+        <div class="trend-chart" aria-label="人口推移グラフ">${trendBars}</div>
+      </section>
+
+      <section class="population-panel insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Insight</p>
+          <h4>どこで、どんな変化が起きているか</h4>
+        </div>
+        <ul>${notes}</ul>
+        <p class="source-note">${article.source}</p>
+      </section>
+    </div>
   `;
 }
 
