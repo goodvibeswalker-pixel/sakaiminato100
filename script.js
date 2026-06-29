@@ -1,3 +1,4 @@
+(() => {
 const themeDetails = {
   population: {
     id: "001",
@@ -335,3 +336,4 @@ themeButtons.forEach((button) => {
     themeDetail.focus({ preventScroll: true });
   });
 });
+})();
