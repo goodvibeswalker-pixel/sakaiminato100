@@ -9,6 +9,74 @@
       content="境港市の産業、観光、子育て、防災、市政などを100のテーマで見える化するホームページ。"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      .subtheme-panel {
+        grid-column: span 2;
+      }
+
+      .subtheme-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .subtheme-card {
+        display: grid;
+        align-content: start;
+        gap: 8px;
+        min-height: 180px;
+        border: 1px solid rgba(11, 39, 68, 0.1);
+        border-radius: var(--radius);
+        padding: 14px;
+        background: linear-gradient(180deg, #ffffff, #f5fbfd);
+      }
+
+      .subtheme-card span {
+        color: var(--orange);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .subtheme-card h5 {
+        margin: 0;
+        color: var(--ink);
+        font-size: 16px;
+      }
+
+      .subtheme-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      .subtheme-card strong {
+        align-self: end;
+        color: var(--blue);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      @media (max-width: 1080px) {
+        .subtheme-panel {
+          grid-column: auto;
+        }
+
+        .subtheme-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 560px) {
+        .subtheme-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .subtheme-card {
+          min-height: 0;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="site-header" aria-label="サイトヘッダー">
@@ -318,5 +386,62 @@
     </footer>
 
     <script type="module" src="script.js?v=population-article"></script>
+    <script>
+      (() => {
+        const subThemeHtml = `
+          <section class="population-panel subtheme-panel">
+            <div class="panel-heading">
+              <p class="section-kicker">Theme 001</p>
+              <h4>境港市の人口を5つに分類</h4>
+              <p>100テーマへ広げていくために、人口テーマを小さく分けて更新しやすくします。</p>
+            </div>
+            <div class="subtheme-grid">
+              <article class="subtheme-card">
+                <span>001-1</span>
+                <h5>総人口と世帯数</h5>
+                <p>境港市全体の人口規模と、1世帯あたりの暮らしの単位を見る入口。</p>
+                <strong>31,714人 / 15,456世帯</strong>
+              </article>
+              <article class="subtheme-card">
+                <span>001-2</span>
+                <h5>町別人口</h5>
+                <p>どの町に人が多く住んでいるかを見て、生活機能を考える。</p>
+                <strong>外江町・渡町・上道町が上位</strong>
+              </article>
+              <article class="subtheme-card">
+                <span>001-3</span>
+                <h5>年齢別人口</h5>
+                <p>子ども世代、働く世代、高齢者層の厚みから支援の優先度を見る。</p>
+                <strong>65歳以上 34.0%</strong>
+              </article>
+              <article class="subtheme-card">
+                <span>001-4</span>
+                <h5>人口推移</h5>
+                <p>数年単位で人口がどう変わっているかを追い、減少の速度を見る。</p>
+                <strong>2021年度末から約1,300人減</strong>
+              </article>
+              <article class="subtheme-card">
+                <span>001-5</span>
+                <h5>暮らしへの影響</h5>
+                <p>人口の変化を、医療、福祉、交通、子育て、商業に結びつけて考える。</p>
+                <strong>地域ごとの備えを考える</strong>
+              </article>
+            </div>
+          </section>
+        `;
+
+        const injectPopulationSubThemes = () => {
+          const article = document.querySelector(".population-article");
+          if (!article || article.querySelector(".subtheme-panel")) return;
+          article.insertAdjacentHTML("afterbegin", subThemeHtml);
+        };
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest('[data-theme="population"]')) return;
+          setTimeout(injectPopulationSubThemes, 0);
+          setTimeout(injectPopulationSubThemes, 80);
+        });
+      })();
+    </script>
   </body>
 </html>
