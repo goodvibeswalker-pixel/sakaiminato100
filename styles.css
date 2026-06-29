@@ -522,6 +522,61 @@ h3 {
   color: var(--muted);
 }
 
+.profile-band {
+  padding: 70px 0;
+  background: var(--paper);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(24px, 5vw, 72px);
+  align-items: start;
+}
+
+.profile-card {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(20px, 4vw, 30px);
+  background: #f7fbfc;
+  box-shadow: 0 10px 28px rgba(25, 73, 109, 0.08);
+}
+
+.profile-avatar {
+  display: grid;
+  width: 84px;
+  height: 84px;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: linear-gradient(145deg, var(--blue), var(--teal));
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.profile-label {
+  margin: 0;
+  color: var(--orange);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.profile-card h3 {
+  margin: 2px 0 8px;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.2;
+}
+
+.profile-card p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
 .source-section {
   padding: 68px 0;
 }
@@ -599,6 +654,7 @@ h3 {
 
   .intro-grid,
   .feature-grid,
+  .profile-grid,
   .theme-heading,
   .use-grid {
     grid-template-columns: 1fr;
@@ -635,6 +691,10 @@ h3 {
 
   .theme-card {
     min-height: 0;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
   }
 
   .theme-list,
