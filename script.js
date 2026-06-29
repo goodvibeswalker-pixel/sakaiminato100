@@ -11,6 +11,38 @@ const themeDetails = {
       ["34.0%", "65歳以上", "2026年5月末"],
     ],
     populationArticle: {
+      subThemes: [
+        {
+          id: "001-1",
+          title: "総人口と世帯数",
+          summary: "境港市全体の人口規模と、1世帯あたりの暮らしの単位を見る入口。",
+          data: "31,714人 / 15,456世帯",
+        },
+        {
+          id: "001-2",
+          title: "町別人口",
+          summary: "どの町に人が多く住んでいるかを見て、生活機能を考える。",
+          data: "外江町・渡町・上道町が上位",
+        },
+        {
+          id: "001-3",
+          title: "年齢別人口",
+          summary: "子ども世代、働く世代、高齢者層の厚みから支援の優先度を見る。",
+          data: "65歳以上 34.0%",
+        },
+        {
+          id: "001-4",
+          title: "人口推移",
+          summary: "数年単位で人口がどう変わっているかを追い、減少の速度を見る。",
+          data: "2021年度末から約1,300人減",
+        },
+        {
+          id: "001-5",
+          title: "暮らしへの影響",
+          summary: "人口の変化を、医療、福祉、交通、子育て、商業に結びつけて考える。",
+          data: "地域ごとの備えを考える",
+        },
+      ],
       townRanking: [
         ["外江町", 3831, -2],
         ["渡町", 3589, 3],
@@ -264,9 +296,30 @@ function renderPopulationArticle(article) {
     .join("");
 
   const notes = article.notes.map((note) => `<li>${note}</li>`).join("");
+  const subThemeCards = article.subThemes
+    .map(
+      (item) => `
+        <article class="subtheme-card">
+          <span>${item.id}</span>
+          <h5>${item.title}</h5>
+          <p>${item.summary}</p>
+          <strong>${item.data}</strong>
+        </article>
+      `,
+    )
+    .join("");
 
   return `
     <div class="population-article">
+      <section class="population-panel subtheme-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Theme 001</p>
+          <h4>境港市の人口を5つに分類</h4>
+          <p>100テーマへ広げていくために、人口テーマを小さく分けて更新しやすくします。</p>
+        </div>
+        <div class="subtheme-grid">${subThemeCards}</div>
+      </section>
+
       <section class="population-panel town-panel">
         <div class="panel-heading">
           <p class="section-kicker">Town</p>

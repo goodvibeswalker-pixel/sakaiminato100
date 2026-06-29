@@ -471,7 +471,8 @@ h3 {
 }
 
 .trend-panel,
-.insight-panel {
+.insight-panel,
+.subtheme-panel {
   grid-column: span 2;
 }
 
@@ -483,6 +484,49 @@ h3 {
 .panel-heading p:last-child {
   margin: 0 0 16px;
   color: var(--muted);
+}
+
+.subtheme-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.subtheme-card {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-height: 180px;
+  border: 1px solid rgba(11, 39, 68, 0.1);
+  border-radius: var(--radius);
+  padding: 14px;
+  background: linear-gradient(180deg, #ffffff, #f5fbfd);
+}
+
+.subtheme-card span {
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.subtheme-card h5 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.subtheme-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.subtheme-card strong {
+  align-self: end;
+  color: var(--blue);
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .table-wrap {
@@ -820,8 +864,13 @@ h3 {
   }
 
   .trend-panel,
-  .insight-panel {
+  .insight-panel,
+  .subtheme-panel {
     grid-column: auto;
+  }
+
+  .subtheme-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -904,6 +953,14 @@ h3 {
 
   .age-row {
     grid-template-columns: 76px 1fr 56px;
+  }
+
+  .subtheme-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subtheme-card {
+    min-height: 0;
   }
 
   .button {
