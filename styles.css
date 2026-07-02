@@ -884,6 +884,8 @@ h3 {
 }
 
 .tourism-point-panel,
+.tourism-visitor-panel,
+.tourism-shop-panel,
 .tourism-insight-panel {
   grid-column: span 2;
 }
@@ -938,6 +940,45 @@ h3 {
   gap: 10px;
 }
 
+.tourism-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tourism-stat-card {
+  min-height: 158px;
+  border: 1px solid rgba(11, 39, 68, 0.1);
+  border-radius: var(--radius);
+  padding: 14px;
+  background: linear-gradient(180deg, #ffffff, #eef8fb);
+}
+
+.tourism-stat-card strong,
+.tourism-stat-card span {
+  display: block;
+}
+
+.tourism-stat-card strong {
+  color: var(--blue);
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.05;
+}
+
+.tourism-stat-card span {
+  margin-top: 8px;
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.tourism-stat-card p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
 .tourism-point-card {
   min-height: 150px;
   border: 1px solid rgba(11, 39, 68, 0.1);
@@ -972,6 +1013,36 @@ h3 {
 
 .tourism-insight-panel li {
   color: var(--muted);
+}
+
+.tourism-shop-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tourism-shop-list li {
+  border: 1px solid rgba(11, 39, 68, 0.1);
+  border-radius: var(--radius);
+  padding: 14px;
+  background: white;
+}
+
+.tourism-shop-list strong,
+.tourism-shop-list span {
+  display: block;
+}
+
+.tourism-shop-list strong {
+  color: var(--ink);
+}
+
+.tourism-shop-list span {
+  margin-top: 6px;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .detail-grid {
@@ -1174,6 +1245,8 @@ h3 {
   }
 
   .tourism-point-panel,
+  .tourism-visitor-panel,
+  .tourism-shop-panel,
   .tourism-insight-panel {
     grid-column: auto;
   }
@@ -1186,6 +1259,7 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .tourism-stat-grid,
   .tourism-point-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1289,6 +1363,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .tourism-stat-grid,
   .tourism-point-grid {
     grid-template-columns: 1fr;
   }
@@ -1305,6 +1380,7 @@ h3 {
     min-height: 0;
   }
 
+  .tourism-stat-card,
   .tourism-point-card {
     min-height: 0;
   }

@@ -59,5 +59,7 @@ https://goodvibeswalker-pixel.github.io/sakaiminato100/
 - 境港市 月別住民基本台帳登録数
 - 境港の水産（令和5年版）
 - 境港観光ガイド 水木しげるロード関連記事
-- Wikimedia Commons（Mizuki Shigeru Road -02 / CC BY-SA）
+- 境港観光ガイド 観光MAP
 - 観光庁 Cruise Port Guide of Japan
+- 読売新聞 水木しげるロード30周年関連記事
+- Wikimedia Commons（Mizuki Shigeru Road -02 / CC BY-SA）

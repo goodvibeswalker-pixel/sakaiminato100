@@ -174,13 +174,25 @@ const themeDetails = {
         ["学び", "妖怪ガイドブックや記念館で作品理解が深まる", "親子向き"],
         ["消費", "飲食、土産、グッズへ自然につながる", "商店街向き"],
       ],
+      visitorStats: [
+        ["4,290万人", "累計来訪者", "1993年開設から30周年時点の報道ベース"],
+        ["年143万人規模", "単純平均", "累計を30年で割った参考値。年度別実数とは分けて扱う"],
+        ["多言語MAP", "インバウンド導線", "英語・中国語・韓国語の観光MAPが用意されている"],
+        ["港・空港", "広域アクセス", "クルーズ港、米子鬼太郎空港、境港駅が観光導線を支える"],
+      ],
+      shopSignals: [
+        ["新スポット", "2024年春にゲゲゲの広場、鬼太郎のコインロッカーなどが登場し、駅前の滞在要素が増えています。"],
+        ["スイーツ", "公式記事では、まんじゅう、いちご専門店のパフェ、さつまいも専門店のスイーツなどが紹介されています。"],
+        ["店舗数", "店舗数の年次増加を示す公式の連続データは未確認です。現時点では、店の数そのものより、食べ歩き・土産・写真向きの商品が目立つ傾向として見るのが安全です。"],
+      ],
       notes: [
         "水木しげるロードは、駅から記念館へ向かう約800mの道そのものが観光資源です。",
         "178体のブロンズ像、35個のスタンプラリー、広場や店舗が重なることで、歩く理由が連続して生まれます。",
-        "強みは、写真を撮る、集める、食べる、買う、学ぶという体験が一本の動線上に並ぶことです。",
+        "来訪者数は累計では大きな実績があり、年間の実数は年度ごとの公表データを確認しながら更新する必要があります。",
+        "インバウンド効果は、外国語MAP、クルーズ港、空港アクセスを入口に、写真・食べ歩き・土産へ消費をつなげられる点にあります。",
         "今後は昼だけでなく、夜の影絵や雨の日の楽しみ方も見せると、滞在時間をさらに伸ばせます。",
       ],
-      source: "境港観光ガイド「水木しげるロード」関連記事、Wikimedia Commons",
+      source: "境港観光ガイド「水木しげるロード」関連記事、観光MAP、観光庁 Cruise Port Guide of Japan、読売新聞報道、Wikimedia Commons",
     },
     sections: [
       { heading: "このテーマで伝えること", body: "水木しげるロードは境港市を代表する観光資源です。写真を撮って終わる観光ではなく、商店街、駅前、記念館、食の体験へ回遊する流れを整理します。" },
@@ -349,6 +361,27 @@ function renderTourismArticle(article) {
     .join("");
 
   const notes = article.notes.map((note) => `<li>${note}</li>`).join("");
+  const visitorStats = article.visitorStats
+    .map(
+      ([value, label, text]) => `
+        <article class="tourism-stat-card">
+          <strong>${value}</strong>
+          <span>${label}</span>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+  const shopSignals = article.shopSignals
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
 
   return `
     <div class="tourism-article">
@@ -366,6 +399,15 @@ function renderTourismArticle(article) {
         <ol class="tourism-route">${routeSteps}</ol>
       </section>
 
+      <section class="tourism-panel tourism-visitor-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Visitors</p>
+          <h4>来訪者数とインバウンド効果</h4>
+          <p>累計来訪者の大きさと、港・空港・多言語MAPを使った海外客への入口を分けて見ます。</p>
+        </div>
+        <div class="tourism-stat-grid">${visitorStats}</div>
+      </section>
+
       <section class="tourism-panel tourism-point-panel">
         <div class="panel-heading">
           <p class="section-kicker">Experience</p>
@@ -373,6 +415,15 @@ function renderTourismArticle(article) {
           <p>写真、学び、買い物、食が重なるほど、まち歩きは長く濃くなります。</p>
         </div>
         <div class="tourism-point-grid">${pointCards}</div>
+      </section>
+
+      <section class="tourism-panel tourism-shop-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Shop Trend</p>
+          <h4>店舗とスイーツの見え方</h4>
+          <p>店舗数の増減は断定せず、観光客が歩きながら買いやすい商品が増えているかを見ます。</p>
+        </div>
+        <ul class="tourism-shop-list">${shopSignals}</ul>
       </section>
 
       <section class="tourism-panel tourism-insight-panel">

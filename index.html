@@ -308,6 +308,8 @@
       }
 
       .tourism-point-panel,
+      .tourism-visitor-panel,
+      .tourism-shop-panel,
       .tourism-insight-panel {
         grid-column: span 2;
       }
@@ -362,6 +364,45 @@
         gap: 10px;
       }
 
+      .tourism-stat-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .tourism-stat-card {
+        min-height: 158px;
+        border: 1px solid rgba(11, 39, 68, 0.1);
+        border-radius: var(--radius);
+        padding: 14px;
+        background: linear-gradient(180deg, #ffffff, #eef8fb);
+      }
+
+      .tourism-stat-card strong,
+      .tourism-stat-card span {
+        display: block;
+      }
+
+      .tourism-stat-card strong {
+        color: var(--blue);
+        font-size: clamp(22px, 3vw, 34px);
+        line-height: 1.05;
+      }
+
+      .tourism-stat-card span {
+        margin-top: 8px;
+        color: var(--orange);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .tourism-stat-card p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
       .tourism-point-card {
         min-height: 150px;
         border: 1px solid rgba(11, 39, 68, 0.1);
@@ -398,22 +439,56 @@
         color: var(--muted);
       }
 
+      .tourism-shop-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .tourism-shop-list li {
+        border: 1px solid rgba(11, 39, 68, 0.1);
+        border-radius: var(--radius);
+        padding: 14px;
+        background: white;
+      }
+
+      .tourism-shop-list strong,
+      .tourism-shop-list span {
+        display: block;
+      }
+
+      .tourism-shop-list strong {
+        color: var(--ink);
+      }
+
+      .tourism-shop-list span {
+        margin-top: 6px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
       @media (max-width: 1080px) {
         .tourism-article {
           grid-template-columns: 1fr;
         }
 
         .tourism-point-panel,
+        .tourism-visitor-panel,
+        .tourism-shop-panel,
         .tourism-insight-panel {
           grid-column: auto;
         }
 
+        .tourism-stat-grid,
         .tourism-point-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
       @media (max-width: 560px) {
+        .tourism-stat-grid,
         .tourism-point-grid {
           grid-template-columns: 1fr;
         }
@@ -422,6 +497,7 @@
           min-height: 240px;
         }
 
+        .tourism-stat-card,
         .tourism-point-card {
           min-height: 0;
         }
@@ -727,6 +803,8 @@
           <a href="https://www.city.sakaiminato.lg.jp/index.php?view=120108" target="_blank" rel="noreferrer">人口データ: 境港市 月別住民基本台帳登録数</a>
           <a href="https://www.city.sakaiminato.lg.jp/index.php?view=111050" target="_blank" rel="noreferrer">水産データ: 境港の水産（令和5年版）</a>
           <a href="https://www.sakaiminato.net/magazine/road_202404/" target="_blank" rel="noreferrer">観光データ: 水木しげるロード関連記事</a>
+          <a href="https://www.sakaiminato.net/map/" target="_blank" rel="noreferrer">観光MAP: 多言語マップ</a>
+          <a href="https://en.wikipedia.org/wiki/Sakaiminato,_Tottori#References" target="_blank" rel="noreferrer">来訪者データ: 読売新聞報道（Wikipedia脚注参照）</a>
           <a href="https://commons.wikimedia.org/wiki/File:Mizuki_Shigeru_Road_-02.jpg" target="_blank" rel="noreferrer">写真: Mizuki Shigeru Road -02 / Wikimedia Commons</a>
           <a href="https://www.mlit.go.jp/kankocho/cruise/detail/036/index.html" target="_blank" rel="noreferrer">トップ写真: 観光庁 Cruise Port Guide of Japan / PDL1.0</a>
         </div>
@@ -902,6 +980,20 @@
               </ol>
             </section>
 
+            <section class="tourism-panel tourism-visitor-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Visitors</p>
+                <h4>来訪者数とインバウンド効果</h4>
+                <p>累計来訪者の大きさと、港・空港・多言語MAPを使った海外客への入口を分けて見ます。</p>
+              </div>
+              <div class="tourism-stat-grid">
+                <article class="tourism-stat-card"><strong>4,290万人</strong><span>累計来訪者</span><p>1993年開設から30周年時点の報道ベース</p></article>
+                <article class="tourism-stat-card"><strong>年143万人規模</strong><span>単純平均</span><p>累計を30年で割った参考値。年度別実数とは分けて扱う</p></article>
+                <article class="tourism-stat-card"><strong>多言語MAP</strong><span>インバウンド導線</span><p>英語・中国語・韓国語の観光MAPが用意されている</p></article>
+                <article class="tourism-stat-card"><strong>港・空港</strong><span>広域アクセス</span><p>クルーズ港、米子鬼太郎空港、境港駅が観光導線を支える</p></article>
+              </div>
+            </section>
+
             <section class="tourism-panel tourism-point-panel">
               <div class="panel-heading">
                 <p class="section-kicker">Experience</p>
@@ -916,6 +1008,19 @@
               </div>
             </section>
 
+            <section class="tourism-panel tourism-shop-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Shop Trend</p>
+                <h4>店舗とスイーツの見え方</h4>
+                <p>店舗数の増減は断定せず、観光客が歩きながら買いやすい商品が増えているかを見ます。</p>
+              </div>
+              <ul class="tourism-shop-list">
+                <li><strong>新スポット</strong><span>2024年春にゲゲゲの広場、鬼太郎のコインロッカーなどが登場し、駅前の滞在要素が増えています。</span></li>
+                <li><strong>スイーツ</strong><span>公式記事では、まんじゅう、いちご専門店のパフェ、さつまいも専門店のスイーツなどが紹介されています。</span></li>
+                <li><strong>店舗数</strong><span>店舗数の年次増加を示す公式の連続データは未確認です。現時点では、店の数そのものより、食べ歩き・土産・写真向きの商品が目立つ傾向として見るのが安全です。</span></li>
+              </ul>
+            </section>
+
             <section class="tourism-panel tourism-insight-panel">
               <div class="panel-heading">
                 <p class="section-kicker">Insight</p>
@@ -924,10 +1029,11 @@
               <ul>
                 <li>水木しげるロードは、駅から記念館へ向かう約800mの道そのものが観光資源です。</li>
                 <li>178体のブロンズ像、35個のスタンプラリー、広場や店舗が重なることで、歩く理由が連続して生まれます。</li>
-                <li>強みは、写真を撮る、集める、食べる、買う、学ぶという体験が一本の動線上に並ぶことです。</li>
+                <li>来訪者数は累計では大きな実績があり、年間の実数は年度ごとの公表データを確認しながら更新する必要があります。</li>
+                <li>インバウンド効果は、外国語MAP、クルーズ港、空港アクセスを入口に、写真・食べ歩き・土産へ消費をつなげられる点にあります。</li>
                 <li>今後は昼だけでなく、夜の影絵や雨の日の楽しみ方も見せると、滞在時間をさらに伸ばせます。</li>
               </ul>
-              <p class="source-note">境港観光ガイド「水木しげるロード」関連記事、Wikimedia Commons</p>
+              <p class="source-note">境港観光ガイド「水木しげるロード」関連記事、観光MAP、観光庁 Cruise Port Guide of Japan、読売新聞報道、Wikimedia Commons</p>
             </section>
           </div>
         `;
