@@ -265,6 +265,167 @@
           min-height: 0;
         }
       }
+
+      .tourism-article {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+        gap: 16px;
+        min-width: 0;
+        margin-top: 28px;
+      }
+
+      .tourism-panel,
+      .tourism-photo-panel {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: #fbfdfe;
+      }
+
+      .tourism-photo-panel {
+        overflow: hidden;
+      }
+
+      .tourism-photo-panel img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 360px;
+        object-fit: cover;
+      }
+
+      .tourism-photo-panel p {
+        margin: 0;
+        padding: 10px 12px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+        background: white;
+      }
+
+      .tourism-panel {
+        padding: 18px;
+      }
+
+      .tourism-point-panel,
+      .tourism-insight-panel {
+        grid-column: span 2;
+      }
+
+      .tourism-route {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: tourism-route;
+      }
+
+      .tourism-route li {
+        position: relative;
+        counter-increment: tourism-route;
+        border: 1px solid rgba(11, 39, 68, 0.1);
+        border-radius: var(--radius);
+        padding: 14px 14px 14px 48px;
+        background: white;
+      }
+
+      .tourism-route li::before {
+        content: counter(tourism-route);
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        width: 24px;
+        height: 24px;
+        border-radius: 999px;
+        display: grid;
+        place-items: center;
+        color: white;
+        background: var(--blue);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .tourism-route strong,
+      .tourism-route span {
+        display: block;
+      }
+
+      .tourism-route span {
+        margin-top: 4px;
+        color: var(--muted);
+      }
+
+      .tourism-point-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .tourism-point-card {
+        min-height: 150px;
+        border: 1px solid rgba(11, 39, 68, 0.1);
+        border-radius: var(--radius);
+        padding: 14px;
+        background: linear-gradient(180deg, #ffffff, #fff8ec);
+      }
+
+      .tourism-point-card span {
+        color: var(--orange);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .tourism-point-card h5 {
+        margin: 8px 0;
+        font-size: 17px;
+      }
+
+      .tourism-point-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .tourism-insight-panel ul {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding-left: 1.2em;
+      }
+
+      .tourism-insight-panel li {
+        color: var(--muted);
+      }
+
+      @media (max-width: 1080px) {
+        .tourism-article {
+          grid-template-columns: 1fr;
+        }
+
+        .tourism-point-panel,
+        .tourism-insight-panel {
+          grid-column: auto;
+        }
+
+        .tourism-point-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 560px) {
+        .tourism-point-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tourism-photo-panel img {
+          min-height: 240px;
+        }
+
+        .tourism-point-card {
+          min-height: 0;
+        }
+      }
     </style>
   </head>
   <body>
@@ -565,6 +726,8 @@
           <a href="https://www.sakaiminato.net/access/" target="_blank" rel="noreferrer">交通情報</a>
           <a href="https://www.city.sakaiminato.lg.jp/index.php?view=120108" target="_blank" rel="noreferrer">人口データ: 境港市 月別住民基本台帳登録数</a>
           <a href="https://www.city.sakaiminato.lg.jp/index.php?view=111050" target="_blank" rel="noreferrer">水産データ: 境港の水産（令和5年版）</a>
+          <a href="https://www.sakaiminato.net/magazine/road_202404/" target="_blank" rel="noreferrer">観光データ: 水木しげるロード関連記事</a>
+          <a href="https://commons.wikimedia.org/wiki/File:Mizuki_Shigeru_Road_-02.jpg" target="_blank" rel="noreferrer">写真: Mizuki Shigeru Road -02 / Wikimedia Commons</a>
           <a href="https://www.mlit.go.jp/kankocho/cruise/detail/036/index.html" target="_blank" rel="noreferrer">トップ写真: 観光庁 Cruise Port Guide of Japan / PDL1.0</a>
         </div>
       </section>
@@ -712,6 +875,75 @@
           if (!event.target.closest('[data-theme="port"]')) return;
           setTimeout(injectPortArticle, 0);
           setTimeout(injectPortArticle, 80);
+        });
+      })();
+    </script>
+    <script>
+      (() => {
+        const tourismHtml = `
+          <div class="tourism-article">
+            <section class="tourism-photo-panel">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mizuki_Shigeru_Road_-02.jpg?width=1200" alt="水木しげるロードの街路と時計型サイン" />
+              <p>Photo: Aimaimyi / Wikimedia Commons / CC BY-SA 3.0</p>
+            </section>
+
+            <section class="tourism-panel tourism-map-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Route</p>
+                <h4>駅から記念館まで、歩く観光導線</h4>
+                <p>水木しげるロードは、約800mの道に見どころを連続させることで回遊を生みます。</p>
+              </div>
+              <ol class="tourism-route">
+                <li><strong>JR境港駅</strong><span>列車・駅前広場から妖怪の世界へ入る</span></li>
+                <li><strong>ゲゲゲの広場</strong><span>休憩、記念撮影、親子の滞在ポイント</span></li>
+                <li><strong>水木しげるロード</strong><span>約800mの商店街を歩きながら妖怪像を巡る</span></li>
+                <li><strong>店舗・食べ歩き</strong><span>土産、スイーツ、海鮮などで滞在時間を伸ばす</span></li>
+                <li><strong>水木しげる記念館</strong><span>作品世界と作者の人生を深く知る</span></li>
+              </ol>
+            </section>
+
+            <section class="tourism-panel tourism-point-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Experience</p>
+                <h4>観光体験を4つに分ける</h4>
+                <p>写真、学び、買い物、食が重なるほど、まち歩きは長く濃くなります。</p>
+              </div>
+              <div class="tourism-point-grid">
+                <article class="tourism-point-card"><span>回遊しやすい</span><h5>街歩き</h5><p>駅から記念館まで歩いて回れる</p></article>
+                <article class="tourism-point-card"><span>SNS向き</span><h5>写真</h5><p>サイン、広場、商店街が撮影スポットになる</p></article>
+                <article class="tourism-point-card"><span>親子向き</span><h5>学び</h5><p>妖怪ガイドブックや記念館で作品理解が深まる</p></article>
+                <article class="tourism-point-card"><span>商店街向き</span><h5>消費</h5><p>飲食、土産、グッズへ自然につながる</p></article>
+              </div>
+            </section>
+
+            <section class="tourism-panel tourism-insight-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Insight</p>
+                <h4>水木しげるロードをどう見るか</h4>
+              </div>
+              <ul>
+                <li>水木しげるロードは、駅から記念館へ向かう約800mの道そのものが観光資源です。</li>
+                <li>178体のブロンズ像、35個のスタンプラリー、広場や店舗が重なることで、歩く理由が連続して生まれます。</li>
+                <li>強みは、写真を撮る、集める、食べる、買う、学ぶという体験が一本の動線上に並ぶことです。</li>
+                <li>今後は昼だけでなく、夜の影絵や雨の日の楽しみ方も見せると、滞在時間をさらに伸ばせます。</li>
+              </ul>
+              <p class="source-note">境港観光ガイド「水木しげるロード」関連記事、Wikimedia Commons</p>
+            </section>
+          </div>
+        `;
+
+        const injectTourismArticle = () => {
+          const detail = document.querySelector("#themeDetail");
+          if (!detail || detail.querySelector(".tourism-article")) return;
+          const header = detail.querySelector(".detail-header");
+          if (!header || !header.textContent.includes("水木しげるロード")) return;
+          header.insertAdjacentHTML("afterend", tourismHtml);
+        };
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest('[data-theme="tourism"]')) return;
+          setTimeout(injectTourismArticle, 0);
+          setTimeout(injectTourismArticle, 80);
         });
       })();
     </script>

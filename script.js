@@ -150,10 +150,42 @@ const themeDetails = {
     category: "観光・文化",
     title: "水木しげるロード",
     lead: "妖怪文化を入口に、まち歩き、学び、滞在時間を伸ばす観光を考えます。",
+    facts: [
+      ["約800m", "散策距離", "JR境港駅から東へ"],
+      ["178体", "妖怪ブロンズ像", "2024年春時点"],
+      ["35個", "スタンプ", "妖怪スタンプラリー"],
+    ],
+    tourismArticle: {
+      image: {
+        src: "https://commons.wikimedia.org/wiki/Special:FilePath/Mizuki_Shigeru_Road_-02.jpg?width=1200",
+        alt: "水木しげるロードの街路と時計型サイン",
+        credit: "Photo: Aimaimyi / Wikimedia Commons / CC BY-SA 3.0",
+      },
+      route: [
+        ["JR境港駅", "列車・駅前広場から妖怪の世界へ入る"],
+        ["ゲゲゲの広場", "休憩、記念撮影、親子の滞在ポイント"],
+        ["水木しげるロード", "約800mの商店街を歩きながら妖怪像を巡る"],
+        ["店舗・食べ歩き", "土産、スイーツ、海鮮などで滞在時間を伸ばす"],
+        ["水木しげる記念館", "作品世界と作者の人生を深く知る"],
+      ],
+      points: [
+        ["街歩き", "駅から記念館まで歩いて回れる", "回遊しやすい"],
+        ["写真", "サイン、広場、商店街が撮影スポットになる", "SNS向き"],
+        ["学び", "妖怪ガイドブックや記念館で作品理解が深まる", "親子向き"],
+        ["消費", "飲食、土産、グッズへ自然につながる", "商店街向き"],
+      ],
+      notes: [
+        "水木しげるロードは、駅から記念館へ向かう約800mの道そのものが観光資源です。",
+        "178体のブロンズ像、35個のスタンプラリー、広場や店舗が重なることで、歩く理由が連続して生まれます。",
+        "強みは、写真を撮る、集める、食べる、買う、学ぶという体験が一本の動線上に並ぶことです。",
+        "今後は昼だけでなく、夜の影絵や雨の日の楽しみ方も見せると、滞在時間をさらに伸ばせます。",
+      ],
+      source: "境港観光ガイド「水木しげるロード」関連記事、Wikimedia Commons",
+    },
     sections: [
       { heading: "このテーマで伝えること", body: "水木しげるロードは境港市を代表する観光資源です。写真を撮って終わる観光ではなく、商店街、駅前、記念館、食の体験へ回遊する流れを整理します。" },
       { heading: "見るポイント", items: ["来訪者が歩くルート", "親子・海外客・リピーターの楽しみ方", "夜や雨の日の過ごし方"] },
-      { heading: "考察", body: "強い観光資源があるまちは、周辺への分散と滞在時間の設計が鍵になります。妖怪文化を入り口に、港町の歴史や食へ自然につなげることが重要です。" },
+      { heading: "考察", body: "強い観光資源があるまちは、周辺への分散と滞在時間の設計が鍵になります。水木しげるロードは、駅から記念館までの道を歩く体験そのものが価値になっており、そこに写真、スタンプ、買い物、食、学びを重ねられる点が強みです。妖怪文化を入口に、港町の歴史や食へ自然につなげることが重要です。" },
     ],
   },
   children: {
@@ -274,6 +306,9 @@ function renderDetail(theme) {
   const portArticle = theme.portArticle
     ? renderPortArticle(theme.portArticle)
     : "";
+  const tourismArticle = theme.tourismArticle
+    ? renderTourismArticle(theme.tourismArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -284,7 +319,71 @@ function renderDetail(theme) {
     </div>
     ${populationArticle}
     ${portArticle}
+    ${tourismArticle}
     <div class="detail-grid">${sections}</div>
+  `;
+}
+
+function renderTourismArticle(article) {
+  const routeSteps = article.route
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const pointCards = article.points
+    .map(
+      ([title, text, label]) => `
+        <article class="tourism-point-card">
+          <span>${label}</span>
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const notes = article.notes.map((note) => `<li>${note}</li>`).join("");
+
+  return `
+    <div class="tourism-article">
+      <section class="tourism-photo-panel">
+        <img src="${article.image.src}" alt="${article.image.alt}" />
+        <p>${article.image.credit}</p>
+      </section>
+
+      <section class="tourism-panel tourism-map-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Route</p>
+          <h4>駅から記念館まで、歩く観光導線</h4>
+          <p>水木しげるロードは、約800mの道に見どころを連続させることで回遊を生みます。</p>
+        </div>
+        <ol class="tourism-route">${routeSteps}</ol>
+      </section>
+
+      <section class="tourism-panel tourism-point-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Experience</p>
+          <h4>観光体験を4つに分ける</h4>
+          <p>写真、学び、買い物、食が重なるほど、まち歩きは長く濃くなります。</p>
+        </div>
+        <div class="tourism-point-grid">${pointCards}</div>
+      </section>
+
+      <section class="tourism-panel tourism-insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Insight</p>
+          <h4>水木しげるロードをどう見るか</h4>
+        </div>
+        <ul>${notes}</ul>
+        <p class="source-note">${article.source}</p>
+      </section>
+    </div>
   `;
 }
 

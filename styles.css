@@ -842,6 +842,138 @@ h3 {
   color: var(--muted);
 }
 
+.tourism-article {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+  gap: 16px;
+  min-width: 0;
+  margin-top: 28px;
+}
+
+.tourism-panel,
+.tourism-photo-panel {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #fbfdfe;
+}
+
+.tourism-photo-panel {
+  overflow: hidden;
+}
+
+.tourism-photo-panel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.tourism-photo-panel p {
+  margin: 0;
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  background: white;
+}
+
+.tourism-panel {
+  padding: 18px;
+}
+
+.tourism-point-panel,
+.tourism-insight-panel {
+  grid-column: span 2;
+}
+
+.tourism-route {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: tourism-route;
+}
+
+.tourism-route li {
+  position: relative;
+  counter-increment: tourism-route;
+  border: 1px solid rgba(11, 39, 68, 0.1);
+  border-radius: var(--radius);
+  padding: 14px 14px 14px 48px;
+  background: white;
+}
+
+.tourism-route li::before {
+  content: counter(tourism-route);
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.tourism-route strong,
+.tourism-route span {
+  display: block;
+}
+
+.tourism-route span {
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.tourism-point-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tourism-point-card {
+  min-height: 150px;
+  border: 1px solid rgba(11, 39, 68, 0.1);
+  border-radius: var(--radius);
+  padding: 14px;
+  background: linear-gradient(180deg, #ffffff, #fff8ec);
+}
+
+.tourism-point-card span {
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.tourism-point-card h5 {
+  margin: 8px 0;
+  font-size: 17px;
+}
+
+.tourism-point-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.tourism-insight-panel ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.tourism-insight-panel li {
+  color: var(--muted);
+}
+
 .detail-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1026,6 +1158,10 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .tourism-article {
+    grid-template-columns: 1fr;
+  }
+
   .trend-panel,
   .insight-panel,
   .subtheme-panel {
@@ -1037,11 +1173,20 @@ h3 {
     grid-column: auto;
   }
 
+  .tourism-point-panel,
+  .tourism-insight-panel {
+    grid-column: auto;
+  }
+
   .subtheme-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .fish-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tourism-point-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1144,11 +1289,23 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .tourism-point-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tourism-photo-panel img {
+    min-height: 240px;
+  }
+
   .subtheme-card {
     min-height: 0;
   }
 
   .fish-flow li {
+    min-height: 0;
+  }
+
+  .tourism-point-card {
     min-height: 0;
   }
 
