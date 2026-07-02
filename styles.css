@@ -683,6 +683,165 @@ h3 {
   font-weight: 800;
 }
 
+.port-article {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-width: 0;
+  margin-top: 28px;
+}
+
+.port-panel {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fbfdfe;
+}
+
+.fish-flow-panel,
+.fish-insight-panel {
+  grid-column: span 2;
+}
+
+.fish-chart {
+  display: grid;
+  gap: 12px;
+}
+
+.fish-row {
+  display: grid;
+  grid-template-columns: 110px 96px 46px;
+  gap: 10px;
+  align-items: center;
+}
+
+.fish-row span,
+.fish-row strong,
+.fish-row em {
+  font-style: normal;
+  font-weight: 800;
+}
+
+.fish-row span {
+  color: var(--muted);
+}
+
+.fish-row i {
+  grid-column: 1 / -1;
+  display: block;
+  height: 12px;
+  border-radius: 999px;
+  background: #e7eef2;
+  overflow: hidden;
+}
+
+.fish-row i::before {
+  content: "";
+  display: block;
+  width: var(--bar);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--blue), var(--orange));
+}
+
+.fish-trend-chart {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  min-height: 240px;
+  align-items: end;
+  padding-top: 18px;
+}
+
+.fish-trend-column {
+  display: grid;
+  grid-template-rows: 28px 150px auto;
+  gap: 8px;
+  min-width: 0;
+  text-align: center;
+}
+
+.fish-trend-column i {
+  align-self: end;
+  display: block;
+  width: 100%;
+  height: var(--bar);
+  border-radius: 8px 8px 2px 2px;
+  background: linear-gradient(180deg, var(--orange), var(--gold));
+}
+
+.fish-trend-column span,
+.fish-trend-column strong {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.fish-trend-column span {
+  color: var(--ink);
+}
+
+.fish-trend-column strong {
+  color: var(--muted);
+}
+
+.fish-flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: fish-flow;
+}
+
+.fish-flow li {
+  position: relative;
+  counter-increment: fish-flow;
+  min-height: 150px;
+  border: 1px solid rgba(11, 39, 68, 0.1);
+  border-radius: var(--radius);
+  padding: 38px 14px 14px;
+  background: white;
+}
+
+.fish-flow li::before {
+  content: counter(fish-flow, decimal-leading-zero);
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.fish-flow strong,
+.fish-flow span {
+  display: block;
+}
+
+.fish-flow strong {
+  color: var(--ink);
+}
+
+.fish-flow span {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.fish-insight-panel ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.fish-insight-panel li {
+  color: var(--muted);
+}
+
 .detail-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -863,13 +1022,26 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .port-article {
+    grid-template-columns: 1fr;
+  }
+
   .trend-panel,
   .insight-panel,
   .subtheme-panel {
     grid-column: auto;
   }
 
+  .fish-flow-panel,
+  .fish-insight-panel {
+    grid-column: auto;
+  }
+
   .subtheme-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fish-flow {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -951,15 +1123,32 @@ h3 {
     row-gap: 18px;
   }
 
+  .fish-trend-chart {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 18px;
+  }
+
   .age-row {
     grid-template-columns: 76px 1fr 56px;
+  }
+
+  .fish-row {
+    grid-template-columns: 86px 1fr 44px;
   }
 
   .subtheme-grid {
     grid-template-columns: 1fr;
   }
 
+  .fish-flow {
+    grid-template-columns: 1fr;
+  }
+
   .subtheme-card {
+    min-height: 0;
+  }
+
+  .fish-flow li {
     min-height: 0;
   }
 

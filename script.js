@@ -102,10 +102,47 @@ const themeDetails = {
     category: "産業・経済",
     title: "境漁港と水産業",
     lead: "魚のまちを支える港、市場、加工、流通を、暮らしと経済の両面から見つめます。",
+    facts: [
+      ["12.0万t", "水揚量", "令和5年"],
+      ["245億円", "水揚金額", "令和5年"],
+      ["全国3位", "水揚量順位", "令和5年"],
+    ],
+    portArticle: {
+      fishTypes: [
+        ["いわし", 53700, "45%"],
+        ["さば", 34382, "29%"],
+        ["あじ", 8799, "7%"],
+        ["べにずわいがに", 5741, "5%"],
+        ["くろまぐろ", 1099, "1%"],
+        ["その他", 15972, "13%"],
+      ],
+      trend: [
+        ["H30", 115381],
+        ["R1", 85678],
+        ["R2", 98289],
+        ["R3", 93829],
+        ["R4", 104948],
+        ["R5", 120108],
+      ],
+      flow: [
+        ["漁船", "まき網・かにかご・いか釣など"],
+        ["市場", "入札・セリで価格が決まる"],
+        ["買受人", "加工32・小売25・出荷13"],
+        ["加工", "冷凍食品・カニ・サバ・アジなど"],
+        ["食卓・観光", "魚のまちのブランドになる"],
+      ],
+      notes: [
+        "令和5年の境漁港は、水揚量12.0万トン余で全国3位、水揚金額245億円余で全国5位です。",
+        "魚種別では、いわしが45%、さばが29%を占め、まき網で獲る回遊魚が水揚げの大きな柱です。",
+        "ベニズワイガニは年間約5千トンで、境漁港に水揚げされる量は全国の約5割のシェアがあります。",
+        "市場で終わらず、冷凍・加工・販売・観光PRまでつながるところが、境港の水産業の強みです。",
+      ],
+      source: "境港市公式「境港の水産（令和5年版）」",
+    },
     sections: [
       { heading: "このテーマで伝えること", body: "境漁港は境港市の産業イメージを形づくる重要な現場です。水揚げ、市場、加工、物流、食の発信をつなげて見ることで、港が地域経済に与える広がりを整理します。" },
       { heading: "見るポイント", items: ["水揚げされる魚種と季節の変化", "市場・加工・冷凍・物流のつながり", "観光や食育への活用"] },
-      { heading: "考察", body: "港は単なる産業施設ではなく、境港市のブランドそのものです。働く人の姿や流通の仕組みを見せることで、魚を食べる観光から、魚のまちを理解する観光へ広げられます。" },
+      { heading: "考察", body: "港は単なる産業施設ではなく、境港市のブランドそのものです。水揚量ではいわし・さばの存在感が大きく、加工や冷凍の仕組みがあることで地域内に仕事と価値が残ります。魚を食べる観光から、魚が水揚げされ、値がつき、加工され、全国へ届く流れを理解する観光へ広げることが重要です。" },
     ],
   },
   tourism: {
@@ -234,6 +271,9 @@ function renderDetail(theme) {
   const populationArticle = theme.populationArticle
     ? renderPopulationArticle(theme.populationArticle)
     : "";
+  const portArticle = theme.portArticle
+    ? renderPortArticle(theme.portArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -243,7 +283,95 @@ function renderDetail(theme) {
       ${factMarkup}
     </div>
     ${populationArticle}
+    ${portArticle}
     <div class="detail-grid">${sections}</div>
+  `;
+}
+
+function renderPortArticle(article) {
+  const maxFish = Math.max(...article.fishTypes.map(([, value]) => value));
+  const maxTrend = Math.max(...article.trend.map(([, value]) => value));
+  const minTrend = Math.min(...article.trend.map(([, value]) => value));
+  const rangeTrend = maxTrend - minTrend || 1;
+
+  const fishBars = article.fishTypes
+    .map(([name, value, ratio]) => {
+      const width = Math.round((value / maxFish) * 100);
+      return `
+        <div class="fish-row">
+          <span>${name}</span>
+          <strong>${value.toLocaleString()}t</strong>
+          <em>${ratio}</em>
+          <i style="--bar:${width}%"></i>
+        </div>
+      `;
+    })
+    .join("");
+
+  const trendBars = article.trend
+    .map(([label, value]) => {
+      const height = 34 + Math.round(((value - minTrend) / rangeTrend) * 66);
+      return `
+        <div class="fish-trend-column">
+          <span>${value.toLocaleString()}</span>
+          <i style="--bar:${height}%"></i>
+          <strong>${label}</strong>
+        </div>
+      `;
+    })
+    .join("");
+
+  const flowSteps = article.flow
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const notes = article.notes.map((note) => `<li>${note}</li>`).join("");
+
+  return `
+    <div class="port-article">
+      <section class="port-panel fish-map-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Catch</p>
+          <h4>令和5年の水揚げ構成</h4>
+          <p>境漁港の水揚げは、いわし・さばを中心に、カニやマグロもブランドを支えています。</p>
+        </div>
+        <div class="fish-chart">${fishBars}</div>
+      </section>
+
+      <section class="port-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Trend</p>
+          <h4>近年の水揚量推移</h4>
+          <p>令和元年に落ち込んだ後、令和5年は12万トン台まで増えています。</p>
+        </div>
+        <div class="fish-trend-chart">${trendBars}</div>
+      </section>
+
+      <section class="port-panel fish-flow-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Flow</p>
+          <h4>魚が価値に変わる流れ</h4>
+          <p>水揚げされた魚は、市場、買受人、加工、販売を通って、地域の仕事とブランドになります。</p>
+        </div>
+        <ol class="fish-flow">${flowSteps}</ol>
+      </section>
+
+      <section class="port-panel fish-insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Insight</p>
+          <h4>水産業をどう見るか</h4>
+        </div>
+        <ul>${notes}</ul>
+        <p class="source-note">${article.source}</p>
+      </section>
+    </div>
   `;
 }
 

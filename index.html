@@ -76,6 +76,195 @@
           min-height: 0;
         }
       }
+
+      .port-article {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        min-width: 0;
+        margin-top: 28px;
+      }
+
+      .port-panel {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+        background: #fbfdfe;
+      }
+
+      .fish-flow-panel,
+      .fish-insight-panel {
+        grid-column: span 2;
+      }
+
+      .fish-chart {
+        display: grid;
+        gap: 12px;
+      }
+
+      .fish-row {
+        display: grid;
+        grid-template-columns: 110px 96px 46px;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .fish-row span,
+      .fish-row strong,
+      .fish-row em {
+        font-style: normal;
+        font-weight: 800;
+      }
+
+      .fish-row span {
+        color: var(--muted);
+      }
+
+      .fish-row i {
+        grid-column: 1 / -1;
+        display: block;
+        height: 12px;
+        border-radius: 999px;
+        background: #e7eef2;
+        overflow: hidden;
+      }
+
+      .fish-row i::before {
+        content: "";
+        display: block;
+        width: var(--bar);
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--blue), var(--orange));
+      }
+
+      .fish-trend-chart {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 10px;
+        min-height: 240px;
+        align-items: end;
+        padding-top: 18px;
+      }
+
+      .fish-trend-column {
+        display: grid;
+        grid-template-rows: 28px 150px auto;
+        gap: 8px;
+        min-width: 0;
+        text-align: center;
+      }
+
+      .fish-trend-column i {
+        align-self: end;
+        display: block;
+        width: 100%;
+        height: var(--bar);
+        border-radius: 8px 8px 2px 2px;
+        background: linear-gradient(180deg, var(--orange), var(--gold));
+      }
+
+      .fish-trend-column span,
+      .fish-trend-column strong {
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .fish-trend-column span {
+        color: var(--ink);
+      }
+
+      .fish-trend-column strong {
+        color: var(--muted);
+      }
+
+      .fish-flow {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: fish-flow;
+      }
+
+      .fish-flow li {
+        position: relative;
+        counter-increment: fish-flow;
+        min-height: 150px;
+        border: 1px solid rgba(11, 39, 68, 0.1);
+        border-radius: var(--radius);
+        padding: 38px 14px 14px;
+        background: white;
+      }
+
+      .fish-flow li::before {
+        content: counter(fish-flow, decimal-leading-zero);
+        position: absolute;
+        top: 12px;
+        left: 14px;
+        color: var(--teal);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .fish-flow strong,
+      .fish-flow span {
+        display: block;
+      }
+
+      .fish-flow span {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      .fish-insight-panel ul {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding-left: 1.2em;
+      }
+
+      .fish-insight-panel li {
+        color: var(--muted);
+      }
+
+      @media (max-width: 1080px) {
+        .port-article {
+          grid-template-columns: 1fr;
+        }
+
+        .fish-flow-panel,
+        .fish-insight-panel {
+          grid-column: auto;
+        }
+
+        .fish-flow {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 560px) {
+        .fish-trend-chart {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          row-gap: 18px;
+        }
+
+        .fish-row {
+          grid-template-columns: 86px 1fr 44px;
+        }
+
+        .fish-flow {
+          grid-template-columns: 1fr;
+        }
+
+        .fish-flow li {
+          min-height: 0;
+        }
+      }
     </style>
   </head>
   <body>
@@ -375,6 +564,7 @@
           <a href="https://www.sakaiminato.net/about/" target="_blank" rel="noreferrer">境港について</a>
           <a href="https://www.sakaiminato.net/access/" target="_blank" rel="noreferrer">交通情報</a>
           <a href="https://www.city.sakaiminato.lg.jp/index.php?view=120108" target="_blank" rel="noreferrer">人口データ: 境港市 月別住民基本台帳登録数</a>
+          <a href="https://www.city.sakaiminato.lg.jp/index.php?view=111050" target="_blank" rel="noreferrer">水産データ: 境港の水産（令和5年版）</a>
           <a href="https://www.mlit.go.jp/kankocho/cruise/detail/036/index.html" target="_blank" rel="noreferrer">トップ写真: 観光庁 Cruise Port Guide of Japan / PDL1.0</a>
         </div>
       </section>
@@ -440,6 +630,88 @@
           if (!event.target.closest('[data-theme="population"]')) return;
           setTimeout(injectPopulationSubThemes, 0);
           setTimeout(injectPopulationSubThemes, 80);
+        });
+      })();
+    </script>
+    <script>
+      (() => {
+        const portHtml = `
+          <div class="port-article">
+            <section class="port-panel fish-map-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Catch</p>
+                <h4>令和5年の水揚げ構成</h4>
+                <p>境漁港の水揚げは、いわし・さばを中心に、カニやマグロもブランドを支えています。</p>
+              </div>
+              <div class="fish-chart">
+                <div class="fish-row"><span>いわし</span><strong>53,700t</strong><em>45%</em><i style="--bar:100%"></i></div>
+                <div class="fish-row"><span>さば</span><strong>34,382t</strong><em>29%</em><i style="--bar:64%"></i></div>
+                <div class="fish-row"><span>あじ</span><strong>8,799t</strong><em>7%</em><i style="--bar:16%"></i></div>
+                <div class="fish-row"><span>べにずわいがに</span><strong>5,741t</strong><em>5%</em><i style="--bar:11%"></i></div>
+                <div class="fish-row"><span>くろまぐろ</span><strong>1,099t</strong><em>1%</em><i style="--bar:2%"></i></div>
+                <div class="fish-row"><span>その他</span><strong>15,972t</strong><em>13%</em><i style="--bar:30%"></i></div>
+              </div>
+            </section>
+
+            <section class="port-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Trend</p>
+                <h4>近年の水揚量推移</h4>
+                <p>令和元年に落ち込んだ後、令和5年は12万トン台まで増えています。</p>
+              </div>
+              <div class="fish-trend-chart">
+                <div class="fish-trend-column"><span>115,381</span><i style="--bar:89%"></i><strong>H30</strong></div>
+                <div class="fish-trend-column"><span>85,678</span><i style="--bar:34%"></i><strong>R1</strong></div>
+                <div class="fish-trend-column"><span>98,289</span><i style="--bar:57%"></i><strong>R2</strong></div>
+                <div class="fish-trend-column"><span>93,829</span><i style="--bar:49%"></i><strong>R3</strong></div>
+                <div class="fish-trend-column"><span>104,948</span><i style="--bar:69%"></i><strong>R4</strong></div>
+                <div class="fish-trend-column"><span>120,108</span><i style="--bar:100%"></i><strong>R5</strong></div>
+              </div>
+            </section>
+
+            <section class="port-panel fish-flow-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Flow</p>
+                <h4>魚が価値に変わる流れ</h4>
+                <p>水揚げされた魚は、市場、買受人、加工、販売を通って、地域の仕事とブランドになります。</p>
+              </div>
+              <ol class="fish-flow">
+                <li><strong>漁船</strong><span>まき網・かにかご・いか釣など</span></li>
+                <li><strong>市場</strong><span>入札・セリで価格が決まる</span></li>
+                <li><strong>買受人</strong><span>加工32・小売25・出荷13</span></li>
+                <li><strong>加工</strong><span>冷凍食品・カニ・サバ・アジなど</span></li>
+                <li><strong>食卓・観光</strong><span>魚のまちのブランドになる</span></li>
+              </ol>
+            </section>
+
+            <section class="port-panel fish-insight-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Insight</p>
+                <h4>水産業をどう見るか</h4>
+              </div>
+              <ul>
+                <li>令和5年の境漁港は、水揚量12.0万トン余で全国3位、水揚金額245億円余で全国5位です。</li>
+                <li>魚種別では、いわしが45%、さばが29%を占め、まき網で獲る回遊魚が水揚げの大きな柱です。</li>
+                <li>ベニズワイガニは年間約5千トンで、境漁港に水揚げされる量は全国の約5割のシェアがあります。</li>
+                <li>市場で終わらず、冷凍・加工・販売・観光PRまでつながるところが、境港の水産業の強みです。</li>
+              </ul>
+              <p class="source-note">境港市公式「境港の水産（令和5年版）」</p>
+            </section>
+          </div>
+        `;
+
+        const injectPortArticle = () => {
+          const detail = document.querySelector("#themeDetail");
+          if (!detail || detail.querySelector(".port-article")) return;
+          const header = detail.querySelector(".detail-header");
+          if (!header || !header.textContent.includes("境漁港と水産業")) return;
+          header.insertAdjacentHTML("afterend", portHtml);
+        };
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest('[data-theme="port"]')) return;
+          setTimeout(injectPortArticle, 0);
+          setTimeout(injectPortArticle, 80);
         });
       })();
     </script>
