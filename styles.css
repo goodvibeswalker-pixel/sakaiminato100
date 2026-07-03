@@ -1125,13 +1125,14 @@ h3 {
   z-index: 2;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.74);
+  border: 2px solid rgba(255, 255, 255, 0.88);
   border-radius: 40% 60% 52% 48% / 48% 42% 58% 52%;
   color: rgba(11, 39, 68, 0.74);
   font-size: 12px;
   font-weight: 900;
   line-height: 1;
-  opacity: 0.78;
+  opacity: 0.92;
+  box-shadow: inset 0 0 0 1px rgba(11, 39, 68, 0.08), 0 10px 24px rgba(11, 39, 68, 0.1);
   transform: rotate(-10deg);
 }
 
@@ -1144,32 +1145,32 @@ h3 {
 
 .education-school-zone.zone-1,
 .zone-swatch.zone-1 {
-  background: rgba(25, 124, 181, 0.24);
+  background: rgba(25, 124, 181, 0.45);
 }
 
 .education-school-zone.zone-2,
 .zone-swatch.zone-2 {
-  background: rgba(231, 126, 40, 0.25);
+  background: rgba(231, 126, 40, 0.46);
 }
 
 .education-school-zone.zone-3,
 .zone-swatch.zone-3 {
-  background: rgba(17, 124, 116, 0.25);
+  background: rgba(17, 124, 116, 0.44);
 }
 
 .education-school-zone.zone-4,
 .zone-swatch.zone-4 {
-  background: rgba(211, 163, 49, 0.3);
+  background: rgba(211, 163, 49, 0.5);
 }
 
 .education-school-zone.zone-5,
 .zone-swatch.zone-5 {
-  background: rgba(129, 107, 184, 0.25);
+  background: rgba(129, 107, 184, 0.46);
 }
 
 .education-school-zone.zone-6,
 .zone-swatch.zone-6 {
-  background: rgba(74, 151, 88, 0.25);
+  background: rgba(74, 151, 88, 0.46);
 }
 
 .education-map::after {
