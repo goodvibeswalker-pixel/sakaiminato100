@@ -1120,6 +1120,58 @@ h3 {
   transform: rotate(-12deg);
 }
 
+.education-school-zone {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 40% 60% 52% 48% / 48% 42% 58% 52%;
+  color: rgba(11, 39, 68, 0.74);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.78;
+  transform: rotate(-10deg);
+}
+
+.education-school-zone strong {
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 4px 12px rgba(11, 39, 68, 0.08);
+}
+
+.education-school-zone.zone-1,
+.zone-swatch.zone-1 {
+  background: rgba(25, 124, 181, 0.24);
+}
+
+.education-school-zone.zone-2,
+.zone-swatch.zone-2 {
+  background: rgba(231, 126, 40, 0.25);
+}
+
+.education-school-zone.zone-3,
+.zone-swatch.zone-3 {
+  background: rgba(17, 124, 116, 0.25);
+}
+
+.education-school-zone.zone-4,
+.zone-swatch.zone-4 {
+  background: rgba(211, 163, 49, 0.3);
+}
+
+.education-school-zone.zone-5,
+.zone-swatch.zone-5 {
+  background: rgba(129, 107, 184, 0.25);
+}
+
+.education-school-zone.zone-6,
+.zone-swatch.zone-6 {
+  background: rgba(74, 151, 88, 0.25);
+}
+
 .education-map::after {
   content: "";
   position: absolute;
@@ -1168,9 +1220,57 @@ h3 {
   transform: rotate(-18deg);
 }
 
+.education-map-side {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  min-width: 0;
+}
+
+.education-zone-legend {
+  border: 1px solid rgba(11, 39, 68, 0.1);
+  border-radius: var(--radius);
+  padding: 12px;
+  background: white;
+}
+
+.education-zone-legend > strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.education-zone-legend ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.education-zone-legend li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.zone-swatch {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  border: 1px solid rgba(11, 39, 68, 0.12);
+  border-radius: 4px;
+}
+
 .education-map-marker {
   position: absolute;
-  z-index: 3;
+  z-index: 4;
   display: grid;
   grid-template-columns: 28px max-content;
   gap: 6px;
@@ -1727,6 +1827,14 @@ h3 {
 
   .education-map {
     min-height: 520px;
+  }
+
+  .education-school-zone {
+    font-size: 11px;
+  }
+
+  .education-zone-legend ul {
+    grid-template-columns: 1fr;
   }
 
   .education-map-marker {

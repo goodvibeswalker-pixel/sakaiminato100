@@ -8,7 +8,7 @@
       name="description"
       content="境港市の産業、観光、子育て、防災、市政などを100のテーマで見える化するホームページ。"
     />
-    <link rel="stylesheet" href="styles.css?v=school-map" />
+    <link rel="stylesheet" href="styles.css?v=school-zones" />
     <style>
       .subtheme-panel {
         grid-column: span 2;
@@ -544,6 +544,58 @@
         transform: rotate(-12deg);
       }
 
+      .education-school-zone {
+        position: absolute;
+        z-index: 2;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.74);
+        border-radius: 40% 60% 52% 48% / 48% 42% 58% 52%;
+        color: rgba(11, 39, 68, 0.74);
+        font-size: 12px;
+        font-weight: 900;
+        line-height: 1;
+        opacity: 0.78;
+        transform: rotate(-10deg);
+      }
+
+      .education-school-zone strong {
+        padding: 5px 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.72);
+        box-shadow: 0 4px 12px rgba(11, 39, 68, 0.08);
+      }
+
+      .education-school-zone.zone-1,
+      .zone-swatch.zone-1 {
+        background: rgba(25, 124, 181, 0.24);
+      }
+
+      .education-school-zone.zone-2,
+      .zone-swatch.zone-2 {
+        background: rgba(231, 126, 40, 0.25);
+      }
+
+      .education-school-zone.zone-3,
+      .zone-swatch.zone-3 {
+        background: rgba(17, 124, 116, 0.25);
+      }
+
+      .education-school-zone.zone-4,
+      .zone-swatch.zone-4 {
+        background: rgba(211, 163, 49, 0.3);
+      }
+
+      .education-school-zone.zone-5,
+      .zone-swatch.zone-5 {
+        background: rgba(129, 107, 184, 0.25);
+      }
+
+      .education-school-zone.zone-6,
+      .zone-swatch.zone-6 {
+        background: rgba(74, 151, 88, 0.25);
+      }
+
       .education-map::after {
         content: "";
         position: absolute;
@@ -592,9 +644,57 @@
         transform: rotate(-18deg);
       }
 
+      .education-map-side {
+        display: grid;
+        align-content: start;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .education-zone-legend {
+        border: 1px solid rgba(11, 39, 68, 0.1);
+        border-radius: var(--radius);
+        padding: 12px;
+        background: white;
+      }
+
+      .education-zone-legend > strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--ink);
+        font-size: 13px;
+      }
+
+      .education-zone-legend ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .education-zone-legend li {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        min-width: 0;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .zone-swatch {
+        width: 14px;
+        height: 14px;
+        flex: 0 0 14px;
+        border: 1px solid rgba(11, 39, 68, 0.12);
+        border-radius: 4px;
+      }
+
       .education-map-marker {
         position: absolute;
-        z-index: 3;
+        z-index: 4;
         display: grid;
         grid-template-columns: 28px max-content;
         gap: 6px;
@@ -852,6 +952,14 @@
 
         .education-map {
           min-height: 520px;
+        }
+
+        .education-school-zone {
+          font-size: 11px;
+        }
+
+        .education-zone-legend ul {
+          grid-template-columns: 1fr;
         }
 
         .education-map-marker {
@@ -1200,7 +1308,7 @@
       <p>境港市の今を知り、未来をつくるための100のテーマ</p>
     </footer>
 
-    <script type="module" src="script.js?v=school-map"></script>
+    <script type="module" src="script.js?v=school-zones"></script>
     <script>
       (() => {
         const subThemeHtml = `
@@ -1457,11 +1565,17 @@
             <section class="education-panel education-map-panel">
               <div class="panel-heading">
                 <p class="section-kicker">School Map</p>
-                <h4>地図上で見る学校の位置</h4>
-                <p>小学校・中学校・高校を、境港市内の相対位置に合わせて表示します。</p>
+                <h4>地図上で見る学校の位置と校区の目安</h4>
+                <p>小学校区の目安を色で分け、その上に小学校・中学校・高校の位置を重ねて表示します。</p>
               </div>
               <div class="education-map-wrap">
                 <div class="education-map" aria-label="境港市内の学校位置マップ">
+                  <span class="education-school-zone zone-1" style="left:4%; top:18%; width:28%; height:34%;"><strong>外江</strong></span>
+                  <span class="education-school-zone zone-2" style="left:42%; top:3%; width:27%; height:24%;"><strong>境</strong></span>
+                  <span class="education-school-zone zone-3" style="left:55%; top:16%; width:27%; height:26%;"><strong>上道</strong></span>
+                  <span class="education-school-zone zone-4" style="left:18%; top:55%; width:26%; height:34%;"><strong>渡</strong></span>
+                  <span class="education-school-zone zone-5" style="left:56%; top:43%; width:29%; height:31%;"><strong>余子</strong></span>
+                  <span class="education-school-zone zone-6" style="left:76%; top:63%; width:22%; height:32%;"><strong>中浜</strong></span>
                   <span class="map-label map-label-sea">日本海</span>
                   <span class="map-label map-label-port">境港駅・中心市街地</span>
                   <span class="map-label map-label-airport">米子鬼太郎空港方面</span>
@@ -1478,21 +1592,34 @@
                   <button class="education-map-marker is-high" type="button" style="left:60.98%; top:23.05%;" aria-label="境高校 上道町3030番地"><span>高</span><strong>境高校</strong></button>
                   <button class="education-map-marker is-high" type="button" style="left:68.35%; top:51.13%;" aria-label="境港総合技術高校 竹内町925番地"><span>高</span><strong>境港総合技術高校</strong></button>
                 </div>
-                <ul class="education-map-list">
-                  <li><strong>渡小学校</strong><span>小学校 / 渡町901番地</span></li>
-                  <li><strong>外江小学校</strong><span>小学校 / 外江町2105番地</span></li>
-                  <li><strong>境小学校</strong><span>小学校 / 湊町27番地</span></li>
-                  <li><strong>上道小学校</strong><span>小学校 / 上道町3026番地</span></li>
-                  <li><strong>余子小学校</strong><span>小学校 / 竹内町3117番地</span></li>
-                  <li><strong>中浜小学校</strong><span>小学校 / 麦垣町432番地</span></li>
-                  <li><strong>第一中学校</strong><span>中学校 / 上道町1840番地</span></li>
-                  <li><strong>第二中学校</strong><span>中学校 / 竹内町2438番地</span></li>
-                  <li><strong>第三中学校</strong><span>中学校 / 外江町1372番地</span></li>
-                  <li><strong>境高校</strong><span>高校 / 上道町3030番地</span></li>
-                  <li><strong>境港総合技術高校</strong><span>高校 / 竹内町925番地</span></li>
-                </ul>
+                <div class="education-map-side">
+                  <div class="education-zone-legend">
+                    <strong>小学校区の色分け</strong>
+                    <ul>
+                      <li><span class="zone-swatch zone-1"></span>外江小学校区</li>
+                      <li><span class="zone-swatch zone-2"></span>境小学校区</li>
+                      <li><span class="zone-swatch zone-3"></span>上道小学校区</li>
+                      <li><span class="zone-swatch zone-4"></span>渡小学校区</li>
+                      <li><span class="zone-swatch zone-5"></span>余子小学校区</li>
+                      <li><span class="zone-swatch zone-6"></span>中浜小学校区</li>
+                    </ul>
+                  </div>
+                  <ul class="education-map-list">
+                    <li><strong>渡小学校</strong><span>小学校 / 渡町901番地</span></li>
+                    <li><strong>外江小学校</strong><span>小学校 / 外江町2105番地</span></li>
+                    <li><strong>境小学校</strong><span>小学校 / 湊町27番地</span></li>
+                    <li><strong>上道小学校</strong><span>小学校 / 上道町3026番地</span></li>
+                    <li><strong>余子小学校</strong><span>小学校 / 竹内町3117番地</span></li>
+                    <li><strong>中浜小学校</strong><span>小学校 / 麦垣町432番地</span></li>
+                    <li><strong>第一中学校</strong><span>中学校 / 上道町1840番地</span></li>
+                    <li><strong>第二中学校</strong><span>中学校 / 竹内町2438番地</span></li>
+                    <li><strong>第三中学校</strong><span>中学校 / 外江町1372番地</span></li>
+                    <li><strong>境高校</strong><span>高校 / 上道町3030番地</span></li>
+                    <li><strong>境港総合技術高校</strong><span>高校 / 竹内町925番地</span></li>
+                  </ul>
+                </div>
               </div>
-              <p class="source-note">各学校ページ掲載の所在地・座標をもとに作成</p>
+              <p class="source-note">校区の色分けは位置関係を伝えるための目安です。正確な通学区域は境港市教育委員会の最新情報を確認してください。</p>
             </section>
 
             <section class="education-panel education-stat-panel">

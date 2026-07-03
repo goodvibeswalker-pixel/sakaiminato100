@@ -229,6 +229,14 @@ const themeDetails = {
           minLng: 133.208,
           maxLng: 133.251,
         },
+        zones: [
+          ["外江小学校区", "外江", 4, 18, 28, 34],
+          ["境小学校区", "境", 42, 3, 27, 24],
+          ["上道小学校区", "上道", 55, 16, 27, 26],
+          ["渡小学校区", "渡", 18, 55, 26, 34],
+          ["余子小学校区", "余子", 56, 43, 29, 31],
+          ["中浜小学校区", "中浜", 76, 63, 22, 32],
+        ],
         schools: [
           ["渡小学校", "小学校", "渡町901番地", 35.516778, 133.218722],
           ["外江小学校", "小学校", "外江町2105番地", 35.534917, 133.209583],
@@ -422,7 +430,25 @@ function renderChildrenArticle(article) {
     )
     .join("");
 
-  const { bounds, schools } = article.schoolMap;
+  const { bounds, schools, zones } = article.schoolMap;
+  const schoolZones = zones
+    .map(
+      ([name, label, left, top, width, height], index) => `
+        <span class="education-school-zone zone-${index + 1}" style="left:${left}%; top:${top}%; width:${width}%; height:${height}%;">
+          <strong>${label}</strong>
+        </span>
+      `,
+    )
+    .join("");
+
+  const schoolZoneLegend = zones
+    .map(
+      ([name], index) => `
+        <li><span class="zone-swatch zone-${index + 1}"></span>${name}</li>
+      `,
+    )
+    .join("");
+
   const schoolMarkers = schools
     .map(([name, type, address, lat, lng]) => {
       const left = ((lng - bounds.minLng) / (bounds.maxLng - bounds.minLng)) * 100;
@@ -485,20 +511,27 @@ function renderChildrenArticle(article) {
       <section class="education-panel education-map-panel">
         <div class="panel-heading">
           <p class="section-kicker">School Map</p>
-          <h4>地図上で見る学校の位置</h4>
-          <p>小学校・中学校・高校を、境港市内の相対位置に合わせて表示します。</p>
+          <h4>地図上で見る学校の位置と校区の目安</h4>
+          <p>小学校区の目安を色で分け、その上に小学校・中学校・高校の位置を重ねて表示します。</p>
         </div>
         <div class="education-map-wrap">
           <div class="education-map" aria-label="境港市内の学校位置マップ">
+            ${schoolZones}
             <span class="map-label map-label-sea">日本海</span>
             <span class="map-label map-label-port">境港駅・中心市街地</span>
             <span class="map-label map-label-airport">米子鬼太郎空港方面</span>
             <span class="map-line map-line-rail"></span>
             ${schoolMarkers}
           </div>
-          <ul class="education-map-list">${schoolList}</ul>
+          <div class="education-map-side">
+            <div class="education-zone-legend">
+              <strong>小学校区の色分け</strong>
+              <ul>${schoolZoneLegend}</ul>
+            </div>
+            <ul class="education-map-list">${schoolList}</ul>
+          </div>
         </div>
-        <p class="source-note">各学校ページ掲載の所在地・座標をもとに作成</p>
+        <p class="source-note">校区の色分けは位置関係を伝えるための目安です。正確な通学区域は境港市教育委員会の最新情報を確認してください。</p>
       </section>
 
       <section class="education-panel education-stat-panel">
