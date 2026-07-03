@@ -1062,6 +1062,7 @@ h3 {
 }
 
 .education-school-panel,
+.education-map-panel,
 .education-stat-panel,
 .education-path-panel,
 .education-challenge-panel,
@@ -1086,6 +1087,175 @@ h3 {
 
 .education-challenge-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.education-map-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.education-map {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  border: 1px solid rgba(11, 39, 68, 0.12);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(160deg, rgba(31, 152, 170, 0.22) 0 18%, transparent 18% 100%),
+    linear-gradient(120deg, transparent 0 46%, rgba(30, 99, 145, 0.16) 46% 53%, transparent 53% 100%),
+    linear-gradient(180deg, #f6fbfd, #eef8f4);
+}
+
+.education-map::before {
+  content: "";
+  position: absolute;
+  inset: 12% 6% 8% 16%;
+  border: 2px solid rgba(11, 39, 68, 0.12);
+  border-radius: 42% 58% 48% 52% / 50% 38% 62% 50%;
+  background:
+    radial-gradient(circle at 38% 20%, rgba(255, 255, 255, 0.9), transparent 18%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(235, 246, 238, 0.9));
+  transform: rotate(-12deg);
+}
+
+.education-map::after {
+  content: "";
+  position: absolute;
+  right: 8%;
+  bottom: 12%;
+  width: 42%;
+  height: 18%;
+  border-top: 3px solid rgba(30, 99, 145, 0.22);
+  transform: rotate(-16deg);
+}
+
+.map-label,
+.map-line {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.map-label {
+  color: rgba(11, 39, 68, 0.62);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.map-label-sea {
+  top: 18px;
+  left: 18px;
+}
+
+.map-label-port {
+  top: 22%;
+  right: 10%;
+}
+
+.map-label-airport {
+  right: 9%;
+  bottom: 8%;
+}
+
+.map-line-rail {
+  left: 24%;
+  right: 10%;
+  bottom: 23%;
+  height: 0;
+  border-top: 3px dashed rgba(30, 99, 145, 0.32);
+  transform: rotate(-18deg);
+}
+
+.education-map-marker {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 28px max-content;
+  gap: 6px;
+  align-items: center;
+  max-width: 172px;
+  border: 0;
+  border-radius: 999px;
+  padding: 5px 9px 5px 5px;
+  color: var(--ink);
+  background: white;
+  box-shadow: 0 10px 24px rgba(11, 39, 68, 0.18);
+  transform: translate(-14px, -14px);
+}
+
+.education-map-marker span {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 999px;
+  color: white;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.education-map-marker strong {
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.education-map-marker.is-elementary span {
+  background: var(--blue);
+}
+
+.education-map-marker.is-junior span {
+  background: var(--orange);
+}
+
+.education-map-marker.is-high span {
+  background: var(--teal);
+}
+
+.education-map-marker:hover,
+.education-map-marker:focus-visible {
+  z-index: 5;
+  outline: 3px solid rgba(245, 138, 31, 0.28);
+  transform: translate(-14px, -14px) scale(1.04);
+}
+
+.education-map-list {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  max-height: 420px;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+}
+
+.education-map-list li {
+  border: 1px solid rgba(11, 39, 68, 0.1);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  background: white;
+}
+
+.education-map-list strong,
+.education-map-list span {
+  display: block;
+}
+
+.education-map-list strong {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.education-map-list span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .education-school-card,
@@ -1408,6 +1578,7 @@ h3 {
   }
 
   .education-school-panel,
+  .education-map-panel,
   .education-stat-panel,
   .education-path-panel,
   .education-challenge-panel,
@@ -1433,6 +1604,14 @@ h3 {
   .education-path-list,
   .education-challenge-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .education-map-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .education-map-list {
+    max-height: none;
   }
 }
 
@@ -1544,6 +1723,25 @@ h3 {
   .education-path-list,
   .education-challenge-grid {
     grid-template-columns: 1fr;
+  }
+
+  .education-map {
+    min-height: 520px;
+  }
+
+  .education-map-marker {
+    grid-template-columns: 24px minmax(54px, max-content);
+    max-width: 136px;
+    padding-right: 7px;
+  }
+
+  .education-map-marker span {
+    width: 24px;
+    height: 24px;
+  }
+
+  .education-map-marker strong {
+    font-size: 11px;
   }
 
   .tourism-photo-panel img {

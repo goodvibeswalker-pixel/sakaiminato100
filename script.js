@@ -222,6 +222,27 @@ const themeDetails = {
         ["9校", "小中学校の受け皿", "小学校6校・中学校3校で地域に学校が分散"],
         ["1校あたり約230人", "単純平均の目安", "小中学齢人口の目安を9校で割った参考値"],
       ],
+      schoolMap: {
+        bounds: {
+          minLat: 35.508,
+          maxLat: 35.545,
+          minLng: 133.208,
+          maxLng: 133.251,
+        },
+        schools: [
+          ["渡小学校", "小学校", "渡町901番地", 35.516778, 133.218722],
+          ["外江小学校", "小学校", "外江町2105番地", 35.534917, 133.209583],
+          ["境小学校", "小学校", "湊町27番地", 35.54325, 133.2315],
+          ["上道小学校", "小学校", "上道町3026番地", 35.537222, 133.235722],
+          ["余子小学校", "小学校", "竹内町3117番地", 35.525444, 133.239972],
+          ["中浜小学校", "小学校", "麦垣町432番地", 35.509068, 133.249472],
+          ["第一中学校", "中学校", "上道町1840番地", 35.542333, 133.237972],
+          ["第二中学校", "中学校", "竹内町2438番地", 35.520944, 133.231111],
+          ["第三中学校", "中学校", "外江町1372番地", 35.52525, 133.215778],
+          ["境高校", "高校", "上道町3030番地", 35.536472, 133.234222],
+          ["境港総合技術高校", "高校", "竹内町925番地", 35.526083, 133.237389],
+        ],
+      },
       pathways: [
         ["小学校", "通学・地域行事・公民館と近い日常の学び"],
         ["中学校", "部活動、進路、地域活動を広げる時期"],
@@ -401,6 +422,31 @@ function renderChildrenArticle(article) {
     )
     .join("");
 
+  const { bounds, schools } = article.schoolMap;
+  const schoolMarkers = schools
+    .map(([name, type, address, lat, lng]) => {
+      const left = ((lng - bounds.minLng) / (bounds.maxLng - bounds.minLng)) * 100;
+      const top = ((bounds.maxLat - lat) / (bounds.maxLat - bounds.minLat)) * 100;
+      return `
+        <button class="education-map-marker ${type === "小学校" ? "is-elementary" : type === "中学校" ? "is-junior" : "is-high"}" type="button" style="left:${left.toFixed(2)}%; top:${top.toFixed(2)}%;" aria-label="${name} ${address}">
+          <span>${type === "小学校" ? "小" : type === "中学校" ? "中" : "高"}</span>
+          <strong>${name}</strong>
+        </button>
+      `;
+    })
+    .join("");
+
+  const schoolList = schools
+    .map(
+      ([name, type, address]) => `
+        <li>
+          <strong>${name}</strong>
+          <span>${type} / ${address}</span>
+        </li>
+      `,
+    )
+    .join("");
+
   const pathways = article.pathways
     .map(
       ([title, text]) => `
@@ -434,6 +480,25 @@ function renderChildrenArticle(article) {
           <p>小学校・中学校・高校が地域にどう配置されているかを、子どもの経験につなげて見ます。</p>
         </div>
         <div class="education-school-grid">${schoolCards}</div>
+      </section>
+
+      <section class="education-panel education-map-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">School Map</p>
+          <h4>地図上で見る学校の位置</h4>
+          <p>小学校・中学校・高校を、境港市内の相対位置に合わせて表示します。</p>
+        </div>
+        <div class="education-map-wrap">
+          <div class="education-map" aria-label="境港市内の学校位置マップ">
+            <span class="map-label map-label-sea">日本海</span>
+            <span class="map-label map-label-port">境港駅・中心市街地</span>
+            <span class="map-label map-label-airport">米子鬼太郎空港方面</span>
+            <span class="map-line map-line-rail"></span>
+            ${schoolMarkers}
+          </div>
+          <ul class="education-map-list">${schoolList}</ul>
+        </div>
+        <p class="source-note">各学校ページ掲載の所在地・座標をもとに作成</p>
       </section>
 
       <section class="education-panel education-stat-panel">
