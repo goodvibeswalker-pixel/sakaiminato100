@@ -205,10 +205,46 @@ const themeDetails = {
     category: "子育て・教育",
     title: "子育てと学び",
     lead: "子どもたちが地域を知り、地域が子育てを支える仕組みを考えます。",
+    facts: [
+      ["6校", "市立小学校", "渡・外江・境・上道・余子・中浜"],
+      ["3校", "市立中学校", "第一・第二・第三"],
+      ["3,462人", "0-14歳人口", "2026年5月末"],
+    ],
+    childrenArticle: {
+      schoolCounts: [
+        ["市立小学校", 6, "渡・外江・境・上道・余子・中浜"],
+        ["市立中学校", 3, "第一・第二・第三"],
+        ["県立高校", 2, "境高校・境港総合技術高校"],
+      ],
+      childStats: [
+        ["3,462人", "0-14歳人口", "2026年5月末の住民基本台帳ベース"],
+        ["約2,100人", "小中学齢の目安", "0-14歳人口を6-14歳相当に単純按分した参考値"],
+        ["9校", "小中学校の受け皿", "小学校6校・中学校3校で地域に学校が分散"],
+        ["1校あたり約230人", "単純平均の目安", "小中学齢人口の目安を9校で割った参考値"],
+      ],
+      pathways: [
+        ["小学校", "通学・地域行事・公民館と近い日常の学び"],
+        ["中学校", "部活動、進路、地域活動を広げる時期"],
+        ["高校", "水産、観光、技術、地域産業と接続する出口"],
+        ["地域", "港、商店街、水木しげるロード、防災を教材にする"],
+      ],
+      challenges: [
+        ["児童生徒数の減少", "0-14歳人口は全体の10.9%。学校数を維持しながら、クラス規模、教職員配置、部活動の選択肢をどう守るかが課題です。"],
+        ["校区ごとの差", "人口の多い町と少ない町があるため、通学距離、放課後の居場所、地域行事への参加機会に差が出やすくなります。"],
+        ["地域を学ぶ機会", "港、水産業、観光、防災、鬼太郎文化など、境港らしい教材は多いので、学校外の人や場所とつなぐ仕組みが重要です。"],
+      ],
+      notes: [
+        "境港市には市立小学校6校、市立中学校3校があり、地域ごとに学校が配置されています。",
+        "0-14歳人口は3,462人で、市全体の10.9%。将来の児童生徒数は人口減少の影響を受けやすい構造です。",
+        "学校の数だけを見るのではなく、子どもが地域の大人、産業、文化、自然、防災に触れる機会を増やせるかが定住にも関わります。",
+        "今後は、学校別の児童生徒数、学級数、通学区域の変化を追うことで、より具体的な課題が見えてきます。",
+      ],
+      source: "境港市公式 月別住民基本台帳登録数、境港市の学校一覧情報",
+    },
     sections: [
       { heading: "このテーマで伝えること", body: "保育、学校、通学路、放課後の居場所、ふるさと教育をつなげ、子育て世帯にとって必要な情報と、地域で支える視点を整理します。" },
       { heading: "見るポイント", items: ["親子で使える場所", "学校と地域産業の接点", "若者がまちに関わる機会"] },
-      { heading: "考察", body: "人口を考えるうえで、子育て環境は最重要テーマの一つです。支援制度だけでなく、地域の人と場所が子どもの経験を増やせるかが定住にも関わります。" },
+      { heading: "考察", body: "人口を考えるうえで、子育て環境は最重要テーマの一つです。境港市は小学校6校・中学校3校が地域に分散しているため、子どもが地域と近い距離で学べる強みがあります。一方で、0-14歳人口は3,462人で全体の10.9%にとどまり、児童生徒数の減少が進むと、学級規模、部活動、通学、放課後の居場所に影響が出ます。支援制度だけでなく、港・水産業・観光・防災・文化を学校の学びにつなげ、地域全体で子どもの経験を増やすことが定住にも関わります。" },
     ],
   },
   welfare: {
@@ -321,6 +357,9 @@ function renderDetail(theme) {
   const tourismArticle = theme.tourismArticle
     ? renderTourismArticle(theme.tourismArticle)
     : "";
+  const childrenArticle = theme.childrenArticle
+    ? renderChildrenArticle(theme.childrenArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -332,7 +371,106 @@ function renderDetail(theme) {
     ${populationArticle}
     ${portArticle}
     ${tourismArticle}
+    ${childrenArticle}
     <div class="detail-grid">${sections}</div>
+  `;
+}
+
+function renderChildrenArticle(article) {
+  const schoolCards = article.schoolCounts
+    .map(
+      ([label, count, text]) => `
+        <article class="education-school-card">
+          <strong>${count}</strong>
+          <span>${label}</span>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const statCards = article.childStats
+    .map(
+      ([value, label, text]) => `
+        <article class="education-stat-card">
+          <strong>${value}</strong>
+          <span>${label}</span>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const pathways = article.pathways
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const challenges = article.challenges
+    .map(
+      ([title, text]) => `
+        <article class="education-challenge-card">
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const notes = article.notes.map((note) => `<li>${note}</li>`).join("");
+
+  return `
+    <div class="education-article">
+      <section class="education-panel education-school-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Schools</p>
+          <h4>学校数から見る学びの土台</h4>
+          <p>小学校・中学校・高校が地域にどう配置されているかを、子どもの経験につなげて見ます。</p>
+        </div>
+        <div class="education-school-grid">${schoolCards}</div>
+      </section>
+
+      <section class="education-panel education-stat-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Children</p>
+          <h4>児童生徒数の見方</h4>
+          <p>正確な学校別人数は今後追いながら、まずは0-14歳人口から小中学齢の規模感を見ます。</p>
+        </div>
+        <div class="education-stat-grid">${statCards}</div>
+      </section>
+
+      <section class="education-panel education-path-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Learning Path</p>
+          <h4>地域を知る学びの流れ</h4>
+          <p>学校の中だけでなく、港、観光、防災、文化を教材にできることが境港の強みです。</p>
+        </div>
+        <ol class="education-path-list">${pathways}</ol>
+      </section>
+
+      <section class="education-panel education-challenge-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Issues</p>
+          <h4>今後の課題</h4>
+        </div>
+        <div class="education-challenge-grid">${challenges}</div>
+      </section>
+
+      <section class="education-panel education-insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Insight</p>
+          <h4>学校を地域の入口として見る</h4>
+        </div>
+        <ul>${notes}</ul>
+        <p class="source-note">${article.source}</p>
+      </section>
+    </div>
   `;
 }
 

@@ -469,8 +469,164 @@
         line-height: 1.7;
       }
 
+      .education-article {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        min-width: 0;
+        margin-top: 28px;
+      }
+
+      .education-panel {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+        background: #fbfdfe;
+      }
+
+      .education-school-panel,
+      .education-stat-panel,
+      .education-path-panel,
+      .education-challenge-panel,
+      .education-insight-panel {
+        grid-column: span 2;
+      }
+
+      .education-school-grid,
+      .education-stat-grid,
+      .education-challenge-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .education-school-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .education-stat-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .education-challenge-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .education-school-card,
+      .education-stat-card,
+      .education-challenge-card {
+        border: 1px solid rgba(11, 39, 68, 0.1);
+        border-radius: var(--radius);
+        padding: 14px;
+        background: white;
+      }
+
+      .education-school-card,
+      .education-stat-card {
+        min-height: 150px;
+        background: linear-gradient(180deg, #ffffff, #eef8fb);
+      }
+
+      .education-school-card strong,
+      .education-school-card span,
+      .education-stat-card strong,
+      .education-stat-card span {
+        display: block;
+      }
+
+      .education-school-card strong,
+      .education-stat-card strong {
+        color: var(--blue);
+        font-size: clamp(24px, 3vw, 36px);
+        line-height: 1.05;
+      }
+
+      .education-school-card span,
+      .education-stat-card span {
+        margin-top: 8px;
+        color: var(--orange);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .education-school-card p,
+      .education-stat-card p,
+      .education-challenge-card p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      .education-path-list {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: education-path;
+      }
+
+      .education-path-list li {
+        position: relative;
+        counter-increment: education-path;
+        min-height: 150px;
+        border: 1px solid rgba(11, 39, 68, 0.1);
+        border-radius: var(--radius);
+        padding: 38px 14px 14px;
+        background: white;
+      }
+
+      .education-path-list li::before {
+        content: counter(education-path, decimal-leading-zero);
+        position: absolute;
+        top: 12px;
+        left: 14px;
+        color: var(--teal);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .education-path-list strong,
+      .education-path-list span {
+        display: block;
+      }
+
+      .education-path-list span {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      .education-challenge-card {
+        min-height: 160px;
+        background: linear-gradient(180deg, #ffffff, #fff8ec);
+      }
+
+      .education-challenge-card h5 {
+        margin: 0;
+        font-size: 17px;
+      }
+
+      .education-insight-panel ul {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding-left: 1.2em;
+      }
+
+      .education-insight-panel li {
+        color: var(--muted);
+      }
+
       @media (max-width: 1080px) {
         .tourism-article {
+          grid-template-columns: 1fr;
+        }
+
+        .education-article {
           grid-template-columns: 1fr;
         }
 
@@ -481,8 +637,23 @@
           grid-column: auto;
         }
 
+        .education-school-panel,
+        .education-stat-panel,
+        .education-path-panel,
+        .education-challenge-panel,
+        .education-insight-panel {
+          grid-column: auto;
+        }
+
         .tourism-stat-grid,
         .tourism-point-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .education-school-grid,
+        .education-stat-grid,
+        .education-path-list,
+        .education-challenge-grid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
@@ -493,12 +664,26 @@
           grid-template-columns: 1fr;
         }
 
+        .education-school-grid,
+        .education-stat-grid,
+        .education-path-list,
+        .education-challenge-grid {
+          grid-template-columns: 1fr;
+        }
+
         .tourism-photo-panel img {
           min-height: 240px;
         }
 
         .tourism-stat-card,
         .tourism-point-card {
+          min-height: 0;
+        }
+
+        .education-school-card,
+        .education-stat-card,
+        .education-path-list li,
+        .education-challenge-card {
           min-height: 0;
         }
       }
@@ -806,6 +991,7 @@
           <a href="https://www.sakaiminato.net/map/" target="_blank" rel="noreferrer">観光MAP: 多言語マップ</a>
           <a href="https://en.wikipedia.org/wiki/Sakaiminato,_Tottori#References" target="_blank" rel="noreferrer">来訪者データ: 読売新聞報道（Wikipedia脚注参照）</a>
           <a href="https://commons.wikimedia.org/wiki/File:Mizuki_Shigeru_Road_-02.jpg" target="_blank" rel="noreferrer">写真: Mizuki Shigeru Road -02 / Wikimedia Commons</a>
+          <a href="https://ja.wikipedia.org/wiki/%E5%A2%83%E6%B8%AF%E5%B8%82#%E6%95%99%E8%82%B2" target="_blank" rel="noreferrer">学校一覧: 境港市 教育</a>
           <a href="https://www.mlit.go.jp/kankocho/cruise/detail/036/index.html" target="_blank" rel="noreferrer">トップ写真: 観光庁 Cruise Port Guide of Japan / PDL1.0</a>
         </div>
       </section>
@@ -1050,6 +1236,94 @@
           if (!event.target.closest('[data-theme="tourism"]')) return;
           setTimeout(injectTourismArticle, 0);
           setTimeout(injectTourismArticle, 80);
+        });
+      })();
+    </script>
+    <script>
+      (() => {
+        const childrenHtml = `
+          <div class="education-article">
+            <section class="education-panel education-school-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Schools</p>
+                <h4>学校数から見る学びの土台</h4>
+                <p>小学校・中学校・高校が地域にどう配置されているかを、子どもの経験につなげて見ます。</p>
+              </div>
+              <div class="education-school-grid">
+                <article class="education-school-card"><strong>6</strong><span>市立小学校</span><p>渡・外江・境・上道・余子・中浜</p></article>
+                <article class="education-school-card"><strong>3</strong><span>市立中学校</span><p>第一・第二・第三</p></article>
+                <article class="education-school-card"><strong>2</strong><span>県立高校</span><p>境高校・境港総合技術高校</p></article>
+              </div>
+            </section>
+
+            <section class="education-panel education-stat-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Children</p>
+                <h4>児童生徒数の見方</h4>
+                <p>正確な学校別人数は今後追いながら、まずは0-14歳人口から小中学齢の規模感を見ます。</p>
+              </div>
+              <div class="education-stat-grid">
+                <article class="education-stat-card"><strong>3,462人</strong><span>0-14歳人口</span><p>2026年5月末の住民基本台帳ベース</p></article>
+                <article class="education-stat-card"><strong>約2,100人</strong><span>小中学齢の目安</span><p>0-14歳人口を6-14歳相当に単純按分した参考値</p></article>
+                <article class="education-stat-card"><strong>9校</strong><span>小中学校の受け皿</span><p>小学校6校・中学校3校で地域に学校が分散</p></article>
+                <article class="education-stat-card"><strong>約230人</strong><span>1校あたり目安</span><p>小中学齢人口の目安を9校で割った参考値</p></article>
+              </div>
+            </section>
+
+            <section class="education-panel education-path-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Learning Path</p>
+                <h4>地域を知る学びの流れ</h4>
+                <p>学校の中だけでなく、港、観光、防災、文化を教材にできることが境港の強みです。</p>
+              </div>
+              <ol class="education-path-list">
+                <li><strong>小学校</strong><span>通学・地域行事・公民館と近い日常の学び</span></li>
+                <li><strong>中学校</strong><span>部活動、進路、地域活動を広げる時期</span></li>
+                <li><strong>高校</strong><span>水産、観光、技術、地域産業と接続する出口</span></li>
+                <li><strong>地域</strong><span>港、商店街、水木しげるロード、防災を教材にする</span></li>
+              </ol>
+            </section>
+
+            <section class="education-panel education-challenge-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Issues</p>
+                <h4>今後の課題</h4>
+              </div>
+              <div class="education-challenge-grid">
+                <article class="education-challenge-card"><h5>児童生徒数の減少</h5><p>0-14歳人口は全体の10.9%。学校数を維持しながら、クラス規模、教職員配置、部活動の選択肢をどう守るかが課題です。</p></article>
+                <article class="education-challenge-card"><h5>校区ごとの差</h5><p>人口の多い町と少ない町があるため、通学距離、放課後の居場所、地域行事への参加機会に差が出やすくなります。</p></article>
+                <article class="education-challenge-card"><h5>地域を学ぶ機会</h5><p>港、水産業、観光、防災、鬼太郎文化など、境港らしい教材は多いので、学校外の人や場所とつなぐ仕組みが重要です。</p></article>
+              </div>
+            </section>
+
+            <section class="education-panel education-insight-panel">
+              <div class="panel-heading">
+                <p class="section-kicker">Insight</p>
+                <h4>学校を地域の入口として見る</h4>
+              </div>
+              <ul>
+                <li>境港市には市立小学校6校、市立中学校3校があり、地域ごとに学校が配置されています。</li>
+                <li>0-14歳人口は3,462人で、市全体の10.9%。将来の児童生徒数は人口減少の影響を受けやすい構造です。</li>
+                <li>学校の数だけを見るのではなく、子どもが地域の大人、産業、文化、自然、防災に触れる機会を増やせるかが定住にも関わります。</li>
+                <li>今後は、学校別の児童生徒数、学級数、通学区域の変化を追うことで、より具体的な課題が見えてきます。</li>
+              </ul>
+              <p class="source-note">境港市公式 月別住民基本台帳登録数、境港市の学校一覧情報</p>
+            </section>
+          </div>
+        `;
+
+        const injectChildrenArticle = () => {
+          const detail = document.querySelector("#themeDetail");
+          if (!detail || detail.querySelector(".education-article")) return;
+          const header = detail.querySelector(".detail-header");
+          if (!header || !header.textContent.includes("子育てと学び")) return;
+          header.insertAdjacentHTML("afterend", childrenHtml);
+        };
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest('[data-theme="children"]')) return;
+          setTimeout(injectChildrenArticle, 0);
+          setTimeout(injectChildrenArticle, 80);
         });
       })();
     </script>

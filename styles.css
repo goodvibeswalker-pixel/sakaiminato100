@@ -1045,6 +1045,158 @@ h3 {
   line-height: 1.7;
 }
 
+.education-article {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-width: 0;
+  margin-top: 28px;
+}
+
+.education-panel {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fbfdfe;
+}
+
+.education-school-panel,
+.education-stat-panel,
+.education-path-panel,
+.education-challenge-panel,
+.education-insight-panel {
+  grid-column: span 2;
+}
+
+.education-school-grid,
+.education-stat-grid,
+.education-challenge-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.education-school-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.education-stat-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.education-challenge-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.education-school-card,
+.education-stat-card,
+.education-challenge-card {
+  border: 1px solid rgba(11, 39, 68, 0.1);
+  border-radius: var(--radius);
+  padding: 14px;
+  background: white;
+}
+
+.education-school-card,
+.education-stat-card {
+  min-height: 150px;
+  background: linear-gradient(180deg, #ffffff, #eef8fb);
+}
+
+.education-school-card strong,
+.education-school-card span,
+.education-stat-card strong,
+.education-stat-card span {
+  display: block;
+}
+
+.education-school-card strong,
+.education-stat-card strong {
+  color: var(--blue);
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.05;
+}
+
+.education-school-card span,
+.education-stat-card span {
+  margin-top: 8px;
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.education-school-card p,
+.education-stat-card p,
+.education-challenge-card p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.education-path-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: education-path;
+}
+
+.education-path-list li {
+  position: relative;
+  counter-increment: education-path;
+  min-height: 150px;
+  border: 1px solid rgba(11, 39, 68, 0.1);
+  border-radius: var(--radius);
+  padding: 38px 14px 14px;
+  background: white;
+}
+
+.education-path-list li::before {
+  content: counter(education-path, decimal-leading-zero);
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.education-path-list strong,
+.education-path-list span {
+  display: block;
+}
+
+.education-path-list span {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.education-challenge-card {
+  min-height: 160px;
+  background: linear-gradient(180deg, #ffffff, #fff8ec);
+}
+
+.education-challenge-card h5 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.education-insight-panel ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.education-insight-panel li {
+  color: var(--muted);
+}
+
 .detail-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1233,6 +1385,10 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .education-article {
+    grid-template-columns: 1fr;
+  }
+
   .trend-panel,
   .insight-panel,
   .subtheme-panel {
@@ -1251,6 +1407,14 @@ h3 {
     grid-column: auto;
   }
 
+  .education-school-panel,
+  .education-stat-panel,
+  .education-path-panel,
+  .education-challenge-panel,
+  .education-insight-panel {
+    grid-column: auto;
+  }
+
   .subtheme-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1261,6 +1425,13 @@ h3 {
 
   .tourism-stat-grid,
   .tourism-point-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .education-school-grid,
+  .education-stat-grid,
+  .education-path-list,
+  .education-challenge-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -1368,6 +1539,13 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .education-school-grid,
+  .education-stat-grid,
+  .education-path-list,
+  .education-challenge-grid {
+    grid-template-columns: 1fr;
+  }
+
   .tourism-photo-panel img {
     min-height: 240px;
   }
@@ -1382,6 +1560,13 @@ h3 {
 
   .tourism-stat-card,
   .tourism-point-card {
+    min-height: 0;
+  }
+
+  .education-school-card,
+  .education-stat-card,
+  .education-path-list li,
+  .education-challenge-card {
     min-height: 0;
   }
 
