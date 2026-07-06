@@ -64,6 +64,11 @@ https://goodvibeswalker-pixel.github.io/sakaiminato100/
 - 境港観光ガイド 水木しげるロード関連記事
 - 境港観光ガイド 観光MAP
 - Googleマップ（学校位置マップの背景表示）
+- 境港市地域包括支援センター
+- 鳥取県西部地区の医療・介護施設案内
+- 境港市 日曜・休日・夜間救急診療施設等
+- 境港市 公共交通・予約型乗合バス
+- 中海・宍道湖・大山圏域市長会
 - 観光庁 Cruise Port Guide of Japan
 - 読売新聞 水木しげるロード30周年関連記事
 - Wikimedia Commons（Mizuki Shigeru Road -02 / CC BY-SA）
