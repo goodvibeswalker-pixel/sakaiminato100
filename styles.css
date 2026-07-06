@@ -454,6 +454,90 @@ h3 {
   font-weight: 700;
 }
 
+.contact-panel {
+  margin-top: 28px;
+  border: 1px solid rgba(24, 107, 151, 0.18);
+  border-radius: var(--radius);
+  padding: clamp(18px, 3vw, 26px);
+  background: linear-gradient(180deg, #f7fcfd 0%, #ffffff 100%);
+}
+
+.contact-panel h4 {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 30px);
+}
+
+.contact-card-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.contact-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid rgba(24, 107, 151, 0.16);
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(25, 73, 109, 0.06);
+}
+
+.contact-label {
+  align-self: flex-start;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #e8f5f8;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.contact-card h5 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.contact-card dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.contact-card dl div {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.contact-card dt {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.contact-card dd {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 800;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.contact-card p {
+  margin: auto 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
 .population-article {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1621,6 +1705,10 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .contact-card-list {
+    grid-template-columns: 1fr;
+  }
+
   .trend-panel,
   .insight-panel,
   .subtheme-panel {
@@ -1747,6 +1835,11 @@ h3 {
   .theme-list,
   .detail-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-card dl div {
+    grid-template-columns: 1fr;
+    gap: 2px;
   }
 
   .trend-chart {
