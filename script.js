@@ -223,6 +223,8 @@ const themeDetails = {
         ["1校あたり約230人", "単純平均の目安", "小中学齢人口の目安を9校で割った参考値"],
       ],
       schoolMap: {
+        googleEmbed:
+          "https://www.google.com/maps?q=%E5%A2%83%E6%B8%AF%E5%B8%82%20%E5%AD%A6%E6%A0%A1&output=embed",
         bounds: {
           minLat: 35.508,
           maxLat: 35.545,
@@ -512,16 +514,23 @@ function renderChildrenArticle(article) {
         <div class="panel-heading">
           <p class="section-kicker">School Map</p>
           <h4>地図上で見る学校の位置と校区の目安</h4>
-          <p>小学校区の目安を色で分け、その上に小学校・中学校・高校の位置を重ねて表示します。</p>
+          <p>Googleマップを背景に、小学校区の目安を薄い色で分け、その上に小学校・中学校・高校の位置を重ねて表示します。</p>
         </div>
         <div class="education-map-wrap">
           <div class="education-map" aria-label="境港市内の学校位置マップ">
-            ${schoolZones}
-            <span class="map-label map-label-sea">日本海</span>
-            <span class="map-label map-label-port">境港駅・中心市街地</span>
-            <span class="map-label map-label-airport">米子鬼太郎空港方面</span>
-            <span class="map-line map-line-rail"></span>
-            ${schoolMarkers}
+            <iframe
+              class="education-google-map"
+              title="Googleマップで見る境港市の学校"
+              src="${article.schoolMap.googleEmbed}"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <div class="education-map-overlay" aria-hidden="true">
+              ${schoolZones}
+            </div>
+            <div class="education-marker-layer">
+              ${schoolMarkers}
+            </div>
           </div>
           <div class="education-map-side">
             <div class="education-zone-legend">
@@ -531,7 +540,7 @@ function renderChildrenArticle(article) {
             <ul class="education-map-list">${schoolList}</ul>
           </div>
         </div>
-        <p class="source-note">校区の色分けは位置関係を伝えるための目安です。正確な通学区域は境港市教育委員会の最新情報を確認してください。</p>
+        <p class="source-note">背景地図はGoogleマップを使用しています。校区の色分けは位置関係を伝えるための目安です。正確な通学区域は境港市教育委員会の最新情報を確認してください。</p>
       </section>
 
       <section class="education-panel education-stat-panel">

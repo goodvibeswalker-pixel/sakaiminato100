@@ -14,8 +14,8 @@
 - 活用方法
 - サイト管理者プロフィール
 - 参考情報
-- 子育てと学びテーマ内の学校位置マップ
-- 小学校区の目安を示す色分けマップ
+- 子育てと学びテーマ内のGoogleマップ背景付き学校位置マップ
+- 小学校区の目安を示す薄い色分け表示
 
 ## 公開中のテーマ
 
@@ -63,6 +63,7 @@ https://goodvibeswalker-pixel.github.io/sakaiminato100/
 - 境港の水産（令和5年版）
 - 境港観光ガイド 水木しげるロード関連記事
 - 境港観光ガイド 観光MAP
+- Googleマップ（学校位置マップの背景表示）
 - 観光庁 Cruise Port Guide of Japan
 - 読売新聞 水木しげるロード30周年関連記事
 - Wikimedia Commons（Mizuki Shigeru Road -02 / CC BY-SA）
