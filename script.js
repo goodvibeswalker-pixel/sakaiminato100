@@ -344,10 +344,69 @@ const themeDetails = {
     category: "防災・安全",
     title: "低地の防災",
     lead: "水辺に囲まれたまちだからこそ、避難、情報、備えを日常化します。",
+    facts: [
+      ["震度6強", "2000年鳥取県西部地震", "境港市東本町で観測。地震時の液状化・避難行動も考える"],
+      ["2021年3月", "ハザードマップ更新", "津波・洪水の浸水予測と避難ルートを確認"],
+      ["0859-47-1071", "防災危機管理課", "防災行政無線、避難所、ハザードマップの確認窓口"],
+    ],
+    disasterArticle: {
+      pastEvents: [
+        {
+          label: "地震",
+          value: "震度6強",
+          title: "2000年鳥取県西部地震",
+          text: "2000年10月6日13時30分、境港市東本町で震度6強、最大加速度762.7galを観測。低地のまちでは、建物だけでなく地盤、道路、港湾施設、避難路の通行可否まで考える必要があります。",
+        },
+        {
+          label: "津波",
+          value: "繰り返し",
+          title: "津波は一度で終わらない",
+          text: "境港市は、海岸近くで地震を感じたら海岸から離れ、2階建て以上の頑丈な建物や津波一時避難所へ避難するよう案内しています。警報解除まで戻らないことが基本です。",
+        },
+        {
+          label: "風水害",
+          value: "事前行動",
+          title: "台風・豪雨は早めの準備",
+          text: "風水害は、気象情報を集め、停電、非常持ち出し品、飛散物、側溝・排水溝の確認を早めに行うことで被害を小さくできます。強風雨の中で海辺や水路を見に行かないことも重要です。",
+        },
+      ],
+      flow: [
+        ["1. 自宅を確認", "津波・洪水ハザードマップで、浸水想定、家の階数、近くの高い建物を確認する。"],
+        ["2. 逃げ先を決める", "指定緊急避難場所、津波避難ビル、親族・友人宅など、状況別の行き先を複数持つ。"],
+        ["3. 道順を歩く", "夜、雨、子ども・高齢者と一緒の場合も想定し、段差、暗い道、橋、冠水しやすい道を見ておく。"],
+        ["4. 情報を受ける", "防災行政無線、あんしんトリピーメール、市ホームページ、広報車など複数の受け取り方を用意する。"],
+        ["5. 戻らない", "津波や高潮・洪水では、一度水が引いた後や雨が弱まった後も危険が残るため、解除や安全確認まで戻らない。"],
+      ],
+      signals: [
+        ["防災行政無線", "大津波警報・津波警報、避難情報、訓練放送、生活安全情報を地域へ伝える基礎インフラ。"],
+        ["あんしんトリピーメール", "屋外放送が聞こえにくい時や外出中でも情報を受け取るため、事前登録しておきたい手段。"],
+        ["高齢者・子ども", "聞こえたか、理解できたか、動けるかを近所・家族・学校・福祉とつなげて確認する。"],
+      ],
+      portRoles: [
+        ["避難と立入規制", "岸壁、漁港、海辺の観光地は、津波・高潮時に近づかないルールを明確にする。"],
+        ["物資と燃料", "災害時は道路だけでなく港湾・空港・広域物流の復旧が生活物資の確保に関わる。"],
+        ["事業継続", "水産、冷凍・加工、観光船、フェリーなど、港が止まると地域経済と食の流通に影響が出る。"],
+      ],
+      checklist: [
+        "家族で集合場所、連絡方法、避難先を決める",
+        "非常持ち出し品、薬、眼鏡、充電器、モバイルバッテリーをまとめる",
+        "ハザードマップで浸水想定と避難場所を確認する",
+        "高齢者、子ども、観光客にもわかる声かけを決めておく",
+        "港、海岸、水路を見に行かないことを家族で共有する",
+      ],
+      notes: [
+        "境港市は令和3年3月に津波・洪水ハザードマップを更新しており、浸水予想場所と避難ルートの確認を呼びかけています。",
+        "指定緊急避難場所は、地震、津波、洪水・高潮等、大規模火災など災害種別ごとに指定されています。",
+        "避難情報は、防災行政無線、あんしんトリピーメール、市ホームページ、広報車などで伝えられます。",
+        "2000年鳥取県西部地震では境港市東本町で震度6強を観測。低地では水害だけでなく地震時の地盤・道路・港湾への影響も重ねて見る必要があります。",
+      ],
+      source: "境港市公式 防災情報、津波に備える、風水害に備える、指定避難所・指定緊急避難場所、防災行政無線情報、気象庁 強震波形（2000年鳥取県西部地震）",
+    },
     sections: [
-      { heading: "このテーマで伝えること", body: "津波、高潮、大雨、避難所、家庭備蓄、防災行政無線などを、暮らしの目線でわかりやすく整理します。" },
-      { heading: "見るポイント", items: ["自宅から避難場所までの動線", "高齢者や子どもへの情報伝達", "港湾・物流の災害時の役割"] },
-      { heading: "考察", body: "防災は特別な日だけのテーマではありません。観光客にも住民にもわかる表示や、日常の移動と避難経路を重ねて考えることが、港町の安全を高めます。" },
+      { heading: "このテーマで伝えること", body: "津波、高潮、大雨、避難所、家庭備蓄、防災行政無線を、暮らしの目線で整理します。とくに境港市は海、日本海、中海、境水道、港湾に囲まれたまちなので、どこに逃げるかだけでなく、いつ判断し、誰に伝え、どの道を使うかまで日常の中で確認しておくことが大切です。" },
+      { heading: "見るポイント", items: ["自宅から避難場所までの動線を、昼・夜・雨の日で確認する", "高齢者や子どもに情報が届き、実際に動ける仕組みがあるか", "港湾・物流が止まった時、生活物資、燃料、水産業、観光にどんな影響が出るか", "過去の地震や水害の教訓を、避難ルートと備蓄に落とし込めているか"] },
+      { heading: "参考にした主な情報", items: ["境港市公式: 防災情報（自助・共助、避難所、原子力防災 他）", "境港市公式: 津波に備える、津波・洪水ハザードマップ（令和3年3月更新）", "境港市公式: 風水害に備える", "境港市公式: 指定避難所・指定緊急避難場所", "境港市公式: 防災行政無線情報、あんしんトリピーメール", "気象庁: 平成12年（2000年）鳥取県西部地震 強震波形"] },
+      { heading: "考察", body: "防災は特別な日だけのテーマではありません。境港市では、津波・高潮・大雨の水のリスク、2000年鳥取県西部地震のような強い揺れ、港湾・物流が止まるリスクが重なります。だからこそ、観光客にも住民にもわかる表示、複数の情報伝達、日常の移動と避難経路を重ねた確認が重要です。地図を見て終わりではなく、実際に歩き、家族や近所と話し、港や海辺に近づかない判断を早くできるまちほど、被害を小さくできます。" },
     ],
   },
   transport: {
@@ -478,6 +537,9 @@ function renderDetail(theme) {
   const childrenArticle = theme.childrenArticle
     ? renderChildrenArticle(theme.childrenArticle)
     : "";
+  const disasterArticle = theme.disasterArticle
+    ? renderDisasterArticle(theme.disasterArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -490,8 +552,117 @@ function renderDetail(theme) {
     ${portArticle}
     ${tourismArticle}
     ${childrenArticle}
+    ${disasterArticle}
     ${contactMarkup}
     <div class="detail-grid">${sections}</div>
+  `;
+}
+
+function renderDisasterArticle(article) {
+  const pastCards = article.pastEvents
+    .map(
+      (event) => `
+        <article class="disaster-event-card">
+          <span>${event.label}</span>
+          <strong>${event.value}</strong>
+          <h5>${event.title}</h5>
+          <p>${event.text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const flowSteps = article.flow
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const signalCards = article.signals
+    .map(
+      ([title, text]) => `
+        <article class="disaster-signal-card">
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const portRoles = article.portRoles
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const checklist = article.checklist.map((item) => `<li>${item}</li>`).join("");
+  const notes = article.notes.map((note) => `<li>${note}</li>`).join("");
+
+  return `
+    <div class="disaster-article">
+      <section class="disaster-panel disaster-history-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Past Data</p>
+          <h4>過去データから見る注意点</h4>
+          <p>水害だけでなく、強い揺れ、津波、台風・豪雨を重ねて見ます。</p>
+        </div>
+        <div class="disaster-event-grid">${pastCards}</div>
+      </section>
+
+      <section class="disaster-panel disaster-flow-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Evacuation</p>
+          <h4>避難を日常の動線にする</h4>
+          <p>地図で確認して終わりにせず、実際に歩ける道順として考えます。</p>
+        </div>
+        <ol class="disaster-flow-list">${flowSteps}</ol>
+      </section>
+
+      <section class="disaster-panel disaster-signal-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Information</p>
+          <h4>情報が届く仕組み</h4>
+          <p>屋外放送だけに頼らず、メール、家族、近所、学校、福祉の連絡網を重ねます。</p>
+        </div>
+        <div class="disaster-signal-grid">${signalCards}</div>
+      </section>
+
+      <section class="disaster-panel disaster-port-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Port & Logistics</p>
+          <h4>港湾・物流の災害時の役割</h4>
+          <p>港は産業だけでなく、物資、燃料、復旧、地域経済を支える基盤です。</p>
+        </div>
+        <ul class="disaster-port-list">${portRoles}</ul>
+      </section>
+
+      <section class="disaster-panel disaster-check-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Checklist</p>
+          <h4>家庭で先に決めること</h4>
+        </div>
+        <ul class="disaster-check-list">${checklist}</ul>
+      </section>
+
+      <section class="disaster-panel disaster-insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Insight</p>
+          <h4>どこで、どんな変化が起きるか</h4>
+        </div>
+        <ul>${notes}</ul>
+        <p class="source-note">${article.source}</p>
+      </section>
+    </div>
   `;
 }
 
