@@ -863,16 +863,20 @@ h3 {
   background: #ffffff;
 }
 
-.disaster-flow-list li {
+.disaster-flow-list li,
+.disaster-port-list li,
+.disaster-check-list li {
   padding: 0;
   overflow: hidden;
 }
 
-.disaster-flow-detail {
+.disaster-flow-detail,
+.disaster-expand-detail {
   min-width: 0;
 }
 
-.disaster-flow-detail summary {
+.disaster-flow-detail summary,
+.disaster-expand-detail summary {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 22px;
   gap: 10px;
@@ -882,11 +886,13 @@ h3 {
   list-style: none;
 }
 
-.disaster-flow-detail summary::-webkit-details-marker {
+.disaster-flow-detail summary::-webkit-details-marker,
+.disaster-expand-detail summary::-webkit-details-marker {
   display: none;
 }
 
-.disaster-flow-detail summary::after {
+.disaster-flow-detail summary::after,
+.disaster-expand-detail summary::after {
   content: "+";
   display: grid;
   width: 22px;
@@ -898,42 +904,50 @@ h3 {
   font-weight: 900;
 }
 
-.disaster-flow-detail[open] summary::after {
+.disaster-flow-detail[open] summary::after,
+.disaster-expand-detail[open] summary::after {
   content: "-";
   background: var(--blue);
   color: #ffffff;
 }
 
-.disaster-flow-detail summary:hover {
+.disaster-flow-detail summary:hover,
+.disaster-expand-detail summary:hover {
   background: #f6fbfd;
 }
 
 .disaster-flow-detail strong,
-.disaster-flow-detail span {
+.disaster-flow-detail span,
+.disaster-expand-detail strong,
+.disaster-expand-detail span {
   grid-column: 1;
 }
 
-.disaster-flow-more {
+.disaster-flow-more,
+.disaster-expand-more {
   border-top: 1px solid rgba(24, 107, 151, 0.12);
   padding: 14px 16px 16px;
   background: #f8fcfd;
 }
 
-.disaster-flow-more p {
+.disaster-flow-more p,
+.disaster-expand-more p {
   margin: 0 0 8px;
   color: var(--blue);
   font-size: 13px;
   font-weight: 900;
 }
 
-.disaster-flow-more ul {
+.disaster-flow-more ul,
+.disaster-expand-more ul {
   display: grid;
   gap: 8px;
   margin: 0;
   padding-left: 1.2em;
 }
 
-.disaster-flow-more li {
+.disaster-flow-more li,
+.disaster-expand-more li {
   border: 0;
   padding: 0;
   background: transparent;
@@ -965,18 +979,10 @@ h3 {
 
 .disaster-check-list li {
   position: relative;
-  padding-left: 42px;
 }
 
 .disaster-check-list li::before {
-  content: "";
-  position: absolute;
-  left: 16px;
-  top: 20px;
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: var(--orange);
+  content: none;
 }
 
 .disaster-insight-panel ul {
