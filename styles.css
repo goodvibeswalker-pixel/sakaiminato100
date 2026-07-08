@@ -1014,6 +1014,7 @@ h3 {
 }
 
 .transport-node-panel,
+.transport-photo-panel,
 .transport-care-panel,
 .transport-tourist-panel,
 .transport-mode-panel,
@@ -1023,11 +1024,65 @@ h3 {
 }
 
 .transport-node-grid,
+.transport-photo-grid,
 .transport-care-grid,
 .transport-mode-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
+}
+
+.transport-photo-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.transport-photo-card {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(24, 107, 151, 0.16);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(25, 73, 109, 0.06);
+}
+
+.transport-photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.transport-photo-card figcaption {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+}
+
+.transport-photo-card strong,
+.transport-photo-card span,
+.transport-photo-card small {
+  display: block;
+}
+
+.transport-photo-card strong {
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.transport-photo-card span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.transport-photo-card small {
+  color: #6f8493;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.5;
 }
 
 .transport-care-grid {
@@ -2101,6 +2156,7 @@ h3 {
   }
 
   .transport-node-panel,
+  .transport-photo-panel,
   .transport-care-panel,
   .transport-tourist-panel,
   .transport-mode-panel,
@@ -2110,6 +2166,7 @@ h3 {
   }
 
   .transport-node-grid,
+  .transport-photo-grid,
   .transport-care-grid,
   .transport-mode-grid {
     grid-template-columns: 1fr;

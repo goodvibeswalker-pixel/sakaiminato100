@@ -519,6 +519,29 @@ const themeDetails = {
       ["約10分", "空港-境港駅", "米子鬼太郎空港から車での目安"],
     ],
     transportArticle: {
+      photos: [
+        {
+          src: "https://commons.wikimedia.org/wiki/Special:FilePath/150321_Yonago_Airport_Yonago_Tottori_pref_Japan02s3.jpg?width=1200",
+          alt: "米子鬼太郎空港の外観",
+          title: "米子鬼太郎空港",
+          text: "広域から境港へ入る玄関口。空港からJR、バス、みなとーる、タクシーへつなぐ視点で見ます。",
+          credit: "Photo: 663highland / Wikimedia Commons / CC BY-SA 3.0",
+        },
+        {
+          src: "https://commons.wikimedia.org/wiki/Special:FilePath/Sakaiminato_Station_1.jpg?width=1200",
+          alt: "境港駅の駅舎",
+          title: "JR境港駅",
+          text: "JR境線の終点。駅前から水木しげるロード、港、バス・タクシーへ回遊が始まります。",
+          credit: "Photo: Wikimedia Commons / CC BY-SA",
+        },
+        {
+          src: "https://commons.wikimedia.org/wiki/Special:FilePath/Mizuki_Shigeru_Road_-02.jpg?width=1200",
+          alt: "水木しげるロードの街路",
+          title: "歩く観光導線",
+          text: "境港駅から水木しげるロードへ、歩きながら滞在と消費を生む道として見ます。",
+          credit: "Photo: Aimaimyi / Wikimedia Commons / CC BY-SA 3.0",
+        },
+      ],
       nodes: [
         ["米子鬼太郎空港", "広域の玄関口", "境港駅まで車で約10分。JR米子空港駅、空港バス、みなとーる、タクシーへ接続。"],
         ["JR境港駅", "観光と生活の結節点", "JR境線の終点。水木しげるロード、隠岐汽船、バス・タクシーへの入口。"],
@@ -566,7 +589,7 @@ const themeDetails = {
         "米子鬼太郎空港は境港市佐斐神町にあり、境港駅まで車で約10分。JR、バス、タクシー、予約型乗合バスを組み合わせる視点が必要です。",
         "観光客の二次交通は、到着前に選択肢が分かること、到着後に迷わないこと、帰りの接続を逃さないことが重要です。",
       ],
-      source: "境港市公式 公共交通・予約型乗合バス「みなとーる」、米子鬼太郎空港 アクセス・駐車場、JRおでかけネット駅情報",
+      source: "境港市公式 公共交通・予約型乗合バス「みなとーる」、米子鬼太郎空港 アクセス・駐車場、JRおでかけネット駅情報、Wikimedia Commons掲載写真",
     },
     sections: [
       { heading: "このテーマで伝えること", body: "米子鬼太郎空港、JR境港駅、JR境線、予約型乗合バス、タクシー、自転車、徒歩をつなげ、車がなくても動きやすいまちの可能性を考えます。生活では通院・買い物・手続き、観光では空港や駅から水木しげるロード、港、周辺施設へ迷わず移動できることが重要です。" },
@@ -718,6 +741,21 @@ function renderDetail(theme) {
 }
 
 function renderTransportArticle(article) {
+  const photoCards = article.photos
+    .map(
+      (photo) => `
+        <figure class="transport-photo-card">
+          <img src="${photo.src}" alt="${photo.alt}" loading="lazy" />
+          <figcaption>
+            <strong>${photo.title}</strong>
+            <span>${photo.text}</span>
+            <small>${photo.credit}</small>
+          </figcaption>
+        </figure>
+      `,
+    )
+    .join("");
+
   const nodeCards = article.nodes
     .map(
       ([title, label, text]) => `
@@ -779,6 +817,15 @@ function renderTransportArticle(article) {
 
   return `
     <div class="transport-article">
+      <section class="transport-panel transport-photo-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Photos</p>
+          <h4>写真で見る移動の入口</h4>
+          <p>空港、駅、まち歩きの風景を、生活と観光をつなぐ導線として見ます。</p>
+        </div>
+        <div class="transport-photo-grid">${photoCards}</div>
+      </section>
+
       <section class="transport-panel transport-node-panel">
         <div class="panel-heading">
           <p class="section-kicker">Network</p>
