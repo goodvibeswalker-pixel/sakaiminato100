@@ -513,10 +513,66 @@ const themeDetails = {
     category: "交通・移動",
     title: "暮らしの移動",
     lead: "駅、空港、バス、自転車、徒歩を、生活と観光の両面で見直します。",
+    facts: [
+      ["7:00-20:00", "みなとーる", "予約型乗合バス。年末年始は運休"],
+      ["100円", "市内の移動運賃", "大人・小児。障がい者・介助者50円"],
+      ["約10分", "空港-境港駅", "米子鬼太郎空港から車での目安"],
+    ],
+    transportArticle: {
+      nodes: [
+        ["米子鬼太郎空港", "広域の玄関口", "境港駅まで車で約10分。JR米子空港駅、空港バス、みなとーる、タクシーへ接続。"],
+        ["JR境港駅", "観光と生活の結節点", "JR境線の終点。水木しげるロード、隠岐汽船、バス・タクシーへの入口。"],
+        ["みなとーる", "生活の足", "AIが予約状況に応じてルートを作る予約型乗合バス。通院・買い物の近距離移動に向く。"],
+        ["徒歩・自転車", "まち歩きの質", "駅から水木しげるロードへ歩く観光導線と、日常の買い物・通院の安心感を支える。"],
+      ],
+      dailyCare: [
+        {
+          title: "高齢者の通院",
+          text: "病院、薬局、市役所、地域包括支援センターへ行く移動は、予約のしやすさ、待ち時間、帰りの便が重要です。",
+          points: ["電話予約も残す", "乗降場所を増やす", "帰りの時間も考える"],
+        },
+        {
+          title: "買い物の移動",
+          text: "免許返納後もスーパー、金融機関、郵便局、商店へ行けるかが、暮らし続けやすさに直結します。",
+          points: ["荷物を持って乗れる", "店の近くで降りられる", "雨の日も使える"],
+        },
+        {
+          title: "福祉との接続",
+          text: "移動手段は福祉そのものではありませんが、相談先や居場所へ行けることで孤立を防ぐ基盤になります。",
+          points: ["見守りとつなげる", "予約支援を用意する", "介護タクシーと役割分担"],
+        },
+      ],
+      touristFlow: [
+        ["空港到着", "JR米子空港駅、空港バス、みなとーる、タクシーの選び方を到着前から見せる。"],
+        ["境港駅へ", "JRは米子空港駅-境港駅190円、空港から境港方面のみなとーるは100円・約30分から。"],
+        ["まち歩き", "境港駅から水木しげるロード、店舗、記念館へ歩きやすくつなぐ。"],
+        ["周遊", "レンタサイクルや徒歩で港、海辺、商店街、文化施設へ回遊を広げる。"],
+        ["帰路", "空港、米子駅、松江方面、隠岐航路への接続情報を分かりやすく戻す。"],
+      ],
+      modeCards: [
+        ["JR境線", "米子駅-米子空港駅240円、米子空港駅-境港駅190円。ICOCA対応駅もあり、観光客にも説明しやすい。"],
+        ["空港バス", "米子空港-米子駅は連絡バス640円・約25分。境港方面はみなとーる等と組み合わせる。"],
+        ["みなとーる", "2025年4月導入。アプリ、LINE、電話予約を前提に、市内の生活移動を面で支える。"],
+        ["タクシー", "早朝・夜間、荷物が多い時、船や飛行機の接続が厳しい時の確実な選択肢。"],
+      ],
+      walkIdeas: [
+        ["駅前の分かりやすさ", "到着してすぐ、水木しげるロード、バス乗り場、タクシー、トイレ、観光案内が見えること。"],
+        ["休める道", "高齢者や親子が歩くには、ベンチ、日陰、雨宿り、段差の少なさが満足度を左右します。"],
+        ["夜と雨の日", "照明、足元、横断しやすさ、屋内に入れる場所があると、車なしでも動きやすくなります。"],
+      ],
+      notes: [
+        "はまるーぷバスは2025年3月31日で廃止され、2025年4月から予約型乗合バス「みなとーる」が導入されています。",
+        "みなとーるは午前7時から午後8時まで運行し、大人・小児100円、障がい者・介助者50円です。",
+        "米子鬼太郎空港は境港市佐斐神町にあり、境港駅まで車で約10分。JR、バス、タクシー、予約型乗合バスを組み合わせる視点が必要です。",
+        "観光客の二次交通は、到着前に選択肢が分かること、到着後に迷わないこと、帰りの接続を逃さないことが重要です。",
+      ],
+      source: "境港市公式 公共交通・予約型乗合バス「みなとーる」、米子鬼太郎空港 アクセス・駐車場、JRおでかけネット駅情報",
+    },
     sections: [
-      { heading: "このテーマで伝えること", body: "米子鬼太郎空港、境港駅、バス、レンタサイクル、歩行空間をつなげ、車がなくても動きやすいまちの可能性を考えます。" },
-      { heading: "見るポイント", items: ["高齢者の通院・買い物", "観光客の二次交通", "歩きたくなる道の整備"] },
-      { heading: "考察", body: "移動手段は人口、観光、福祉を横断する基盤です。便数だけでなく、情報の見つけやすさ、乗り換えのわかりやすさ、歩く楽しさが満足度を左右します。" },
+      { heading: "このテーマで伝えること", body: "米子鬼太郎空港、JR境港駅、JR境線、予約型乗合バス、タクシー、自転車、徒歩をつなげ、車がなくても動きやすいまちの可能性を考えます。生活では通院・買い物・手続き、観光では空港や駅から水木しげるロード、港、周辺施設へ迷わず移動できることが重要です。" },
+      { heading: "見るポイント", items: ["高齢者が通院・買い物・市役所へ行く時、予約、待ち時間、帰りの便が使いやすいか", "観光客が空港、JR、バス、タクシー、徒歩を迷わず選べるか", "駅前から水木しげるロード、港、商店街へ歩きたくなる道になっているか", "はまるーぷバス廃止後のみなとーるを、生活交通としてどう定着させるか"] },
+      { heading: "参考にした主な情報", items: ["境港市公式: 公共交通、予約型乗合バス「みなとーる」", "境港市公式: はまるーぷバス廃止のお知らせ", "米子鬼太郎空港: アクセス・駐車場、バス、列車、タクシー", "JRおでかけネット: JR境線各駅情報"] },
+      { heading: "考察", body: "移動手段は人口、観光、福祉を横断する基盤です。境港市では、みなとーるのような面で支える生活交通と、JR境線・空港・徒歩観光をどうつなぐかが鍵になります。便数だけでなく、予約の分かりやすさ、乗り換えの見つけやすさ、歩いて楽しい道、雨の日や夜でも安心できる環境が満足度を左右します。車を持つ人だけを前提にしないことが、高齢者の暮らし、観光客の滞在、中心部の回遊を同時に支えます。" },
     ],
   },
   environment: {
@@ -639,6 +695,9 @@ function renderDetail(theme) {
   const disasterArticle = theme.disasterArticle
     ? renderDisasterArticle(theme.disasterArticle)
     : "";
+  const transportArticle = theme.transportArticle
+    ? renderTransportArticle(theme.transportArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -652,8 +711,128 @@ function renderDetail(theme) {
     ${tourismArticle}
     ${childrenArticle}
     ${disasterArticle}
+    ${transportArticle}
     ${contactMarkup}
     <div class="detail-grid">${sections}</div>
+  `;
+}
+
+function renderTransportArticle(article) {
+  const nodeCards = article.nodes
+    .map(
+      ([title, label, text]) => `
+        <article class="transport-node-card">
+          <span>${label}</span>
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const dailyCards = article.dailyCare
+    .map(
+      (item) => `
+        <article class="transport-care-card">
+          <h5>${item.title}</h5>
+          <p>${item.text}</p>
+          <ul>${item.points.map((point) => `<li>${point}</li>`).join("")}</ul>
+        </article>
+      `,
+    )
+    .join("");
+
+  const touristSteps = article.touristFlow
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const modeCards = article.modeCards
+    .map(
+      ([title, text]) => `
+        <article class="transport-mode-card">
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const walkIdeas = article.walkIdeas
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const notes = article.notes.map((note) => `<li>${note}</li>`).join("");
+
+  return `
+    <div class="transport-article">
+      <section class="transport-panel transport-node-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Network</p>
+          <h4>駅・空港・バス・徒歩をつなぐ</h4>
+          <p>境港の移動は、広域アクセスと市内の短い移動を分けて考えると見えやすくなります。</p>
+        </div>
+        <div class="transport-node-grid">${nodeCards}</div>
+      </section>
+
+      <section class="transport-panel transport-care-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Daily Life</p>
+          <h4>高齢者の通院・買い物</h4>
+          <p>免許返納後も、病院、買い物、手続き、居場所へ行けるかを見ます。</p>
+        </div>
+        <div class="transport-care-grid">${dailyCards}</div>
+      </section>
+
+      <section class="transport-panel transport-tourist-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Tourist Flow</p>
+          <h4>観光客の二次交通</h4>
+          <p>空港や駅に着いてから、まち歩き、港、帰路まで迷わない導線にします。</p>
+        </div>
+        <ol class="transport-tourist-flow">${touristSteps}</ol>
+      </section>
+
+      <section class="transport-panel transport-mode-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Modes</p>
+          <h4>手段ごとの役割</h4>
+          <p>JR、バス、みなとーる、タクシーを競合ではなく役割分担として見ます。</p>
+        </div>
+        <div class="transport-mode-grid">${modeCards}</div>
+      </section>
+
+      <section class="transport-panel transport-walk-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Walkability</p>
+          <h4>歩きたくなる道の整備</h4>
+          <p>観光の満足度と、生活の安心感は、歩く環境の質で変わります。</p>
+        </div>
+        <ul class="transport-walk-list">${walkIdeas}</ul>
+      </section>
+
+      <section class="transport-panel transport-insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Insight</p>
+          <h4>移動を暮らしの基盤として見る</h4>
+        </div>
+        <ul>${notes}</ul>
+        <p class="source-note">${article.source}</p>
+      </section>
+    </div>
   `;
 }
 

@@ -997,6 +997,149 @@ h3 {
   line-height: 1.8;
 }
 
+.transport-article {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-width: 0;
+  margin-top: 28px;
+}
+
+.transport-panel {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fbfdfe;
+}
+
+.transport-node-panel,
+.transport-care-panel,
+.transport-tourist-panel,
+.transport-mode-panel,
+.transport-walk-panel,
+.transport-insight-panel {
+  grid-column: span 2;
+}
+
+.transport-node-grid,
+.transport-care-grid,
+.transport-mode-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.transport-care-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.transport-mode-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.transport-node-card,
+.transport-care-card,
+.transport-mode-card {
+  min-width: 0;
+  border: 1px solid rgba(24, 107, 151, 0.16);
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(25, 73, 109, 0.06);
+}
+
+.transport-node-card span {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #e8f5f8;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.transport-node-card h5,
+.transport-care-card h5,
+.transport-mode-card h5 {
+  margin: 10px 0 8px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.transport-node-card p,
+.transport-care-card p,
+.transport-mode-card p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.transport-care-card ul {
+  display: grid;
+  gap: 6px;
+  margin: 12px 0 0;
+  padding-left: 1.2em;
+}
+
+.transport-care-card li {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.transport-tourist-flow,
+.transport-walk-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.transport-tourist-flow li,
+.transport-walk-list li {
+  min-width: 0;
+  border: 1px solid rgba(24, 107, 151, 0.14);
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.transport-tourist-flow strong,
+.transport-tourist-flow span,
+.transport-walk-list strong,
+.transport-walk-list span {
+  display: block;
+}
+
+.transport-tourist-flow strong,
+.transport-walk-list strong {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.transport-tourist-flow span,
+.transport-walk-list span {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.transport-insight-panel ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.transport-insight-panel li {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
 .port-article {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1950,6 +2093,25 @@ h3 {
 
   .disaster-event-grid,
   .disaster-signal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transport-article {
+    grid-template-columns: 1fr;
+  }
+
+  .transport-node-panel,
+  .transport-care-panel,
+  .transport-tourist-panel,
+  .transport-mode-panel,
+  .transport-walk-panel,
+  .transport-insight-panel {
+    grid-column: auto;
+  }
+
+  .transport-node-grid,
+  .transport-care-grid,
+  .transport-mode-grid {
     grid-template-columns: 1fr;
   }
 
