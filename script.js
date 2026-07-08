@@ -542,11 +542,11 @@ const themeDetails = {
           credit: "Photo: Wikimedia Commons / CC BY-SA",
         },
         {
-          src: "https://commons.wikimedia.org/wiki/Special:FilePath/Mizuki_Shigeru_Road_-02.jpg?width=1200",
-          alt: "水木しげるロードの街路",
-          title: "歩く観光導線",
-          text: "境港駅から水木しげるロードへ、歩きながら滞在と消費を生む道として見ます。",
-          credit: "Photo: Aimaimyi / Wikimedia Commons / CC BY-SA 3.0",
+          src: "https://commons.wikimedia.org/wiki/Special:FilePath/Mizuki_Shigeru_Road_Taxi.jpg?width=1200",
+          alt: "水木しげるロードを走るタクシー",
+          title: "水木しげるロードのタクシー",
+          text: "駅、ロード、港、空港をつなぐ移動手段として、観光と暮らしの両方を支えます。",
+          credit: "Photo: Wikimedia Commons / CC BY-SA",
         },
       ],
       nodes: [
