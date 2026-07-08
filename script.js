@@ -535,6 +535,13 @@ const themeDetails = {
           credit: "Photo: Wikimedia Commons / CC BY-SA",
         },
         {
+          src: "https://commons.wikimedia.org/wiki/Special:FilePath/Kiha40_2115.jpg?width=1200",
+          alt: "鬼太郎のキャラクターが描かれたJR境線の列車",
+          title: "鬼太郎列車",
+          text: "JR境線そのものが観光体験になります。移動中から境港らしさを感じられる、まちの入口の演出です。",
+          credit: "Photo: Wikimedia Commons / CC BY-SA",
+        },
+        {
           src: "https://commons.wikimedia.org/wiki/Special:FilePath/Mizuki_Shigeru_Road_-02.jpg?width=1200",
           alt: "水木しげるロードの街路",
           title: "歩く観光導線",
