@@ -620,18 +620,33 @@ const themeDetails = {
         {
           title: "写真を撮りたくなる場所",
           label: "View Point",
+          image: {
+            src: "https://commons.wikimedia.org/wiki/Special:FilePath/%E5%A2%83%E6%B8%AF%20-%20panoramio.jpg?width=1200",
+            alt: "境港の海辺と港の風景",
+            credit: "Photo: Wikimedia Commons / CC BY-SA",
+          },
           text: "海、船、港の施設、街並み、大山が同時に見える場所は、境港らしさを一枚で伝えられる景観資源です。",
           points: ["海と山が同じ画面に入るか", "朝夕で見え方が変わるか", "歩行者が安全に立ち止まれるか"],
         },
         {
           title: "海辺で過ごせる公共空間",
           label: "Stay",
+          image: {
+            src: "https://commons.wikimedia.org/wiki/Special:FilePath/%E5%BC%93%E3%82%B1%E6%B5%9C%E6%B5%B7%E5%B2%B8.jpg?width=1200",
+            alt: "弓ヶ浜海岸の海辺の風景",
+            credit: "Photo: Wikimedia Commons / CC BY-SA",
+          },
           text: "眺めるだけでなく、座る、歩く、休む、子どもと過ごす場所があると、景観は暮らしの質になります。",
           points: ["ベンチ・日陰・トイレ", "段差や車との距離", "雨・風の強い日の逃げ場"],
         },
         {
           title: "ごみ・景観・安全のバランス",
           label: "Care",
+          image: {
+            src: "https://commons.wikimedia.org/wiki/Special:FilePath/Takenouchi%20Sakaiminatocity%20Tottoripref%20No%201.jpg?width=1200",
+            alt: "竹内団地周辺の港湾景観",
+            credit: "Photo: Wikimedia Commons / CC BY-SA",
+          },
           text: "きれいな景観は清掃だけでなく、看板、照明、防護柵、駐車、釣り利用、観光客の動線まで含めて整える必要があります。",
           points: ["ごみ箱と持ち帰りの案内", "夜間照明と眩しさ", "海への転落防止と見晴らし"],
         },
@@ -654,7 +669,7 @@ const themeDetails = {
         "海辺のベンチや休憩場所は、観光客だけでなく高齢者や親子の散歩にも役立つ場所として整える。",
         "ごみ対策は注意看板だけで終わらせず、清掃活動、持ち帰り案内、店舗・団体との連携で続く仕組みにする。",
       ],
-      source: "境港市の港湾・観光エリア、境水道沿いの海辺空間、景観まちづくりの一般的な整理をもとに作成",
+      source: "境港市の港湾・観光エリア、境水道沿いの海辺空間、景観まちづくりの一般的な整理、Wikimedia Commons掲載写真をもとに作成",
     },
     sections: [
       { heading: "このテーマで伝えること", body: "境港らしい景観、海辺の空間、夕日、港の風景、緑を、観光資源としてだけでなく暮らしの質として整理します。写真映えだけでなく、歩きやすさ、休みやすさ、安全、清掃、産業活動との共存まで含めて、日常の景色を地域資産として扱います。" },
@@ -802,6 +817,10 @@ function renderEnvironmentArticle(article) {
     .map(
       (item) => `
         <article class="environment-focus-card">
+          <figure>
+            <img src="${item.image.src}" alt="${item.image.alt}" loading="lazy" />
+            <figcaption>${item.image.credit}</figcaption>
+          </figure>
           <span>${item.label}</span>
           <h5>${item.title}</h5>
           <p>${item.text}</p>
