@@ -1195,6 +1195,124 @@ h3 {
   line-height: 1.8;
 }
 
+.environment-article {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-width: 0;
+  margin-top: 28px;
+}
+
+.environment-panel {
+  min-width: 0;
+  border: 1px solid rgba(35, 124, 105, 0.16);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fbfefd;
+}
+
+.environment-focus-panel,
+.environment-place-panel,
+.environment-check-panel,
+.environment-action-panel {
+  grid-column: span 2;
+}
+
+.environment-focus-grid,
+.environment-check-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.environment-check-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.environment-focus-card,
+.environment-check-card {
+  min-width: 0;
+  border: 1px solid rgba(35, 124, 105, 0.16);
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(25, 73, 109, 0.06);
+}
+
+.environment-focus-card span {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #e8f7f1;
+  color: #237c69;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.environment-focus-card h5,
+.environment-check-card h5 {
+  margin: 10px 0 8px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.environment-focus-card p,
+.environment-check-card p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.environment-focus-card ul {
+  display: grid;
+  gap: 6px;
+  margin: 12px 0 0;
+  padding-left: 1.2em;
+}
+
+.environment-focus-card li {
+  color: #237c69;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.environment-place-list,
+.environment-action-panel ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.environment-place-list li,
+.environment-action-panel li {
+  min-width: 0;
+  border: 1px solid rgba(35, 124, 105, 0.14);
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.environment-place-list strong,
+.environment-place-list span {
+  display: block;
+}
+
+.environment-place-list strong {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.environment-place-list span,
+.environment-action-panel li {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
 .port-article {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2169,6 +2287,22 @@ h3 {
   .transport-photo-grid,
   .transport-care-grid,
   .transport-mode-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .environment-article {
+    grid-template-columns: 1fr;
+  }
+
+  .environment-focus-panel,
+  .environment-place-panel,
+  .environment-check-panel,
+  .environment-action-panel {
+    grid-column: auto;
+  }
+
+  .environment-focus-grid,
+  .environment-check-grid {
     grid-template-columns: 1fr;
   }
 

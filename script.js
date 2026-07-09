@@ -610,10 +610,56 @@ const themeDetails = {
     category: "環境・景観",
     title: "海辺の景観",
     lead: "海、街、山が見える風景を、まちの価値として守り育てます。",
+    facts: [
+      ["海・港", "境港らしさの軸", "漁港、岸壁、航路、海辺の眺め"],
+      ["大山", "背景になる山", "海越し・街越しに見える広域景観"],
+      ["日常風景", "守るべき資産", "散歩、通学、買い物の中にある眺め"],
+    ],
+    environmentArticle: {
+      focusCards: [
+        {
+          title: "写真を撮りたくなる場所",
+          label: "View Point",
+          text: "海、船、港の施設、街並み、大山が同時に見える場所は、境港らしさを一枚で伝えられる景観資源です。",
+          points: ["海と山が同じ画面に入るか", "朝夕で見え方が変わるか", "歩行者が安全に立ち止まれるか"],
+        },
+        {
+          title: "海辺で過ごせる公共空間",
+          label: "Stay",
+          text: "眺めるだけでなく、座る、歩く、休む、子どもと過ごす場所があると、景観は暮らしの質になります。",
+          points: ["ベンチ・日陰・トイレ", "段差や車との距離", "雨・風の強い日の逃げ場"],
+        },
+        {
+          title: "ごみ・景観・安全のバランス",
+          label: "Care",
+          text: "きれいな景観は清掃だけでなく、看板、照明、防護柵、駐車、釣り利用、観光客の動線まで含めて整える必要があります。",
+          points: ["ごみ箱と持ち帰りの案内", "夜間照明と眩しさ", "海への転落防止と見晴らし"],
+        },
+      ],
+      placeIdeas: [
+        ["境水道沿い", "船の往来、対岸、港の施設が見える。散歩と写真の両方で使いやすい場所として整理したい。"],
+        ["境港駅周辺", "到着直後にまちの印象を決める入口。駅から水木しげるロード、港へ向かう道の見え方が大切。"],
+        ["海岸・夕日の見える場所", "夕日や水面の色は観光写真になりやすい。安全に立ち止まれる場所と案内が必要。"],
+        ["港湾・市場周辺", "働く港の風景は境港の個性。産業景観として見せる範囲と、安全管理する範囲を分けたい。"],
+      ],
+      checks: [
+        ["視点場", "写真を撮れる場所が、車道・作業区域・危険箇所に重なっていないか。"],
+        ["連続性", "駅、ロード、港、海辺へ歩く時に、景色が途切れず期待感が続くか。"],
+        ["管理", "草刈り、清掃、看板更新、ベンチ補修など、日常管理の担当が見えるか。"],
+        ["共存", "釣り、散歩、観光、物流、漁業がぶつからないルールや表示があるか。"],
+      ],
+      actions: [
+        "市民が好きな景色を投稿・記録できる仕組みを作り、季節ごとの景観アーカイブにする。",
+        "写真スポットは、撮影位置、歩道、駐車、トイレ、転落防止をセットで確認する。",
+        "海辺のベンチや休憩場所は、観光客だけでなく高齢者や親子の散歩にも役立つ場所として整える。",
+        "ごみ対策は注意看板だけで終わらせず、清掃活動、持ち帰り案内、店舗・団体との連携で続く仕組みにする。",
+      ],
+      source: "境港市の港湾・観光エリア、境水道沿いの海辺空間、景観まちづくりの一般的な整理をもとに作成",
+    },
     sections: [
-      { heading: "このテーマで伝えること", body: "境港らしい景観、海辺の空間、夕日、港の風景、緑を、観光資源としてだけでなく暮らしの質として整理します。" },
-      { heading: "見るポイント", items: ["写真を撮りたくなる場所", "海辺で過ごせる公共空間", "ごみ・景観・安全のバランス"] },
-      { heading: "考察", body: "景観は一度失うと戻しにくい地域資産です。日常の風景を市民が誇れる形で記録し、観光客にも伝えることで、まちの印象が強くなります。" },
+      { heading: "このテーマで伝えること", body: "境港らしい景観、海辺の空間、夕日、港の風景、緑を、観光資源としてだけでなく暮らしの質として整理します。写真映えだけでなく、歩きやすさ、休みやすさ、安全、清掃、産業活動との共存まで含めて、日常の景色を地域資産として扱います。" },
+      { heading: "見るポイント", items: ["写真を撮りたくなる場所が、安全に立ち止まれる場所として整っているか", "海辺で過ごせる公共空間に、ベンチ、日陰、トイレ、歩きやすい道があるか", "ごみ、看板、照明、防護柵、駐車、釣り利用が景観と安全の両方を損ねていないか", "港や市場の働く風景を、観光資源として見せる範囲と立入管理する範囲に分けられているか"] },
+      { heading: "考察", body: "景観は一度失うと戻しにくい地域資産です。境港市の場合、海、港、街、大山が重なる眺めに強みがあります。ただし、眺めの良さだけでは滞在にはつながりません。安全に歩ける、座れる、迷わない、きれいに保たれている、働く港の邪魔をしないという条件がそろって、初めて暮らしにも観光にも効く景観になります。日常の風景を市民が誇れる形で記録し、観光客にも伝えることで、まちの印象は強くなります。" },
     ],
   },
   participation: {
@@ -728,6 +774,9 @@ function renderDetail(theme) {
   const transportArticle = theme.transportArticle
     ? renderTransportArticle(theme.transportArticle)
     : "";
+  const environmentArticle = theme.environmentArticle
+    ? renderEnvironmentArticle(theme.environmentArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -742,8 +791,89 @@ function renderDetail(theme) {
     ${childrenArticle}
     ${disasterArticle}
     ${transportArticle}
+    ${environmentArticle}
     ${contactMarkup}
     <div class="detail-grid">${sections}</div>
+  `;
+}
+
+function renderEnvironmentArticle(article) {
+  const focusCards = article.focusCards
+    .map(
+      (item) => `
+        <article class="environment-focus-card">
+          <span>${item.label}</span>
+          <h5>${item.title}</h5>
+          <p>${item.text}</p>
+          <ul>${item.points.map((point) => `<li>${point}</li>`).join("")}</ul>
+        </article>
+      `,
+    )
+    .join("");
+
+  const placeItems = article.placeIdeas
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const checkCards = article.checks
+    .map(
+      ([title, text]) => `
+        <article class="environment-check-card">
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const actionItems = article.actions.map((item) => `<li>${item}</li>`).join("");
+
+  return `
+    <div class="environment-article">
+      <section class="environment-panel environment-focus-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">View Points</p>
+          <h4>見るポイントを深掘りする</h4>
+          <p>景観を「きれい」で終わらせず、撮る、過ごす、守るという行動に分けて見ます。</p>
+        </div>
+        <div class="environment-focus-grid">${focusCards}</div>
+      </section>
+
+      <section class="environment-panel environment-place-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Places</p>
+          <h4>境港らしさが出る場所</h4>
+          <p>海、街、山、港の重なりを、どこで感じられるかを整理します。</p>
+        </div>
+        <ul class="environment-place-list">${placeItems}</ul>
+      </section>
+
+      <section class="environment-panel environment-check-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Checklist</p>
+          <h4>景観を守るための確認軸</h4>
+          <p>見晴らしと安全、利用と管理を同時に見ます。</p>
+        </div>
+        <div class="environment-check-grid">${checkCards}</div>
+      </section>
+
+      <section class="environment-panel environment-action-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Action</p>
+          <h4>次に進めること</h4>
+          <p>景観を記録し、使い、守るための小さな実践です。</p>
+        </div>
+        <ul>${actionItems}</ul>
+        <p class="source-note">${article.source}</p>
+      </section>
+    </div>
   `;
 }
 
