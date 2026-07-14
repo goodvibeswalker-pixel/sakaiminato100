@@ -682,10 +682,58 @@ const themeDetails = {
     category: "市政・参加",
     title: "市民参加と議会",
     lead: "市政を身近にし、暮らしの声を政策につなげる入口をつくります。",
+    facts: [
+      ["市報", "毎月1日発行", "市からのお知らせを届ける入口"],
+      ["提案箱", "市民の声", "意見・提案・要望を送る入口"],
+      ["パブコメ", "計画への意見", "素案を見て意見を出す仕組み"],
+    ],
+    participationArticle: {
+      focusCards: [
+        {
+          title: "市政情報の探しやすさ",
+          label: "Find",
+          text: "公式サイトには、新着情報、市政情報、市議会、市報、問合せ・相談、提案箱など複数の入口があります。市民目線では、部署名から探すだけでなく「子育て」「防災」「交通」「空き家」のような暮らしのテーマから逆引きできることが重要です。",
+          points: ["トップページの新着から今の動きをつかむ", "市報、議会、計画、募集を同じテーマでつなぐ", "スマホでも目的のページへ短い動線で届く"],
+        },
+        {
+          title: "若者・子育て世帯が参加しやすい方法",
+          label: "Join",
+          text: "会議やパブリックコメントだけでは、忙しい世代の声は集まりにくくなります。学校、保育、子育て施設、SNS、短時間アンケートを組み合わせ、生活の途中で参加できる入口を増やすことが必要です。",
+          points: ["QRコードで1分アンケートに答えられる", "説明資料を短く、やさしい言葉で読める", "オンライン、夕方、親子参加の場を用意する"],
+        },
+        {
+          title: "議会で何が話されているか",
+          label: "Council",
+          text: "議会情報は、議案名や会議録だけでは暮らしとの関係が見えにくいことがあります。子育て、防災、公共施設、空き家、交通、健康のようにテーマ別に読むと、議会で扱われている論点が追いやすくなります。",
+          points: ["議会だよりや会議録を生活テーマ別に読む", "質問、答弁、結果を同じ流れで確認する", "議会運営そのものの透明性も見る"],
+        },
+      ],
+      currentTopics: [
+        ["暑熱・健康", "熱中症への注意、クーリングシェルター、健診・がん検診など、健康を守る情報が公式サイトの新着で目立っています。"],
+        ["公共施設・市民利用", "みなとテラスの開館時間、公共施設等総合管理計画、公共工事の発注見通しなど、施設の使いやすさと財政の見える化が論点になります。"],
+        ["子育て・若者", "青少年育成センター運営協議会、青少年海外研修、こども計画、子どもの読書活動推進計画など、若い世代の経験と支援に関わるテーマが続いています。"],
+        ["空き家・住まい", "空き家・空き地相談会、空家等対策計画、市営住宅入居者募集など、住まいと土地利用の課題が市政情報に表れています。"],
+        ["議会運営・信頼", "議会ペーパレス会議システム、議会議員報酬等の特例、政治倫理条例、議会基本条例など、議会の運営と透明性に関わる情報があります。"],
+        ["安全・広域連携", "原子力発電所環境安全対策協議会、プルサーマル説明会、防災訓練など、市域を越えた安全情報も市民参加の重要なテーマです。"],
+      ],
+      routes: [
+        ["広報を読む", "市報さかいみなとは毎月1日に発行され、市からのお知らせをまとめて確認できる入口です。"],
+        ["パブリックコメントを見る", "計画案や条例案に対し、募集期間、担当課、結果を確認して意見を出せます。"],
+        ["議会を追う", "市議会ページ、議会だより、議案、一般質問、委員会資料を生活テーマに結びつけて読みます。"],
+        ["声を届ける", "市民の声提案箱、問合せ、出前座談会、説明会などを使い、暮らしの困りごとを政策の入口へつなげます。"],
+      ],
+      youthIdeas: [
+        "広報紙、学校、子育て施設、図書館、イベント会場にQRコードを置き、スマホから短く意見を出せるようにする。",
+        "パブリックコメントは全文資料だけでなく、要点版、子育て世帯向け版、若者向け版を用意する。",
+        "議会で扱った内容を、子育て、防災、交通、公共施設などの生活テーマ別に整理して見せる。",
+        "高校生、大学生、若手社会人、子育て中の人が参加できる夕方・オンライン・短時間の意見交換を増やす。",
+      ],
+      source: "境港市公式サイト、市報さかいみなと、パブリックコメント、市民の声提案箱、市議会関連情報（2026年7月15日時点で確認）",
+    },
     sections: [
-      { heading: "このテーマで伝えること", body: "市役所、議会、広報、予算、計画、意見募集を、市民が使える情報として整理します。" },
-      { heading: "見るポイント", items: ["市政情報の探しやすさ", "若者や子育て世帯が参加しやすい方法", "議会で何が話されているか"] },
-      { heading: "考察", body: "まちの課題は行政だけで解けません。市民が情報を理解し、意見を出し、結果を確認できる循環があるほど、100のテーマは実際の改善につながります。" },
+      { heading: "このテーマで伝えること", body: "市役所、議会、広報、予算、計画、意見募集を、市民が使える情報として整理します。情報を読むだけでなく、意見を出し、結果を確認し、次の改善につなげる流れまでを見ます。" },
+      { heading: "見るポイント", items: ["市政情報を、部署名ではなく暮らしのテーマから探せるか", "若者や子育て世帯が、短時間・スマホ・身近な場所から参加できるか", "議会で話されたことが、質問、答弁、結果まで追えるか", "広報、議会、パブリックコメント、提案箱がバラバラにならずつながって見えるか"] },
+      { heading: "考察", body: "まちの課題は行政だけで解けません。市民が情報を理解し、意見を出し、結果を確認できる循環があるほど、100のテーマは実際の改善につながります。境港市では、健康、公共施設、子育て、空き家、議会運営、安全・広域連携などのテーマが公式情報から見えており、それぞれを市民の暮らしの言葉に翻訳することが参加の第一歩になります。" },
     ],
   },
   future: {
@@ -792,6 +840,9 @@ function renderDetail(theme) {
   const environmentArticle = theme.environmentArticle
     ? renderEnvironmentArticle(theme.environmentArticle)
     : "";
+  const participationArticle = theme.participationArticle
+    ? renderParticipationArticle(theme.participationArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -807,8 +858,89 @@ function renderDetail(theme) {
     ${disasterArticle}
     ${transportArticle}
     ${environmentArticle}
+    ${participationArticle}
     ${contactMarkup}
     <div class="detail-grid">${sections}</div>
+  `;
+}
+
+function renderParticipationArticle(article) {
+  const focusCards = article.focusCards
+    .map(
+      (item) => `
+        <article class="participation-focus-card">
+          <span>${item.label}</span>
+          <h5>${item.title}</h5>
+          <p>${item.text}</p>
+          <ul>${item.points.map((point) => `<li>${point}</li>`).join("")}</ul>
+        </article>
+      `,
+    )
+    .join("");
+
+  const topicCards = article.currentTopics
+    .map(
+      ([title, text]) => `
+        <article class="participation-topic-card">
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const routeItems = article.routes
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const youthItems = article.youthIdeas.map((item) => `<li>${item}</li>`).join("");
+
+  return `
+    <div class="participation-article">
+      <section class="participation-panel participation-focus-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Civic Entry</p>
+          <h4>見るポイントを深掘りする</h4>
+          <p>市政情報を「読む」「参加する」「議会を追う」に分けて、入口を整理します。</p>
+        </div>
+        <div class="participation-focus-grid">${focusCards}</div>
+      </section>
+
+      <section class="participation-panel participation-topic-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Current Topics</p>
+          <h4>いま公式情報から見える主な議題</h4>
+          <p>2026年7月15日時点の新着情報、広報、パブリックコメントから、暮らしに近い論点をまとめます。</p>
+        </div>
+        <div class="participation-topic-grid">${topicCards}</div>
+      </section>
+
+      <section class="participation-panel participation-route-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Routes</p>
+          <h4>市民が参加する入口</h4>
+          <p>情報を知り、意見を出し、結果を見るまでの道筋です。</p>
+        </div>
+        <ol class="participation-route-list">${routeItems}</ol>
+      </section>
+
+      <section class="participation-panel participation-youth-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Younger Voices</p>
+          <h4>若者・子育て世帯が参加しやすい工夫</h4>
+          <p>参加のハードルを下げるには、時間、場所、言葉、スマホ対応を同時に整える必要があります。</p>
+        </div>
+        <ul>${youthItems}</ul>
+        <p class="source-note">${article.source}</p>
+      </section>
+    </div>
   `;
 }
 
