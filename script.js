@@ -918,6 +918,105 @@ const themeDetails = {
 const themeButtons = document.querySelectorAll(".theme-card-button");
 const themeDetail = document.querySelector("#themeDetail");
 const detailPrompt = document.querySelector("#detailPrompt");
+const boardForm = document.querySelector("#boardForm");
+const boardList = document.querySelector("#boardList");
+const boardClear = document.querySelector("#boardClear");
+const boardStorageKey = "sakaiminato100-board-posts";
+
+const boardSeedPosts = [
+  {
+    name: "かーくん",
+    category: "お知らせ",
+    message: "境港市100のことは、テーマを少しずつ増やしながら育てていきます。追加したい話題があればここにメモしてください。",
+    date: "2026-07-15",
+  },
+  {
+    name: "編集メモ",
+    category: "テーマ提案",
+    message: "次に深掘りしたいテーマは、買い物、空き家、若者の仕事、健康づくり、地域ブランドなどです。",
+    date: "2026-07-15",
+  },
+];
+
+function escapeHtml(value) {
+  return value.replace(/[&<>"']/g, (char) => {
+    const entities = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    };
+    return entities[char];
+  });
+}
+
+function loadBoardPosts() {
+  try {
+    const stored = localStorage.getItem(boardStorageKey);
+    return stored ? JSON.parse(stored) : boardSeedPosts;
+  } catch {
+    return boardSeedPosts;
+  }
+}
+
+function saveBoardPosts(posts) {
+  localStorage.setItem(boardStorageKey, JSON.stringify(posts));
+}
+
+function renderBoardPosts(posts) {
+  if (!boardList) return;
+  boardList.innerHTML = posts
+    .map(
+      (post) => `
+        <article class="board-post">
+          <div class="board-post-head">
+            <span class="board-post-author">${escapeHtml(post.name)}</span>
+            <span class="board-post-date">${escapeHtml(post.date)}</span>
+          </div>
+          <span class="board-post-category">${escapeHtml(post.category)}</span>
+          <p>${escapeHtml(post.message)}</p>
+        </article>
+      `,
+    )
+    .join("");
+}
+
+function setupBoard() {
+  if (!boardForm || !boardList) return;
+
+  let posts = loadBoardPosts();
+  renderBoardPosts(posts);
+
+  boardForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(boardForm);
+    const name = String(formData.get("name") || "匿名").trim().slice(0, 24) || "匿名";
+    const category = String(formData.get("category") || "テーマ提案").trim();
+    const message = String(formData.get("message") || "").trim().slice(0, 220);
+    if (!message) return;
+
+    const date = new Intl.DateTimeFormat("ja-JP", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    }).format(new Date());
+
+    posts = [{ name, category, message, date }, ...posts].slice(0, 20);
+    saveBoardPosts(posts);
+    renderBoardPosts(posts);
+    boardForm.reset();
+  });
+
+  boardClear?.addEventListener("click", () => {
+    posts = boardSeedPosts;
+    saveBoardPosts(posts);
+    renderBoardPosts(posts);
+    boardForm.reset();
+  });
+}
 
 function renderDetail(theme) {
   const factMarkup = theme.facts
@@ -2095,4 +2194,6 @@ themeButtons.forEach((button) => {
     themeDetail.focus({ preventScroll: true });
   });
 });
+
+setupBoard();
 })();

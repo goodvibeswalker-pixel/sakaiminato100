@@ -8,7 +8,7 @@
       name="description"
       content="境港市の産業、観光、子育て、防災、市政などを100のテーマで見える化するホームページ。"
     />
-    <link rel="stylesheet" href="styles.css?v=themes-20-v1" />
+    <link rel="stylesheet" href="styles.css?v=board-v1" />
     <style>
       .subtheme-panel {
         grid-column: span 2;
@@ -967,6 +967,7 @@
         <a href="#about">概要</a>
         <a href="#themes">100テーマ</a>
         <a href="#use">活用方法</a>
+        <a href="#board">掲示板</a>
         <a href="#profile">管理者</a>
         <a href="#sources">参考情報</a>
       </nav>
@@ -1005,9 +1006,9 @@
 
       <section class="section-inner stats" aria-label="境港市の特徴">
         <article class="stat-card">
-          <span class="stat-number">10</span>
+          <span class="stat-number">20</span>
           <h3>公開テーマ</h3>
-          <p>まずは入口になる10テーマをカード形式で掲載。</p>
+          <p>まずは入口になる20テーマをカード形式で掲載。</p>
         </article>
         <article class="stat-card">
           <span class="stat-number">100</span>
@@ -1351,6 +1352,57 @@
         </div>
       </section>
 
+      <section class="section-inner board-section" id="board">
+        <div class="board-heading">
+          <div>
+            <p class="section-kicker">Board</p>
+            <h2>情報発信チャット掲示板</h2>
+          </div>
+          <p>
+            100のテーマに追加したい情報、現地メモ、写真候補、気づいたことを残せます。
+            投稿はこのブラウザに保存され、公開掲載前のメモとして使えます。
+          </p>
+        </div>
+
+        <div class="board-layout">
+          <form class="board-form" id="boardForm">
+            <div class="board-field">
+              <label for="boardName">名前</label>
+              <input id="boardName" name="name" type="text" maxlength="24" placeholder="例：かーくん" autocomplete="name" />
+            </div>
+            <div class="board-field">
+              <label for="boardCategory">種類</label>
+              <select id="boardCategory" name="category">
+                <option value="テーマ提案">テーマ提案</option>
+                <option value="現地メモ">現地メモ</option>
+                <option value="写真候補">写真候補</option>
+                <option value="お知らせ">お知らせ</option>
+                <option value="修正依頼">修正依頼</option>
+              </select>
+            </div>
+            <div class="board-field board-field-wide">
+              <label for="boardMessage">投稿内容</label>
+              <textarea id="boardMessage" name="message" rows="5" maxlength="220" placeholder="例：水木しげるロード周辺の新しいお店をテーマに追加したいです。"></textarea>
+            </div>
+            <div class="board-actions">
+              <button class="button primary" type="submit">投稿する</button>
+              <button class="button secondary" id="boardClear" type="button">初期表示に戻す</button>
+            </div>
+            <p class="board-note">
+              個人情報や急ぎの連絡は書き込まず、正式な相談は市役所や関係機関の窓口を利用してください。
+            </p>
+          </form>
+
+          <div class="board-panel" aria-live="polite">
+            <div class="board-panel-head">
+              <p class="section-kicker">Messages</p>
+              <h3>みんなの投稿メモ</h3>
+            </div>
+            <div class="board-list" id="boardList"></div>
+          </div>
+        </div>
+      </section>
+
       <section class="profile-band" id="profile">
         <div class="section-inner profile-grid">
           <div>
@@ -1406,7 +1458,7 @@
       <p>境港市の今を知り、未来をつくるための100のテーマ</p>
     </footer>
 
-    <script type="module" src="script.js?v=themes-20-v1"></script>
+    <script type="module" src="script.js?v=board-v1"></script>
     <script>
       (() => {
         const subThemeHtml = `
