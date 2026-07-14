@@ -741,10 +741,66 @@ const themeDetails = {
     category: "未来・編集",
     title: "100のこと更新会議",
     lead: "テーマを増やし続けるための編集ルールと参加の仕組みをつくります。",
+    facts: [
+      ["100テーマ", "育てる目標", "一度に完成させず段階更新"],
+      ["月1回", "更新会議の目安", "追加候補と修正点を確認"],
+      ["出典・更新日", "信頼の土台", "誰が見ても確認できる形にする"],
+    ],
+    futureArticle: {
+      focusCards: [
+        {
+          title: "次に追加するテーマの決め方",
+          label: "Theme",
+          text: "思いつきで増やすのではなく、暮らしへの影響、数字で追えるか、現地で確かめられるか、写真で伝わるかを基準にします。",
+          points: ["人口、産業、観光、防災など既存テーマとのつながり", "市民が知りたい切実さ", "データと現地メモの両方で更新できること"],
+        },
+        {
+          title: "情報の出典と更新日",
+          label: "Source",
+          text: "市公式情報、統計、広報、議会資料、現地確認、市民の声を分けて記録します。古い情報は悪い情報ではなく、更新日が見えることが信頼になります。",
+          points: ["本文ごとに出典と確認日を残す", "推測と事実を分けて書く", "数字は年度、月末、調査日を明記する"],
+        },
+        {
+          title: "学校・地域・事業者との共同編集",
+          label: "Team",
+          text: "管理者だけで更新するサイトではなく、学校の調べ学習、地域活動、商店や事業者の現場知をつなげると、100のことはまちの共有ノートになります。",
+          points: ["高校生や子どもの現地メモを活かす", "自治会、商店、団体から写真や声を集める", "公開前に確認する担当を決める"],
+        },
+      ],
+      cycle: [
+        ["集める", "写真、統計、広報、議会資料、現地メモ、市民の声を候補として集めます。"],
+        ["選ぶ", "暮らしへの影響、緊急性、境港らしさ、更新しやすさで優先順位を決めます。"],
+        ["確かめる", "出典、日付、場所、言い切りすぎていないか、個人情報が含まれないかを確認します。"],
+        ["公開する", "本文、図、写真、考察を入れて公開し、更新日と次に調べる問いを残します。"],
+        ["見直す", "読んだ人の反応、新しいデータ、現地の変化を受けて、月1回程度で修正します。"],
+      ],
+      rules: [
+        ["事実", "数字、制度、場所、時期は出典を残し、確認できる形で書く。"],
+        ["考察", "考察は断定ではなく、数字や現場から見える仮説として書く。"],
+        ["写真", "フリー素材、公式に使える写真、自分で撮影した写真は、出所と利用条件を残す。"],
+        ["声", "市民の声は個人が特定されない形にし、必要なら要約して掲載する。"],
+        ["更新", "古い情報を消すだけでなく、過去との比較として活かせるかを考える。"],
+        ["確認", "医療、防災、制度、連絡先など生活に影響する情報は公開前に特に確認する。"],
+      ],
+      roles: [
+        ["サイト管理者", "全体の編集方針、公開判断、出典確認、デザインの統一を担当します。"],
+        ["学校・学生", "調べ学習、まち歩き、写真、インタビュー、若者目線の疑問を提供します。"],
+        ["地域・自治会", "生活道路、防災、見守り、行事、昔からの変化を現場の言葉で伝えます。"],
+        ["事業者", "水産、観光、交通、商店、福祉など、仕事の現場から見える変化を共有します。"],
+        ["読者・市民", "誤りの指摘、追加してほしいテーマ、写真候補、困りごとを届けます。"],
+      ],
+      roadmap: [
+        ["次の10テーマ", "まずは001から010までを土台にし、交通、福祉、防災、観光、教育から派生するテーマを増やします。"],
+        ["地図とグラフ", "学校、避難所、公共施設、観光スポットなど、場所で理解できる情報を増やします。"],
+        ["更新履歴", "いつ、何を、なぜ更新したかを残し、サイトが育っていることを見える化します。"],
+        ["参加フォーム", "写真提供、テーマ提案、修正依頼を受け取る入口を用意します。"],
+      ],
+      source: "このテーマは、これまでの001から009の更新作業、地域情報サイト運営の考え方、出典管理・共同編集の一般的な方法をもとに作成",
+    },
     sections: [
-      { heading: "このテーマで伝えること", body: "100テーマを一度に完成させるのではなく、写真、データ、現地メモ、市民の声を少しずつ追加して育てる運営方法を整理します。" },
-      { heading: "見るポイント", items: ["次に追加するテーマの決め方", "情報の出典と更新日", "学校・地域・事業者との共同編集"] },
-      { heading: "考察", body: "ホームページは完成品ではなく、対話の器です。更新の仕組みを先に作ることで、まちの変化に合わせて内容も育っていきます。" },
+      { heading: "このテーマで伝えること", body: "100テーマを一度に完成させるのではなく、写真、データ、現地メモ、市民の声を少しずつ追加して育てる運営方法を整理します。何を追加するかだけでなく、誰が確認し、どの出典を残し、いつ見直すかまでを決めることが大切です。" },
+      { heading: "見るポイント", items: ["次に追加するテーマを、暮らしへの影響、境港らしさ、データの有無で選べるか", "情報の出典、確認日、更新日が読者に見える形になっているか", "学校、地域、事業者、市民が無理なく参加できる入口があるか", "公開したあとに、修正、追記、比較ができる運営ルールがあるか"] },
+      { heading: "考察", body: "ホームページは完成品ではなく、対話の器です。境港市の変化は、統計だけでも、写真だけでも、市民の声だけでもつかみきれません。だからこそ、100のこと更新会議では、数字、現地、声、考察を分けて集め、ひとつのテーマに重ねていく必要があります。更新の仕組みを先に作ることで、まちの変化に合わせて内容も育ち、読者が参加者に変わるサイトになります。" },
     ],
   },
 };
@@ -843,6 +899,9 @@ function renderDetail(theme) {
   const participationArticle = theme.participationArticle
     ? renderParticipationArticle(theme.participationArticle)
     : "";
+  const futureArticle = theme.futureArticle
+    ? renderFutureArticle(theme.futureArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -859,8 +918,118 @@ function renderDetail(theme) {
     ${transportArticle}
     ${environmentArticle}
     ${participationArticle}
+    ${futureArticle}
     ${contactMarkup}
     <div class="detail-grid">${sections}</div>
+  `;
+}
+
+function renderFutureArticle(article) {
+  const focusCards = article.focusCards
+    .map(
+      (item) => `
+        <article class="future-focus-card">
+          <span>${item.label}</span>
+          <h5>${item.title}</h5>
+          <p>${item.text}</p>
+          <ul>${item.points.map((point) => `<li>${point}</li>`).join("")}</ul>
+        </article>
+      `,
+    )
+    .join("");
+
+  const cycleItems = article.cycle
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const ruleCards = article.rules
+    .map(
+      ([title, text]) => `
+        <article class="future-rule-card">
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const roleItems = article.roles
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const roadmapCards = article.roadmap
+    .map(
+      ([title, text]) => `
+        <article class="future-roadmap-card">
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  return `
+    <div class="future-article">
+      <section class="future-panel future-focus-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Edit Policy</p>
+          <h4>見るポイントを深掘りする</h4>
+          <p>更新を続けるために、テーマ、出典、参加者の3つを先に設計します。</p>
+        </div>
+        <div class="future-focus-grid">${focusCards}</div>
+      </section>
+
+      <section class="future-panel future-cycle-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Update Cycle</p>
+          <h4>100のこと更新会議の流れ</h4>
+          <p>集めて終わりではなく、選び、確かめ、公開し、見直すところまでを1つの流れにします。</p>
+        </div>
+        <ol class="future-cycle-list">${cycleItems}</ol>
+      </section>
+
+      <section class="future-panel future-rule-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Rules</p>
+          <h4>編集ルールのたたき台</h4>
+          <p>読者が信頼でき、参加者も迷わないための基本ルールです。</p>
+        </div>
+        <div class="future-rule-grid">${ruleCards}</div>
+      </section>
+
+      <section class="future-panel future-role-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Team</p>
+          <h4>共同編集の役割</h4>
+          <p>1人で抱えず、まちの中にある知識を少しずつ集めます。</p>
+        </div>
+        <ul class="future-role-list">${roleItems}</ul>
+      </section>
+
+      <section class="future-panel future-roadmap-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Next</p>
+          <h4>次に進めること</h4>
+          <p>更新会議を実際に動かすための小さな一歩です。</p>
+        </div>
+        <div class="future-roadmap-grid">${roadmapCards}</div>
+        <p class="source-note">${article.source}</p>
+      </section>
+    </div>
   `;
 }
 

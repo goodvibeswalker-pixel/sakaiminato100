@@ -1468,6 +1468,160 @@ h3 {
   line-height: 1.7;
 }
 
+.future-article {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-width: 0;
+  margin-top: 28px;
+}
+
+.future-panel {
+  min-width: 0;
+  border: 1px solid rgba(231, 119, 32, 0.18);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fffdf9;
+}
+
+.future-focus-panel,
+.future-cycle-panel,
+.future-rule-panel,
+.future-role-panel,
+.future-roadmap-panel {
+  grid-column: span 2;
+}
+
+.future-focus-grid,
+.future-rule-grid,
+.future-roadmap-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.future-focus-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.future-rule-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.future-roadmap-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.future-focus-card,
+.future-rule-card,
+.future-roadmap-card {
+  min-width: 0;
+  border: 1px solid rgba(231, 119, 32, 0.16);
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(25, 73, 109, 0.06);
+}
+
+.future-focus-card span {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #fff0df;
+  color: #c86112;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.future-focus-card h5,
+.future-rule-card h5,
+.future-roadmap-card h5 {
+  margin: 10px 0 8px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.future-focus-card p,
+.future-rule-card p,
+.future-roadmap-card p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.future-focus-card ul {
+  display: grid;
+  gap: 6px;
+  margin: 12px 0 0;
+  padding-left: 1.2em;
+}
+
+.future-focus-card li {
+  color: #c86112;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.future-cycle-list,
+.future-role-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.future-cycle-list {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  counter-reset: future-cycle;
+}
+
+.future-cycle-list li,
+.future-role-list li {
+  position: relative;
+  min-width: 0;
+  border: 1px solid rgba(35, 124, 105, 0.14);
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.future-cycle-list li {
+  counter-increment: future-cycle;
+  padding-top: 40px;
+}
+
+.future-cycle-list li::before {
+  content: counter(future-cycle, decimal-leading-zero);
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  color: #237c69;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.future-cycle-list strong,
+.future-cycle-list span,
+.future-role-list strong,
+.future-role-list span {
+  display: block;
+}
+
+.future-cycle-list strong,
+.future-role-list strong {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.future-cycle-list span,
+.future-role-list span {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
 .port-article {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2474,6 +2628,25 @@ h3 {
 
   .participation-focus-grid,
   .participation-topic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .future-article {
+    grid-template-columns: 1fr;
+  }
+
+  .future-focus-panel,
+  .future-cycle-panel,
+  .future-rule-panel,
+  .future-role-panel,
+  .future-roadmap-panel {
+    grid-column: auto;
+  }
+
+  .future-focus-grid,
+  .future-rule-grid,
+  .future-roadmap-grid,
+  .future-cycle-list {
     grid-template-columns: 1fr;
   }
 
