@@ -287,6 +287,11 @@ h3 {
 }
 
 .theme-card {
+  --theme-accent: #6d93b8;
+  --theme-bg: #f5f9fc;
+  --theme-bg-strong: #e8f1f8;
+  --theme-border: #d6e6f1;
+  --theme-text: #17334a;
   display: grid;
   gap: 10px;
   min-height: 210px;
@@ -295,19 +300,30 @@ h3 {
 
 .theme-card-button {
   width: 100%;
-  border: 1px solid var(--line);
+  border: 1px solid var(--theme-border);
+  border-top: 5px solid var(--theme-accent);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.18)),
+    var(--theme-bg);
   color: inherit;
   font: inherit;
   text-align: left;
   cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease,
+    background-color 0.18s ease;
 }
 
 .theme-card-button:hover,
 .theme-card-button:focus-visible,
 .theme-card-button.is-active {
-  border-color: rgba(7, 90, 168, 0.48);
+  border-color: var(--theme-accent);
+  border-top-color: var(--theme-accent);
   box-shadow: var(--shadow);
   outline: none;
+  transform: translateY(-2px);
 }
 
 .theme-topline {
@@ -321,11 +337,15 @@ h3 {
 }
 
 .theme-id {
-  color: var(--orange);
+  color: var(--theme-accent);
   font-variant-numeric: tabular-nums;
 }
 
 .theme-category {
+  border-radius: 999px;
+  padding: 3px 9px;
+  background: rgba(255, 255, 255, 0.64);
+  color: var(--theme-text);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -365,10 +385,74 @@ h3 {
 .tag {
   border-radius: 999px;
   padding: 2px 8px;
-  color: #17334a;
-  background: #e9f2f4;
+  color: var(--theme-text);
+  background: var(--theme-bg-strong);
   font-size: 12px;
   font-weight: 800;
+}
+
+.theme-card[data-genre="life"] {
+  --theme-accent: #5f9f9a;
+  --theme-bg: #eef9f6;
+  --theme-bg-strong: #d9f1ec;
+  --theme-border: #c4e5df;
+  --theme-text: #174843;
+}
+
+.theme-card[data-genre="industry"] {
+  --theme-accent: #d19345;
+  --theme-bg: #fff7e9;
+  --theme-bg-strong: #f8e8c7;
+  --theme-border: #efd7aa;
+  --theme-text: #5a3a13;
+}
+
+.theme-card[data-genre="culture"] {
+  --theme-accent: #8f8bc8;
+  --theme-bg: #f5f3ff;
+  --theme-bg-strong: #e7e4fa;
+  --theme-border: #d7d2f0;
+  --theme-text: #35305f;
+}
+
+.theme-card[data-genre="care"] {
+  --theme-accent: #d7859a;
+  --theme-bg: #fff3f6;
+  --theme-bg-strong: #f7dfe7;
+  --theme-border: #ecc7d3;
+  --theme-text: #633044;
+}
+
+.theme-card[data-genre="safety"] {
+  --theme-accent: #dc7a66;
+  --theme-bg: #fff4ef;
+  --theme-bg-strong: #f8ded4;
+  --theme-border: #edc6b8;
+  --theme-text: #673122;
+}
+
+.theme-card[data-genre="mobility"] {
+  --theme-accent: #6595d1;
+  --theme-bg: #eff6ff;
+  --theme-bg-strong: #dceafb;
+  --theme-border: #c8dbf3;
+  --theme-text: #183f6d;
+}
+
+.theme-card[data-genre="environment"] {
+  --theme-accent: #79a85d;
+  --theme-bg: #f2faed;
+  --theme-bg-strong: #e1f0d7;
+  --theme-border: #cfe5c1;
+  --theme-text: #2f4f23;
+}
+
+.theme-card[data-genre="civic"] {
+  --theme-accent: #63a5bd;
+  --theme-bg: #eef8fb;
+  --theme-bg-strong: #d9eef4;
+  --theme-border: #c4e0e9;
+  --theme-text: #1b4550;
 }
 
 .theme-detail {

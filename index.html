@@ -8,7 +8,7 @@
       name="description"
       content="境港市の産業、観光、子育て、防災、市政などを100のテーマで見える化するホームページ。"
     />
-    <link rel="stylesheet" href="styles.css?v=board-v1" />
+    <link rel="stylesheet" href="styles.css?v=genre-v1" />
     <style>
       .subtheme-panel {
         grid-column: span 2;
@@ -1057,7 +1057,7 @@
 
         <div class="theme-layout">
           <div class="theme-list" aria-label="公開中のテーマ一覧">
-            <button class="theme-card theme-card-button" type="button" data-theme="population" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="population" data-genre="life" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">001</span>
                 <span class="theme-category">人口・暮らし</span>
@@ -1070,7 +1070,7 @@
                 <span class="tag">未来</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="port" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="port" data-genre="industry" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">002</span>
                 <span class="theme-category">産業・経済</span>
@@ -1083,7 +1083,7 @@
                 <span class="tag">仕事</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="tourism" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="tourism" data-genre="culture" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">003</span>
                 <span class="theme-category">観光・文化</span>
@@ -1096,7 +1096,7 @@
                 <span class="tag">回遊</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="children" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="children" data-genre="care" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">004</span>
                 <span class="theme-category">子育て・教育</span>
@@ -1109,7 +1109,7 @@
                 <span class="tag">地域</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="welfare" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="welfare" data-genre="care" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">005</span>
                 <span class="theme-category">福祉・医療</span>
@@ -1122,7 +1122,7 @@
                 <span class="tag">見守り</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="disaster" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="disaster" data-genre="safety" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">006</span>
                 <span class="theme-category">防災・安全</span>
@@ -1135,7 +1135,7 @@
                 <span class="tag">水害</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="transport" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="transport" data-genre="mobility" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">007</span>
                 <span class="theme-category">交通・移動</span>
@@ -1148,7 +1148,7 @@
                 <span class="tag">移動</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="environment" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="environment" data-genre="environment" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">008</span>
                 <span class="theme-category">環境・景観</span>
@@ -1161,7 +1161,7 @@
                 <span class="tag">環境</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="participation" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="participation" data-genre="civic" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">009</span>
                 <span class="theme-category">市政・参加</span>
@@ -1174,7 +1174,7 @@
                 <span class="tag">参加</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="future" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="future" data-genre="civic" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">010</span>
                 <span class="theme-category">未来・編集</span>
@@ -1187,7 +1187,7 @@
                 <span class="tag">未来</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="shopping" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="shopping" data-genre="life" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">011</span>
                 <span class="theme-category">暮らし・商業</span>
@@ -1200,7 +1200,7 @@
                 <span class="tag">食</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="housing" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="housing" data-genre="life" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">012</span>
                 <span class="theme-category">住まい・土地</span>
@@ -1213,7 +1213,7 @@
                 <span class="tag">移住</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="youthWork" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="youthWork" data-genre="industry" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">013</span>
                 <span class="theme-category">若者・仕事</span>
@@ -1226,7 +1226,7 @@
                 <span class="tag">定住</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="healthSports" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="healthSports" data-genre="care" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">014</span>
                 <span class="theme-category">健康・スポーツ</span>
@@ -1239,7 +1239,7 @@
                 <span class="tag">予防</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="digital" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="digital" data-genre="civic" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">015</span>
                 <span class="theme-category">情報・デジタル</span>
@@ -1252,7 +1252,7 @@
                 <span class="tag">SNS</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="publicSpace" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="publicSpace" data-genre="environment" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">016</span>
                 <span class="theme-category">公共空間</span>
@@ -1265,7 +1265,7 @@
                 <span class="tag">交流</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="history" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="history" data-genre="culture" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">017</span>
                 <span class="theme-category">歴史・記憶</span>
@@ -1278,7 +1278,7 @@
                 <span class="tag">港町</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="agriculture" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="agriculture" data-genre="industry" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">018</span>
                 <span class="theme-category">農・食材</span>
@@ -1291,7 +1291,7 @@
                 <span class="tag">給食</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="regional" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="regional" data-genre="mobility" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">019</span>
                 <span class="theme-category">広域連携</span>
@@ -1304,7 +1304,7 @@
                 <span class="tag">連携</span>
               </span>
             </button>
-            <button class="theme-card theme-card-button" type="button" data-theme="brand" aria-controls="themeDetail" aria-expanded="false">
+            <button class="theme-card theme-card-button" type="button" data-theme="brand" data-genre="culture" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">020</span>
                 <span class="theme-category">発信・ブランド</span>
@@ -1458,7 +1458,7 @@
       <p>境港市の今を知り、未来をつくるための100のテーマ</p>
     </footer>
 
-    <script type="module" src="script.js?v=board-v1"></script>
+    <script type="module" src="script.js?v=genre-v1"></script>
     <script>
       (() => {
         const subThemeHtml = `
