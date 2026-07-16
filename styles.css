@@ -1746,12 +1746,15 @@ h3 {
 }
 
 .shopping-focus-panel,
+.shopping-seafood-panel,
 .shopping-check-panel,
-.shopping-insight-panel {
+.shopping-insight-panel,
+.shopping-source-panel {
   grid-column: span 2;
 }
 
 .shopping-focus-grid,
+.shopping-seafood-grid,
 .shopping-check-grid {
   display: grid;
   gap: 12px;
@@ -1765,7 +1768,12 @@ h3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.shopping-seafood-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .shopping-focus-card,
+.shopping-seafood-card,
 .shopping-check-card {
   min-width: 0;
   border: 1px solid rgba(95, 159, 154, 0.16);
@@ -1785,7 +1793,19 @@ h3 {
   font-weight: 900;
 }
 
+.shopping-seafood-card span {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #fff7e9;
+  color: #9a5b12;
+  font-size: 12px;
+  font-weight: 900;
+}
+
 .shopping-focus-card h5,
+.shopping-seafood-card h5,
 .shopping-check-card h5 {
   margin: 10px 0 8px;
   color: var(--ink);
@@ -1794,11 +1814,20 @@ h3 {
 }
 
 .shopping-focus-card p,
+.shopping-seafood-card p,
 .shopping-check-card p {
   margin: 0;
   color: var(--muted);
   font-weight: 700;
   line-height: 1.7;
+}
+
+.shopping-seafood-card strong {
+  display: block;
+  margin-top: 12px;
+  color: #2c716c;
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .shopping-focus-card ul {
@@ -1816,7 +1845,8 @@ h3 {
 
 .shopping-zone-list,
 .shopping-flow-list,
-.shopping-insight-panel ul {
+.shopping-insight-panel ul,
+.shopping-source-list {
   display: grid;
   gap: 10px;
   margin: 0;
@@ -1830,7 +1860,8 @@ h3 {
 
 .shopping-zone-list li,
 .shopping-flow-list li,
-.shopping-insight-panel li {
+.shopping-insight-panel li,
+.shopping-source-list li {
   min-width: 0;
   border: 1px solid rgba(95, 159, 154, 0.14);
   border-radius: 8px;
@@ -1857,19 +1888,23 @@ h3 {
 .shopping-zone-list strong,
 .shopping-zone-list span,
 .shopping-flow-list strong,
-.shopping-flow-list span {
+.shopping-flow-list span,
+.shopping-source-list strong,
+.shopping-source-list span {
   display: block;
 }
 
 .shopping-zone-list strong,
-.shopping-flow-list strong {
+.shopping-flow-list strong,
+.shopping-source-list strong {
   color: var(--ink);
   font-size: 16px;
 }
 
 .shopping-zone-list span,
 .shopping-flow-list span,
-.shopping-insight-panel li {
+.shopping-insight-panel li,
+.shopping-source-list span {
   color: var(--muted);
   font-weight: 700;
   line-height: 1.7;
@@ -3111,12 +3146,15 @@ h3 {
   }
 
   .shopping-focus-panel,
+  .shopping-seafood-panel,
   .shopping-check-panel,
-  .shopping-insight-panel {
+  .shopping-insight-panel,
+  .shopping-source-panel {
     grid-column: auto;
   }
 
   .shopping-focus-grid,
+  .shopping-seafood-grid,
   .shopping-check-grid {
     grid-template-columns: 1fr;
   }

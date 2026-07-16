@@ -835,6 +835,44 @@ const themeDetails = {
         ["港・食材供給圏", "漁港、市場、加工、飲食店、家庭、給食をつなぐ流れ。観光用の海鮮だけでなく、日常の魚食文化として続くかが地域らしさに関わります。"],
         ["地域交流圏", "朝市、イベント、移動販売、地域の小さな店は、買い物だけでなく会話や見守りの場にもなります。買い物弱者対策と地域交流を同時に考えられます。"],
       ],
+      seafood: [
+        {
+          name: "松葉がに",
+          season: "冬 / 11月から3月ごろ",
+          note: "成長した雄のズワイガニ。鳥取を代表する冬の味覚で、境漁港にも水揚げされます。",
+          use: "茹でがに、焼きがに、かにすき、かに刺し、土産・贈答品",
+        },
+        {
+          name: "親がに",
+          season: "冬 / 11月から12月ごろ",
+          note: "雌のズワイガニ。小ぶりで、内子・外子・みそを楽しめる家庭の味として扱いやすい食材です。",
+          use: "みそ汁、炊き込みご飯、ボイル、家庭向け総菜",
+        },
+        {
+          name: "のどぐろ",
+          season: "秋の魚として紹介されることが多い",
+          note: "正式にはアカムツ。脂ののった高級魚として知られ、観光客向けの食事にも打ち出しやすい魚です。",
+          use: "塩焼き、煮つけ、炙り、干物、少し特別な外食メニュー",
+        },
+        {
+          name: "ベニズワイガニ",
+          season: "秋から冬にかけて紹介しやすい",
+          note: "深い海で漁獲されるカニ。松葉がにより日常価格に近づけやすく、加工品にも展開しやすい素材です。",
+          use: "かに丼、かに汁、加工品、土産、飲食店の季節メニュー",
+        },
+        {
+          name: "白いか",
+          season: "夏",
+          note: "鳥取の夏の海の幸として紹介しやすい食材。透明感と甘みがあり、観光の食にも家庭の食にも向きます。",
+          use: "刺身、姿造り、天ぷら、いか丼、夏の食べ歩き企画",
+        },
+        {
+          name: "クロマグロ",
+          season: "夏の県魚として紹介される魚",
+          note: "境港の水産イメージを強く伝えられる大型魚。港、市場、飲食店の物語とつなげやすい素材です。",
+          use: "刺身、海鮮丼、寿司、港町らしい看板メニュー",
+        },
+      ],
       flow: [
         ["見つける", "駅、駐車場、観光案内、SNS、地図で店を見つけやすいか。"],
         ["歩く", "水木しげるロードから商店街、港、飲食店へ自然に歩けるか。"],
@@ -853,7 +891,12 @@ const themeDetails = {
       insight: [
         "食と買い物は、福祉、交通、観光、教育、産業を横断するテーマです。どこで買えるかだけでなく、誰が、どの時間帯に、どの移動手段で、何を買っているかを見ると課題が具体化します。",
         "水木しげるロード周辺は観光消費の入口ですが、地域全体の商業につなげるには、駅、商店街、港、スーパー、飲食店を点ではなく線で見せることが重要です。",
-        "魚のまちとしての魅力は、観光客向けの海鮮だけで完結させず、家庭の食卓、学校給食、地元飲食店、加工品に広げることで、暮らしの誇りと地域経済の両方を支えます。",
+        "魚のまちとしての魅力は、松葉がに、親がに、のどぐろ、白いか、クロマグロなどを季節ごとに見せ、観光客向けの海鮮だけで完結させず、家庭の食卓、学校給食、地元飲食店、加工品に広げることで、暮らしの誇りと地域経済の両方を支えます。",
+      ],
+      sources: [
+        ["鳥取県公式サイト", "松葉がに、のどぐろ、とっとりのさかな100選、四季の県魚"],
+        ["鳥取県観光連盟", "食べる・買う、松葉がに、海の幸の紹介"],
+        ["鳥取県境港水産事務所", "境漁港、市場、水産業振興に関する情報"],
       ],
     },
     sections: [
@@ -1210,6 +1253,19 @@ function renderShoppingArticle(article) {
     )
     .join("");
 
+  const seafood = article.seafood
+    .map(
+      (item) => `
+        <article class="shopping-seafood-card">
+          <span>${item.season}</span>
+          <h5>${item.name}</h5>
+          <p>${item.note}</p>
+          <strong>${item.use}</strong>
+        </article>
+      `,
+    )
+    .join("");
+
   const flow = article.flow
     .map(
       ([title, text]) => `
@@ -1233,6 +1289,16 @@ function renderShoppingArticle(article) {
     .join("");
 
   const insight = article.insight.map((item) => `<li>${item}</li>`).join("");
+  const sources = article.sources
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
 
   return `
     <div class="shopping-article">
@@ -1251,6 +1317,15 @@ function renderShoppingArticle(article) {
           <h4>買い物と食の圏域</h4>
         </div>
         <ul class="shopping-zone-list">${zones}</ul>
+      </section>
+
+      <section class="shopping-panel shopping-seafood-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Seafood</p>
+          <h4>境港で見せたい魚介</h4>
+          <p>季節ごとの魚介を具体的に見せると、観光客にも住民にも「今なにを食べるか」が伝わります。</p>
+        </div>
+        <div class="shopping-seafood-grid">${seafood}</div>
       </section>
 
       <section class="shopping-panel shopping-flow-panel">
@@ -1275,6 +1350,14 @@ function renderShoppingArticle(article) {
           <h4>暮らしの便利さと地域経済を同時に見る</h4>
         </div>
         <ul>${insight}</ul>
+      </section>
+
+      <section class="shopping-panel shopping-source-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Source</p>
+          <h4>参考にした主な情報</h4>
+        </div>
+        <ul class="shopping-source-list">${sources}</ul>
       </section>
     </div>
   `;
