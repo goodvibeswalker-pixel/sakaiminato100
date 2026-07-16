@@ -8,7 +8,7 @@
       name="description"
       content="境港市の産業、観光、子育て、防災、市政などを100のテーマで見える化するホームページ。"
     />
-    <link rel="stylesheet" href="styles.css?v=shopping-v1" />
+    <link rel="stylesheet" href="styles.css?v=theme-groups-v1" />
     <style>
       .subtheme-panel {
         grid-column: span 2;
@@ -1051,12 +1051,21 @@
           </div>
           <p>
             まずは20個のテーマを入口として公開します。
-            カードをクリックすると、テーマの中身と考察が表示されます。
+            10個ごとのカテゴリを開き、カードをクリックすると、テーマの中身と考察が表示されます。
           </p>
         </div>
 
         <div class="theme-layout">
           <div class="theme-list" aria-label="公開中のテーマ一覧">
+            <details class="theme-group" open>
+              <summary>
+                <span>
+                  <strong>THEME 001-010</strong>
+                  <small>まちの基礎・暮らしの土台</small>
+                </span>
+                <em>10テーマ</em>
+              </summary>
+              <div class="theme-group-grid">
             <button class="theme-card theme-card-button" type="button" data-theme="population" data-genre="life" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">001</span>
@@ -1187,6 +1196,17 @@
                 <span class="tag">未来</span>
               </span>
             </button>
+              </div>
+            </details>
+            <details class="theme-group">
+              <summary>
+                <span>
+                  <strong>THEME 011-020</strong>
+                  <small>生活の広がり・地域の可能性</small>
+                </span>
+                <em>10テーマ</em>
+              </summary>
+              <div class="theme-group-grid">
             <button class="theme-card theme-card-button" type="button" data-theme="shopping" data-genre="life" aria-controls="themeDetail" aria-expanded="false">
               <span class="theme-topline">
                 <span class="theme-id">011</span>
@@ -1317,6 +1337,8 @@
                 <span class="tag">発信</span>
               </span>
             </button>
+              </div>
+            </details>
           </div>
 
           <div class="detail-prompt" id="detailPrompt">
@@ -1458,7 +1480,7 @@
       <p>境港市の今を知り、未来をつくるための100のテーマ</p>
     </footer>
 
-    <script type="module" src="script.js?v=shopping-v1"></script>
+    <script type="module" src="script.js?v=theme-groups-v1"></script>
     <script>
       (() => {
         const subThemeHtml = `

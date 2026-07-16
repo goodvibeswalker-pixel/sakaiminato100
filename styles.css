@@ -282,8 +282,90 @@ h3 {
 
 .theme-list {
   display: grid;
+  gap: 16px;
+}
+
+.theme-group {
+  min-width: 0;
+  border: 1px solid rgba(25, 73, 109, 0.12);
+  border-radius: var(--radius);
+  background: #fbfdff;
+  box-shadow: 0 14px 30px rgba(25, 73, 109, 0.06);
+  overflow: hidden;
+}
+
+.theme-group summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  color: var(--ink);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(238, 249, 246, 0.72)),
+    #f5fbfc;
+  cursor: pointer;
+  list-style: none;
+}
+
+.theme-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.theme-group summary::after {
+  content: "+";
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--blue);
+  background: #ffffff;
+  font-size: 22px;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(25, 73, 109, 0.08);
+}
+
+.theme-group[open] summary::after {
+  content: "-";
+}
+
+.theme-group summary span {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.theme-group summary strong {
+  color: var(--blue);
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.theme-group summary small {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.theme-group summary em {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 5px 10px;
+  color: #2c716c;
+  background: #dff2ee;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.theme-group-grid {
+  display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
+  padding: 14px;
 }
 
 .theme-card {
@@ -2906,7 +2988,7 @@ h3 {
 }
 
 @media (max-width: 1080px) {
-  .theme-list {
+  .theme-group-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -3143,7 +3225,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .theme-list {
+  .theme-group-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -3175,7 +3257,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .theme-list,
+  .theme-group-grid,
   .detail-grid {
     grid-template-columns: 1fr;
   }
