@@ -808,10 +808,58 @@ const themeDetails = {
     category: "暮らし・商業",
     title: "食と買い物",
     lead: "日常の買い物、食、商店の変化から、暮らしの便利さと地域経済を考えます。",
+    shoppingArticle: {
+      focusCards: [
+        {
+          label: "Daily",
+          title: "日常の買い物を支える店",
+          text: "スーパー、ドラッグストア、個人商店、コンビニは、住民の暮らしを支える基礎インフラです。高齢者や子育て世帯にとっては、品ぞろえだけでなく、駐車場、歩道、バス停、配達、休憩場所までが使いやすさを左右します。",
+          points: ["徒歩・自転車で行ける範囲", "重い荷物を持ち帰る負担", "夕方以降や悪天候の日の選択肢"],
+        },
+        {
+          label: "Tourism",
+          title: "観光で立ち寄りたくなる食",
+          text: "水木しげるロード周辺の食べ歩き、海鮮、カフェ、土産物は、観光客の滞在時間を延ばす入口です。観光向けの店が増えるほど、住民が日常使いできる価格帯や営業時間とのバランスも大切になります。",
+          points: ["食べ歩きと休憩の導線", "昼だけでなく朝・夕の選択肢", "住民も使える店づくり"],
+        },
+        {
+          label: "Local Food",
+          title: "魚のまちの食材循環",
+          text: "境港の強みは水産物です。観光の海鮮だけでなく、家庭、学校給食、飲食店、加工品、土産物へつながると、魚のまちとしての価値が暮らしの中にも残ります。",
+          points: ["地元魚を食べる機会", "加工品や総菜への展開", "子どもが地域の食を知る体験"],
+        },
+      ],
+      zones: [
+        ["生活買い物圏", "スーパー、ドラッグストア、商店、コンビニを中心に、日常の食卓と生活用品を支える範囲。高齢者や子育て世帯は、距離、段差、荷物、駐車場、配達の有無まで見る必要があります。"],
+        ["観光食べ歩き圏", "水木しげるロード、駅周辺、港周辺で、観光客が歩きながら飲食・土産・写真を楽しむ範囲。回遊性が上がるほど、周辺店への立ち寄りが増えます。"],
+        ["港・食材供給圏", "漁港、市場、加工、飲食店、家庭、給食をつなぐ流れ。観光用の海鮮だけでなく、日常の魚食文化として続くかが地域らしさに関わります。"],
+        ["地域交流圏", "朝市、イベント、移動販売、地域の小さな店は、買い物だけでなく会話や見守りの場にもなります。買い物弱者対策と地域交流を同時に考えられます。"],
+      ],
+      flow: [
+        ["見つける", "駅、駐車場、観光案内、SNS、地図で店を見つけやすいか。"],
+        ["歩く", "水木しげるロードから商店街、港、飲食店へ自然に歩けるか。"],
+        ["買う", "食べ歩き、土産、日常品、地元食材の購入が分かれて見えるか。"],
+        ["味わう", "海鮮、スイーツ、カフェ、総菜など滞在時間を伸ばす選択肢があるか。"],
+        ["また来る", "店の記憶、写真、地域らしい味が再訪や口コミにつながるか。"],
+      ],
+      checks: [
+        ["高齢者", "近くに買える場所があるか、配達や移動販売、バスとの接続があるかを確認する。"],
+        ["子育て世帯", "短時間で買える店、駐車しやすい店、子ども連れで入りやすい飲食店を整理する。"],
+        ["観光客", "駅から歩いて食べられるもの、雨の日でも立ち寄れる店、夕方以降の選択肢を見る。"],
+        ["商店", "観光客だけでなく住民にも使われる商品、営業時間、情報発信があるかを見る。"],
+        ["地元食材", "魚、加工品、総菜、給食、飲食店メニューがどこでつながっているかを記録する。"],
+        ["回遊", "1店舗だけで終わらず、周辺の買い物や飲食へ消費が広がっているかを見る。"],
+      ],
+      insight: [
+        "食と買い物は、福祉、交通、観光、教育、産業を横断するテーマです。どこで買えるかだけでなく、誰が、どの時間帯に、どの移動手段で、何を買っているかを見ると課題が具体化します。",
+        "水木しげるロード周辺は観光消費の入口ですが、地域全体の商業につなげるには、駅、商店街、港、スーパー、飲食店を点ではなく線で見せることが重要です。",
+        "魚のまちとしての魅力は、観光客向けの海鮮だけで完結させず、家庭の食卓、学校給食、地元飲食店、加工品に広げることで、暮らしの誇りと地域経済の両方を支えます。",
+      ],
+    },
     sections: [
       { heading: "このテーマで伝えること", body: "スーパー、商店、飲食店、朝市、移動販売、食べ歩き、地元の食材をつなげ、住民と観光客の両方にとって使いやすい商業環境を整理します。" },
       { heading: "見るポイント", items: ["高齢者や子育て世帯が日常の買い物に困っていないか", "観光客向けの食と、住民向けの食がどう共存しているか", "商店街や水木しげるロード周辺の回遊が、地域消費につながっているか", "地元の魚や食材が、家庭、給食、飲食店で活かされているか"] },
-      { heading: "考察", body: "買い物は単なる消費ではなく、移動、健康、交流、観光をつなぐ暮らしの基盤です。境港市では魚のまちとしての強みがありますが、日常の食卓を支える店、歩いて寄れる店、観光で立ち寄りたくなる店を分けて見える化すると、商業の課題と可能性が見えやすくなります。" },
+      { heading: "考察", body: "買い物は単なる消費ではなく、移動、健康、交流、観光をつなぐ暮らしの基盤です。境港市では魚のまちとしての強みがありますが、日常の食卓を支える店、歩いて寄れる店、観光で立ち寄りたくなる店を分けて見える化すると、商業の課題と可能性が見えやすくなります。特に、住民向けの買い物環境と観光向けの食の魅力を別々に考えるのではなく、駅、商店街、水木しげるロード、港、生活圏の店をつなげて見ることで、暮らしの便利さと地域消費を同時に伸ばす道筋が見えてきます。" },
     ],
   },
   housing: {
@@ -1111,6 +1159,9 @@ function renderDetail(theme) {
   const futureArticle = theme.futureArticle
     ? renderFutureArticle(theme.futureArticle)
     : "";
+  const shoppingArticle = theme.shoppingArticle
+    ? renderShoppingArticle(theme.shoppingArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -1128,8 +1179,104 @@ function renderDetail(theme) {
     ${environmentArticle}
     ${participationArticle}
     ${futureArticle}
+    ${shoppingArticle}
     ${contactMarkup}
     <div class="detail-grid">${sections}</div>
+  `;
+}
+
+function renderShoppingArticle(article) {
+  const focusCards = article.focusCards
+    .map(
+      (item) => `
+        <article class="shopping-focus-card">
+          <span>${item.label}</span>
+          <h5>${item.title}</h5>
+          <p>${item.text}</p>
+          <ul>${item.points.map((point) => `<li>${point}</li>`).join("")}</ul>
+        </article>
+      `,
+    )
+    .join("");
+
+  const zones = article.zones
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const flow = article.flow
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const checks = article.checks
+    .map(
+      ([title, text]) => `
+        <article class="shopping-check-card">
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const insight = article.insight.map((item) => `<li>${item}</li>`).join("");
+
+  return `
+    <div class="shopping-article">
+      <section class="shopping-panel shopping-focus-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Food & Shopping</p>
+          <h4>食と買い物を4つの視点で見る</h4>
+          <p>住民の日常、観光客の食、港の食材、地域交流を分けて見ると、商業の役割が立体的に見えます。</p>
+        </div>
+        <div class="shopping-focus-grid">${focusCards}</div>
+      </section>
+
+      <section class="shopping-panel shopping-zone-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Area</p>
+          <h4>買い物と食の圏域</h4>
+        </div>
+        <ul class="shopping-zone-list">${zones}</ul>
+      </section>
+
+      <section class="shopping-panel shopping-flow-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Route</p>
+          <h4>回遊を地域消費につなげる流れ</h4>
+        </div>
+        <ol class="shopping-flow-list">${flow}</ol>
+      </section>
+
+      <section class="shopping-panel shopping-check-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Check</p>
+          <h4>見るポイントを具体化</h4>
+        </div>
+        <div class="shopping-check-grid">${checks}</div>
+      </section>
+
+      <section class="shopping-panel shopping-insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">考察</p>
+          <h4>暮らしの便利さと地域経済を同時に見る</h4>
+        </div>
+        <ul>${insight}</ul>
+      </section>
+    </div>
   `;
 }
 
