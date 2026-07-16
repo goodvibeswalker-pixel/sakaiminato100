@@ -569,6 +569,10 @@ h3 {
 }
 
 .detail-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: start;
   max-width: 920px;
 }
 
@@ -582,6 +586,25 @@ h3 {
 .detail-grid p,
 .detail-grid li {
   color: var(--muted);
+}
+
+.detail-close {
+  border: 1px solid rgba(11, 39, 68, 0.14);
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: var(--blue);
+  background: #f4fafb;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.detail-close:hover,
+.detail-close:focus-visible {
+  border-color: rgba(7, 90, 168, 0.34);
+  background: #e8f3fb;
+  outline: none;
 }
 
 .population-facts {
@@ -3029,6 +3052,14 @@ h3 {
 
   .detail-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .detail-header {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-close {
+    width: fit-content;
   }
 
   .population-facts {

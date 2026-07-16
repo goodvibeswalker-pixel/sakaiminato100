@@ -1208,9 +1208,12 @@ function renderDetail(theme) {
 
   themeDetail.innerHTML = `
     <div class="detail-header">
-      <p class="section-kicker">Theme ${theme.id} / ${theme.category}</p>
-      <h3>${theme.title}</h3>
-      <p>${theme.lead}</p>
+      <div>
+        <p class="section-kicker">Theme ${theme.id} / ${theme.category}</p>
+        <h3>${theme.title}</h3>
+        <p>${theme.lead}</p>
+      </div>
+      <button class="detail-close" type="button" aria-label="開いているテーマを閉じる">閉じる</button>
       ${factMarkup}
     </div>
     ${populationArticle}
@@ -1226,6 +1229,17 @@ function renderDetail(theme) {
     ${contactMarkup}
     <div class="detail-grid">${sections}</div>
   `;
+}
+
+function closeDetail(focusTarget) {
+  themeButtons.forEach((item) => {
+    item.classList.remove("is-active");
+    item.setAttribute("aria-expanded", "false");
+  });
+  themeDetail.classList.remove("is-visible");
+  themeDetail.innerHTML = "";
+  detailPrompt.classList.remove("is-hidden");
+  focusTarget?.focus({ preventScroll: true });
 }
 
 function renderShoppingArticle(article) {
@@ -2411,6 +2425,11 @@ themeButtons.forEach((button) => {
     const theme = themeDetails[button.dataset.theme];
     if (!theme) return;
 
+    if (button.classList.contains("is-active")) {
+      closeDetail(button);
+      return;
+    }
+
     themeButtons.forEach((item) => {
       item.classList.remove("is-active");
       item.setAttribute("aria-expanded", "false");
@@ -2421,6 +2440,7 @@ themeButtons.forEach((button) => {
     button.setAttribute("aria-expanded", "true");
     detailPrompt.classList.add("is-hidden");
     themeDetail.classList.add("is-visible");
+    themeDetail.querySelector(".detail-close")?.addEventListener("click", () => closeDetail(button));
     themeDetail.focus({ preventScroll: true });
   });
 });
