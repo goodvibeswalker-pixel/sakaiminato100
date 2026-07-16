@@ -1009,6 +1009,8 @@ const themeDetails = {
 const themeButtons = document.querySelectorAll(".theme-card-button");
 const themeDetail = document.querySelector("#themeDetail");
 const detailPrompt = document.querySelector("#detailPrompt");
+const originalDetailParent = themeDetail?.parentNode;
+const originalDetailNextSibling = themeDetail?.nextSibling;
 const boardForm = document.querySelector("#boardForm");
 const boardList = document.querySelector("#boardList");
 const boardClear = document.querySelector("#boardClear");
@@ -1238,8 +1240,18 @@ function closeDetail(focusTarget) {
   });
   themeDetail.classList.remove("is-visible");
   themeDetail.innerHTML = "";
+  if (originalDetailParent && themeDetail.parentNode !== originalDetailParent) {
+    originalDetailParent.insertBefore(themeDetail, originalDetailNextSibling);
+  }
   detailPrompt.classList.remove("is-hidden");
   focusTarget?.focus({ preventScroll: true });
+}
+
+function placeDetailNearButton(button) {
+  const group = button.closest(".theme-group");
+  if (group) {
+    group.after(themeDetail);
+  }
 }
 
 function renderShoppingArticle(article) {
@@ -2436,6 +2448,7 @@ themeButtons.forEach((button) => {
     });
 
     renderDetail(theme);
+    placeDetailNearButton(button);
     button.classList.add("is-active");
     button.setAttribute("aria-expanded", "true");
     detailPrompt.classList.add("is-hidden");
