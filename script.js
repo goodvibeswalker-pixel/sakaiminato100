@@ -910,10 +910,48 @@ const themeDetails = {
     category: "住まい・土地",
     title: "住まいと空き家",
     lead: "空き家、住宅地、移住、住み替えを、人口とまちづくりの課題として見ます。",
+    housingArticle: {
+      updated: "調査基準日: 2023年10月1日 / 確認: 2026年7月21日",
+      facts: [
+        ["2,580戸", "空き家総数", "住宅・土地統計調査（2023年）。市内住宅ストックの中で、住まいの使い直しを考える対象。"],
+        ["1,760戸", "その他空き家", "賃貸・売却用・二次的住宅を除く空き家。相続後の未利用住宅や管理が止まりやすい住宅を含みやすい。"],
+        ["700戸", "賃貸用空き家", "若い世代、移住者、住み替え希望者の受け皿になり得る一方、条件整理と情報発信が必要。"],
+        ["41件", "空き家バンク成約実績", "境港市空き家・空き地情報バンクの成約実績。賃貸14件、売買27件。"],
+      ],
+      paths: [
+        ["使う", "状態がよく、立地や間取りが合う住宅は、移住、子育て世帯、若者の住まい、二拠点居住に回す。"],
+        ["直す", "耐震、断熱、水回り、駐車場、段差などを整え、中古住宅として流通しやすくする。"],
+        ["貸す・売る", "所有者が早めに意思決定し、空き家バンクや不動産事業者につなぐ。"],
+        ["開く", "店舗、地域活動、仕事場、観光・文化の拠点として、住宅以外の使い方も検討する。"],
+        ["しまう", "老朽化や防災上の危険が大きいものは、解体・跡地活用まで含めて考える。"],
+      ],
+      risks: [
+        { title: "防災", text: "老朽化した空き家は、台風や大雨、地震時の倒壊・飛散リスクになります。道路や通学路に面する物件は、周辺への影響も含めて優先して把握したい対象です。" },
+        { title: "景観", text: "港町や観光動線の印象は、建物の管理状態にも左右されます。放置された建物が増えると、住宅地だけでなく水木しげるロード周辺の歩きやすさにも影響します。" },
+        { title: "福祉", text: "高齢者だけの世帯が施設入所や相続をきっかけに空き家化する前に、住み替え、見守り、相談先をつなげることが大切です。" },
+        { title: "流通", text: "使える住宅でも、荷物、相続、修繕費、耐震性、駐車場などが未整理だと市場に出にくくなります。早い段階の相談が活用の入口になります。" },
+      ],
+      actions: [
+        ["地図で見る", "町別人口、学校、商店、バス停、避難所と重ねて、住みやすい空き家と管理が必要な空き家を分ける。"],
+        ["所有者に届く", "固定資産税通知、相続時、近隣相談など、所有者が動けるタイミングで制度や相談先を知らせる。"],
+        ["住み替えと結ぶ", "高齢者の住み替え、若者の賃貸、移住希望者の中古住宅探しを別々にせず、同じ住宅ストックとして見る。"],
+        ["小さく試す", "一棟を丸ごと再生するだけでなく、庭、駐車場、離れ、短期利用、地域活動など段階的な活用も考える。"],
+      ],
+      insight: [
+        "境港市の空き家総数2,580戸は、単に「余っている家」ではなく、人口減少、相続、住み替え、住宅の老朽化が同時に進んだ結果として見る必要があります。",
+        "特に1,760戸の「その他空き家」は、賃貸や売却に出ていない可能性が高い層です。ここを放置すると防災・景観・地域の安心の課題になりますが、早めに状態を把握できれば、住まい、店舗、地域拠点、解体後の土地活用という選択肢に分けられます。",
+        "空き家対策は、建物単体ではなく、通学路、買い物、医療、交通、避難、観光動線と重ねることで優先順位が見えます。若者や移住者にとって使いやすい家を増やすことと、危険な空き家を減らすことを同時に進める視点が重要です。",
+      ],
+      sources: [
+        ["総務省 住宅・土地統計調査", "2023年住宅・土地統計調査、空き家の種類別空き家数をもとに整理。"],
+        ["境港市空家等対策計画（第2期）", "人口減少、高齢化、管理不全空家への対応、相談体制などを確認。"],
+        ["境港市空き家・空き地情報バンク", "登録物件、賃貸・売買の成約実績、空き家活用の入口として確認。"],
+      ],
+    },
     sections: [
       { heading: "このテーマで伝えること", body: "空き家、空き地、住宅の老朽化、移住希望者の住まい、子育て世帯の住宅、高齢者の住み替えを整理し、住み続けられるまちの条件を考えます。" },
       { heading: "見るポイント", items: ["空き家が多い地域と、住宅需要がある地域の差", "若い世代や移住者が住まいを探しやすいか", "老朽住宅が防災や景観に与える影響", "中古住宅、賃貸、リフォーム、空き家バンクの使いやすさ"] },
-      { heading: "考察", body: "人口減少の時代は、家を増やすことよりも、すでにある住まいをどう使い直すかが重要になります。空き家を問題として見るだけでなく、若者、移住者、事業者、地域活動の拠点として再利用できる可能性まで見ることで、住まいはまちの資源に変わります。" },
+      { heading: "考察", body: "人口減少の時代は、家を増やすことよりも、すでにある住まいをどう使い直すかが重要になります。空き家を問題として見るだけでなく、若者、移住者、事業者、地域活動の拠点として再利用できる可能性まで見ることで、住まいはまちの資源に変わります。特に、管理が止まりやすい空き家と、すぐに住み替え・移住に使える住宅を分けて見ることが、次の対策につながります。" },
     ],
   },
   youthWork: {
@@ -1207,6 +1245,9 @@ function renderDetail(theme) {
   const shoppingArticle = theme.shoppingArticle
     ? renderShoppingArticle(theme.shoppingArticle)
     : "";
+  const housingArticle = theme.housingArticle
+    ? renderHousingArticle(theme.housingArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -1228,6 +1269,7 @@ function renderDetail(theme) {
     ${participationArticle}
     ${futureArticle}
     ${shoppingArticle}
+    ${housingArticle}
     ${contactMarkup}
     <div class="detail-grid">${sections}</div>
   `;
@@ -1384,6 +1426,118 @@ function renderShoppingArticle(article) {
           <h4>参考にした主な情報</h4>
         </div>
         <ul class="shopping-source-list">${sources}</ul>
+      </section>
+    </div>
+  `;
+}
+
+function renderHousingArticle(article) {
+  const facts = article.facts
+    .map(
+      ([value, label, note]) => `
+        <article class="housing-fact-card">
+          <span>${value}</span>
+          <h5>${label}</h5>
+          <p>${note}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const paths = article.paths
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const risks = article.risks
+    .map(
+      (item) => `
+        <article class="housing-risk-card">
+          <h5>${item.title}</h5>
+          <p>${item.text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const actions = article.actions
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const insight = article.insight.map((item) => `<li>${item}</li>`).join("");
+  const sources = article.sources
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  return `
+    <div class="housing-article">
+      <section class="housing-panel housing-data-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Housing Data</p>
+          <h4>現在の空き家数</h4>
+          <p>${article.updated}</p>
+        </div>
+        <div class="housing-fact-grid">${facts}</div>
+      </section>
+
+      <section class="housing-panel housing-path-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Reuse</p>
+          <h4>空き家を5つの道に分けて考える</h4>
+        </div>
+        <ol class="housing-path-list">${paths}</ol>
+      </section>
+
+      <section class="housing-panel housing-risk-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Impact</p>
+          <h4>放置すると暮らしに出る影響</h4>
+        </div>
+        <div class="housing-risk-grid">${risks}</div>
+      </section>
+
+      <section class="housing-panel housing-action-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Action</p>
+          <h4>次に見るべきこと</h4>
+        </div>
+        <ul class="housing-action-list">${actions}</ul>
+      </section>
+
+      <section class="housing-panel housing-insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">考察</p>
+          <h4>住まいをまちの資源に変える</h4>
+        </div>
+        <ul>${insight}</ul>
+      </section>
+
+      <section class="housing-panel housing-source-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Source</p>
+          <h4>参考にした主な情報</h4>
+        </div>
+        <ul class="housing-source-list">${sources}</ul>
       </section>
     </div>
   `;

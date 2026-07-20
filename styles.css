@@ -1933,6 +1933,137 @@ h3 {
   line-height: 1.7;
 }
 
+.housing-article {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-width: 0;
+  margin-top: 28px;
+}
+
+.housing-panel {
+  min-width: 0;
+  border: 1px solid rgba(86, 142, 120, 0.18);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fbfffc;
+}
+
+.housing-data-panel,
+.housing-risk-panel,
+.housing-insight-panel,
+.housing-source-panel {
+  grid-column: span 2;
+}
+
+.housing-fact-grid,
+.housing-risk-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.housing-fact-card,
+.housing-risk-card {
+  min-width: 0;
+  border: 1px solid rgba(86, 142, 120, 0.16);
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(42, 85, 75, 0.06);
+}
+
+.housing-fact-card span {
+  display: block;
+  color: #2d7b65;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.housing-fact-card h5,
+.housing-risk-card h5 {
+  margin: 12px 0 8px;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.housing-fact-card p,
+.housing-risk-card p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.housing-path-list,
+.housing-action-list,
+.housing-insight-panel ul,
+.housing-source-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.housing-path-list {
+  counter-reset: housing-path;
+}
+
+.housing-path-list li,
+.housing-action-list li,
+.housing-insight-panel li,
+.housing-source-list li {
+  min-width: 0;
+  border: 1px solid rgba(86, 142, 120, 0.14);
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.housing-path-list li {
+  position: relative;
+  counter-increment: housing-path;
+  padding-left: 54px;
+}
+
+.housing-path-list li::before {
+  content: counter(housing-path, decimal-leading-zero);
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  color: #2d7b65;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.housing-path-list strong,
+.housing-path-list span,
+.housing-action-list strong,
+.housing-action-list span,
+.housing-source-list strong,
+.housing-source-list span {
+  display: block;
+}
+
+.housing-path-list strong,
+.housing-action-list strong,
+.housing-source-list strong {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.housing-path-list span,
+.housing-action-list span,
+.housing-insight-panel li,
+.housing-source-list span {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
 .future-cycle-list,
 .future-role-list {
   display: grid;
@@ -3187,6 +3318,22 @@ h3 {
   .shopping-focus-grid,
   .shopping-seafood-grid,
   .shopping-check-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .housing-article {
+    grid-template-columns: 1fr;
+  }
+
+  .housing-data-panel,
+  .housing-risk-panel,
+  .housing-insight-panel,
+  .housing-source-panel {
+    grid-column: auto;
+  }
+
+  .housing-fact-grid,
+  .housing-risk-grid {
     grid-template-columns: 1fr;
   }
 
