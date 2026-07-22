@@ -918,6 +918,26 @@ const themeDetails = {
         ["700戸", "賃貸用空き家", "若い世代、移住者、住み替え希望者の受け皿になり得る一方、条件整理と情報発信が必要。"],
         ["41件", "空き家バンク成約実績", "境港市空き家・空き地情報バンクの成約実績。賃貸14件、売買27件。"],
       ],
+      districts: [
+        ["境", 312, "29.0%", 10, "中心市街地・古くからの住宅や商店が重なる。件数で最も多い。"],
+        ["余子", 191, "17.7%", 4, "住宅地の広がりがあり、件数は2番目。生活圏の維持と合わせて見る。"],
+        ["中浜", 151, "14.0%", 16, "空港・米子方面との接点がある南東側。増加幅も比較的大きい。"],
+        ["外江", 148, "13.7%", 12, "古い住宅地と海側の暮らしが重なる。特定空家認定では最多。"],
+        ["渡", 127, "11.8%", -21, "件数は減少。除却や利活用の進み方を引き続き確認したい。"],
+        ["上道", 125, "11.6%", 30, "増加幅が最大。市役所周辺・内陸側の住み替え動向と合わせて見る。"],
+        ["誠道", 24, "2.2%", 9, "件数は少ないが、規模が小さい地区では数件の増加も地域感覚に響きやすい。"],
+      ],
+      specialDistricts: [
+        ["外江", 26, 8, "特定空家認定が最も多く、未措置も8件。危険化する前の相談・除却支援が重要。"],
+        ["境", 19, 6, "空家総数も多く、観光・商店街の印象にも関わる。景観と防災を一緒に見る。"],
+        ["余子", 18, 3, "住宅地としての広がりがあり、買い物・通院・見守りと重ねて考える。"],
+        ["中浜", 10, 0, "認定済みは全て措置済み。新たな管理不全を出さない予防が中心。"],
+      ],
+      districtInsight: [
+        "令和7年度の自治会調査では、空家等は境地区312件が最多で、全体の約29%を占めます。次いで余子191件、中浜151件、外江148件となり、中心市街地だけでなく住宅地にも広がっています。",
+        "増減を見ると、上道が+30件で最も増え、中浜+16件、外江+12件、境+10件が続きます。単に件数が多い境地区だけでなく、増加している上道・中浜・外江を早めに追う必要があります。",
+        "一方で、危険性の高い特定空家の認定状況では外江26件が最多です。つまり「空家が多い場所」は境、「危険化した空家に注意したい場所」は外江を重点的に見る、という二段階の見方が必要です。",
+      ],
       paths: [
         ["使う", "状態がよく、立地や間取りが合う住宅は、移住、子育て世帯、若者の住まい、二拠点居住に回す。"],
         ["直す", "耐震、断熱、水回り、駐車場、段差などを整え、中古住宅として流通しやすくする。"],
@@ -940,6 +960,7 @@ const themeDetails = {
       insight: [
         "境港市の空き家総数2,580戸は、単に「余っている家」ではなく、人口減少、相続、住み替え、住宅の老朽化が同時に進んだ結果として見る必要があります。",
         "特に1,760戸の「その他空き家」は、賃貸や売却に出ていない可能性が高い層です。ここを放置すると防災・景観・地域の安心の課題になりますが、早めに状態を把握できれば、住まい、店舗、地域拠点、解体後の土地活用という選択肢に分けられます。",
+        "地区別では境地区に空家が集中していますが、特定空家では外江地区の存在感が大きくなります。件数の多さ、増加幅、危険度を分けて見ることで、空き家対策の優先順位がより具体的になります。",
         "空き家対策は、建物単体ではなく、通学路、買い物、医療、交通、避難、観光動線と重ねることで優先順位が見えます。若者や移住者にとって使いやすい家を増やすことと、危険な空き家を減らすことを同時に進める視点が重要です。",
       ],
       sources: [
@@ -1432,6 +1453,42 @@ function renderShoppingArticle(article) {
 }
 
 function renderHousingArticle(article) {
+  const maxDistrict = Math.max(...article.districts.map(([, count]) => count));
+  const districtRows = article.districts
+    .map(([name, count, ratio, change, note]) => {
+      const width = Math.round((count / maxDistrict) * 100);
+      const changeLabel = change > 0 ? `+${change}` : `${change}`;
+      return `
+        <li>
+          <div class="housing-district-head">
+            <strong>${name}地区</strong>
+            <span>${count}件 / ${ratio}</span>
+            <em class="${change < 0 ? "is-down" : "is-up"}">${changeLabel}件</em>
+          </div>
+          <i style="--bar:${width}%"></i>
+          <p>${note}</p>
+        </li>
+      `;
+    })
+    .join("");
+
+  const specialDistricts = article.specialDistricts
+    .map(
+      ([name, total, remaining, note]) => `
+        <article class="housing-special-card">
+          <span>${name}地区</span>
+          <strong>${total}件</strong>
+          <p>未措置 ${remaining}件</p>
+          <small>${note}</small>
+        </article>
+      `,
+    )
+    .join("");
+
+  const districtInsight = article.districtInsight
+    .map((item) => `<li>${item}</li>`)
+    .join("");
+
   const facts = article.facts
     .map(
       ([value, label, note]) => `
@@ -1498,6 +1555,32 @@ function renderHousingArticle(article) {
           <p>${article.updated}</p>
         </div>
         <div class="housing-fact-grid">${facts}</div>
+      </section>
+
+      <section class="housing-panel housing-district-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Area</p>
+          <h4>どのあたりに空き家が集中しているか</h4>
+          <p>令和7年度の自治会調査では、境地区が最多。増加幅では上道地区、危険度では外江地区にも注意が必要です。</p>
+        </div>
+        <ul class="housing-district-list">${districtRows}</ul>
+      </section>
+
+      <section class="housing-panel housing-special-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Risk Area</p>
+          <h4>特定空家で注意したい地区</h4>
+          <p>件数の多い空家と、周辺に危険を及ぼす可能性がある空家は分けて見ます。</p>
+        </div>
+        <div class="housing-special-grid">${specialDistricts}</div>
+      </section>
+
+      <section class="housing-panel housing-district-insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">考察</p>
+          <h4>集中エリアの見方</h4>
+        </div>
+        <ul>${districtInsight}</ul>
       </section>
 
       <section class="housing-panel housing-path-panel">

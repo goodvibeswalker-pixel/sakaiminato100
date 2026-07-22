@@ -1951,13 +1951,17 @@ h3 {
 
 .housing-data-panel,
 .housing-risk-panel,
+.housing-district-panel,
+.housing-special-panel,
+.housing-district-insight-panel,
 .housing-insight-panel,
 .housing-source-panel {
   grid-column: span 2;
 }
 
 .housing-fact-grid,
-.housing-risk-grid {
+.housing-risk-grid,
+.housing-special-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
@@ -1997,8 +2001,126 @@ h3 {
   line-height: 1.7;
 }
 
+.housing-district-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.housing-district-list li {
+  min-width: 0;
+  border: 1px solid rgba(86, 142, 120, 0.14);
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.housing-district-head {
+  display: grid;
+  grid-template-columns: minmax(70px, 0.7fr) minmax(110px, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.housing-district-head strong {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.housing-district-head span {
+  color: #2d7b65;
+  font-weight: 900;
+}
+
+.housing-district-head em {
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.housing-district-head em.is-up {
+  color: #8a520e;
+  background: #fff4df;
+}
+
+.housing-district-head em.is-down {
+  color: #2d7b65;
+  background: #e2f4ee;
+}
+
+.housing-district-list i {
+  display: block;
+  height: 11px;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e7f0eb;
+}
+
+.housing-district-list i::before {
+  content: "";
+  display: block;
+  width: var(--bar);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #2d7b65, #d3a331);
+}
+
+.housing-district-list p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.housing-special-card {
+  min-width: 0;
+  border: 1px solid rgba(86, 142, 120, 0.16);
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(42, 85, 75, 0.06);
+}
+
+.housing-special-card span,
+.housing-special-card strong,
+.housing-special-card small {
+  display: block;
+}
+
+.housing-special-card span {
+  color: #8a520e;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.housing-special-card strong {
+  margin-top: 6px;
+  color: #2d7b65;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1;
+}
+
+.housing-special-card p {
+  margin: 8px 0 0;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.housing-special-card small {
+  margin-top: 8px;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.6;
+}
+
 .housing-path-list,
 .housing-action-list,
+.housing-district-insight-panel ul,
 .housing-insight-panel ul,
 .housing-source-list {
   display: grid;
@@ -2014,6 +2136,7 @@ h3 {
 
 .housing-path-list li,
 .housing-action-list li,
+.housing-district-insight-panel li,
 .housing-insight-panel li,
 .housing-source-list li {
   min-width: 0;
@@ -2057,6 +2180,7 @@ h3 {
 
 .housing-path-list span,
 .housing-action-list span,
+.housing-district-insight-panel li,
 .housing-insight-panel li,
 .housing-source-list span {
   color: var(--muted);
@@ -3327,13 +3451,17 @@ h3 {
 
   .housing-data-panel,
   .housing-risk-panel,
+  .housing-district-panel,
+  .housing-special-panel,
+  .housing-district-insight-panel,
   .housing-insight-panel,
   .housing-source-panel {
     grid-column: auto;
   }
 
   .housing-fact-grid,
-  .housing-risk-grid {
+  .housing-risk-grid,
+  .housing-special-grid {
     grid-template-columns: 1fr;
   }
 
