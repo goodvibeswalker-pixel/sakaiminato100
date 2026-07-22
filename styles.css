@@ -17,10 +17,14 @@
 }
 
 html {
+  min-height: 100%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
+  min-height: 100%;
   margin: 0;
   color: var(--ink);
   background: #f8fbfc;
@@ -28,10 +32,18 @@ body {
     "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", system-ui,
     -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.7;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 a {
   color: inherit;
+}
+
+main {
+  display: block;
+  min-width: 0;
+  overflow: visible;
 }
 
 .site-header {
@@ -278,11 +290,13 @@ h3 {
   grid-template-columns: 1fr;
   gap: 20px;
   align-items: start;
+  min-width: 0;
 }
 
 .theme-list {
   display: grid;
   gap: 16px;
+  min-width: 0;
 }
 
 .theme-group {
@@ -540,6 +554,8 @@ h3 {
 .theme-detail {
   display: none;
   min-width: 0;
+  max-width: 100%;
+  overflow: visible;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: clamp(22px, 4vw, 34px);
@@ -3291,7 +3307,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  padding: 30px clamp(18px, 4vw, 52px);
+  padding: 30px clamp(18px, 4vw, 52px) calc(30px + env(safe-area-inset-bottom, 0px));
   color: white;
   background: #061f38;
 }
@@ -3579,8 +3595,17 @@ h3 {
 }
 
 @media (max-width: 560px) {
+  html,
+  body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
   .hero {
-    min-height: 82vh;
+    min-height: 620px;
+    min-height: min(82svh, 680px);
   }
 
   .hero::after {
@@ -3595,6 +3620,36 @@ h3 {
 
   .theme-card {
     min-height: 0;
+  }
+
+  .theme-section,
+  .use-band,
+  .board-section,
+  .profile-band,
+  .source-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .section-inner {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .theme-group {
+    overflow: visible;
+  }
+
+  .theme-group summary {
+    align-items: flex-start;
+  }
+
+  .theme-detail {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .detail-header h3 {
+    font-size: 30px;
   }
 
   .profile-card {
@@ -3651,6 +3706,7 @@ h3 {
 
   .education-map {
     min-height: 520px;
+    overflow: visible;
   }
 
   .education-school-zone {
@@ -3702,5 +3758,9 @@ h3 {
 
   .button {
     width: 100%;
+  }
+
+  .site-footer {
+    padding-bottom: calc(34px + env(safe-area-inset-bottom, 0px));
   }
 }

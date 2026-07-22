@@ -8,7 +8,7 @@
       name="description"
       content="境港市の産業、観光、子育て、防災、市政などを100のテーマで見える化するホームページ。"
     />
-    <link rel="stylesheet" href="styles.css?v=housing-area-v1" />
+    <link rel="stylesheet" href="styles.css?v=mobile-full-v1" />
     <style>
       .subtheme-panel {
         grid-column: span 2;
@@ -956,6 +956,38 @@
         }
       }
     </style>
+    <style>
+      @media (max-width: 560px) {
+        html,
+        body {
+          width: 100%;
+          min-height: 100%;
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+
+        main,
+        .theme-layout,
+        .theme-list,
+        .theme-detail {
+          min-width: 0;
+          max-width: 100%;
+          overflow: visible;
+        }
+
+        .theme-group {
+          overflow: visible;
+        }
+
+        .education-map {
+          overflow: visible;
+        }
+
+        .site-footer {
+          padding-bottom: calc(34px + env(safe-area-inset-bottom, 0px));
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="site-header" aria-label="サイトヘッダー">
@@ -1480,7 +1512,7 @@
       <p>境港市の今を知り、未来をつくるための100のテーマ</p>
     </footer>
 
-    <script type="module" src="script.js?v=housing-area-v1"></script>
+    <script type="module" src="script.js?v=mobile-full-v1"></script>
     <script>
       (() => {
         const subThemeHtml = `
