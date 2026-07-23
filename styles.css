@@ -1768,6 +1768,140 @@ h3 {
   font-weight: 900;
 }
 
+.youth-article {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-width: 0;
+  margin-top: 28px;
+}
+
+.youth-panel {
+  min-width: 0;
+  border: 1px solid rgba(90, 129, 184, 0.18);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fbfdff;
+}
+
+.youth-lane-panel,
+.youth-support-panel,
+.youth-insight-panel,
+.youth-source-panel {
+  grid-column: span 2;
+}
+
+.youth-lane-grid,
+.youth-support-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.youth-lane-card,
+.youth-support-card {
+  min-width: 0;
+  border: 1px solid rgba(90, 129, 184, 0.15);
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(25, 73, 109, 0.06);
+}
+
+.youth-lane-card span {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #eaf2ff;
+  color: #28548a;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.youth-lane-card h5,
+.youth-support-card h5 {
+  margin: 10px 0 8px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.youth-lane-card p,
+.youth-support-card p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.youth-route-list,
+.youth-action-list,
+.youth-insight-panel ul,
+.youth-source-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.youth-route-list {
+  counter-reset: youth-route;
+}
+
+.youth-route-list li,
+.youth-action-list li,
+.youth-insight-panel li,
+.youth-source-list li {
+  min-width: 0;
+  border: 1px solid rgba(90, 129, 184, 0.14);
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.youth-route-list li {
+  position: relative;
+  counter-increment: youth-route;
+  padding-left: 54px;
+}
+
+.youth-route-list li::before {
+  content: counter(youth-route, decimal-leading-zero);
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  color: #28548a;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.youth-route-list strong,
+.youth-route-list span,
+.youth-action-list strong,
+.youth-action-list span,
+.youth-source-list strong,
+.youth-source-list span {
+  display: block;
+}
+
+.youth-route-list strong,
+.youth-action-list strong,
+.youth-source-list strong {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.youth-route-list span,
+.youth-action-list span,
+.youth-insight-panel li,
+.youth-source-list span {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
 .shopping-article {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3440,6 +3574,22 @@ h3 {
   .future-rule-grid,
   .future-roadmap-grid,
   .future-cycle-list {
+    grid-template-columns: 1fr;
+  }
+
+  .youth-article {
+    grid-template-columns: 1fr;
+  }
+
+  .youth-lane-panel,
+  .youth-support-panel,
+  .youth-insight-panel,
+  .youth-source-panel {
+    grid-column: auto;
+  }
+
+  .youth-lane-grid,
+  .youth-support-grid {
     grid-template-columns: 1fr;
   }
 

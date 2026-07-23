@@ -980,6 +980,74 @@ const themeDetails = {
     category: "若者・仕事",
     title: "若者と働く場",
     lead: "地元で働く選択肢、学び直し、起業、継業を通じて、若者が関われるまちを考えます。",
+    youthWorkArticle: {
+      updated: "確認: 2026年7月24日",
+      lanes: [
+        {
+          label: "水産・食品",
+          title: "港の仕事を分解して見せる",
+          text: "漁業、市場、加工、冷凍、物流、品質管理、営業、商品開発までを一つの流れとして見せると、力仕事だけでなく技術職・企画職・発信職も見えます。",
+        },
+        {
+          label: "観光・商業",
+          title: "まち歩きの仕事を育てる",
+          text: "水木しげるロード、飲食、土産、宿泊、イベント、SNS発信をつなげ、若者が接客、企画、写真、デザイン、商品づくりで関われる余地を増やします。",
+        },
+        {
+          label: "福祉・医療",
+          title: "地域を支える仕事として伝える",
+          text: "高齢化が進むほど、介護、見守り、送迎、健康づくり、生活支援は重要になります。専門職だけでなく、地域の安心をつくる仕事として見せることが大切です。",
+        },
+        {
+          label: "起業・継業",
+          title: "小さく始める入口をつくる",
+          text: "創業補助、空き家・空き店舗、地域活動、副業を組み合わせると、いきなり大きく独立する以外の挑戦ができます。既存事業の引き継ぎも選択肢です。",
+        },
+      ],
+      route: [
+        ["知る", "高校生や若者が、地元企業、港、観光、福祉の現場を見学し、仕事の種類を具体名で知る。"],
+        ["試す", "短期インターン、アルバイト、探究学習、イベント運営、SNS発信などで、失敗しても戻れる小さな経験を増やす。"],
+        ["相談する", "就職、移住、創業、住まい、子育てを別々に探すのではなく、相談先を一覧化して入口をわかりやすくする。"],
+        ["残る・戻る", "卒業直後だけでなく、進学後、転職時、結婚・子育て時に戻れる情報を継続して届ける。"],
+        ["つくる", "既存企業の新商品、観光企画、空き家活用、地域活動を若者の参加プロジェクトに変える。"],
+      ],
+      supports: [
+        ["境港市創業支援補助金", "市内で創業する人の初期費用を支援。補助率は対象経費の1/2、上限30万円、山陰以外からのIターン移住者は上限50万円。"],
+        ["鳥取県の若者県内就職支援", "県内就職を進めるため、学生への情報提供、就職相談、県内企業の魅力発信、Uターン促進を行う枠組み。"],
+        ["鳥取県の移住・就職相談", "仕事、住まい、暮らしを合わせて相談できる窓口があり、鳥取・東京・大阪から相談できる。"],
+        ["境港総合技術高校", "海洋、食品、機械、電気電子、ビジネス、福祉につながる地域性のある学びを持つ学校。地元産業との接点づくりの核になり得る。"],
+      ],
+      actions: [
+        {
+          title: "仕事図鑑を作る",
+          text: "企業名だけでなく、1日の流れ、必要な資格、若手社員の声、未経験からの入り方、将来の役割をカード化します。",
+        },
+        {
+          title: "高校生の探究と企業をつなぐ",
+          text: "水産、観光、福祉、防災、デジタル発信をテーマに、学校の探究学習と地元事業者の課題を結びます。",
+        },
+        {
+          title: "帰ってくるタイミングを逃さない",
+          text: "進学時、成人式、就活、転職、結婚、子育ての節目に、求人、住まい、支援制度を届ける導線を作ります。",
+        },
+        {
+          title: "副業・地域活動を入口にする",
+          text: "いきなり移住や就職を求めず、イベント手伝い、記事作成、商品撮影、オンライン発信などから関係人口を増やします。",
+        },
+      ],
+      insight: [
+        "若者にとって地元で働くかどうかは、給与や求人票だけでなく「自分の役割が見えるか」で決まります。境港市には水産、観光、福祉、商業、物流、行政など暮らしに近い仕事がありますが、外から見ると職種の広がりが伝わりにくい面があります。",
+        "大切なのは、仕事を産業名で語るだけでなく、具体的な職務に分解することです。たとえば水産なら、漁に出る仕事だけでなく、加工、衛生管理、冷凍、EC、商品企画、デザイン、海外向け販売まであります。観光も、接客だけでなく、回遊設計、写真、動画、イベント、店舗づくりの仕事があります。",
+        "若者の定住策は、仕事、住まい、交通、子育て、居場所を別々に扱うと弱くなります。働く場所の近くに住めるか、車がなくても動けるか、子どもが生まれても続けられるかまで見えると、境港で暮らすイメージが具体になります。",
+        "境港市100のことでは、求人情報を並べるだけでなく、若者がまちに関わる入口を編集していくことができます。高校生の探究、若手社員の声、創業者の記録、継業した店のストーリーを重ねることで、境港で働くことを「まちをつくる参加」として伝えられます。",
+      ],
+      sources: [
+        ["境港市 創業支援補助金", "市内創業者への初期費用支援、補助率、上限額、問い合わせ先を確認。"],
+        ["鳥取県 若者県内就職強化事業", "学生への情報提供、Uターン促進、県内企業の魅力発信の方向性を確認。"],
+        ["鳥取県 移住・就職相談", "仕事・住まい・暮らしを合わせて相談できる県の窓口を確認。"],
+        ["境港総合技術高校 学びの目標", "地域特性を生かした学び、海洋・食品・機械・電気電子・ビジネス・福祉につながる学校の特徴を確認。"],
+      ],
+    },
     sections: [
       { heading: "このテーマで伝えること", body: "水産、観光、福祉、交通、行政、商業、ものづくりなどの仕事を見える化し、若者が境港で働く、戻る、関わるための入口を整理します。" },
       { heading: "見るポイント", items: ["高校生や若者が地元企業を知る機会があるか", "水産業や観光業の仕事が、次世代に魅力として伝わっているか", "起業、継業、副業、地域活動など多様な関わり方があるか", "働く場所と住まい、交通、子育て環境がつながっているか"] },
@@ -1269,6 +1337,9 @@ function renderDetail(theme) {
   const housingArticle = theme.housingArticle
     ? renderHousingArticle(theme.housingArticle)
     : "";
+  const youthWorkArticle = theme.youthWorkArticle
+    ? renderYouthWorkArticle(theme.youthWorkArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -1291,6 +1362,7 @@ function renderDetail(theme) {
     ${futureArticle}
     ${shoppingArticle}
     ${housingArticle}
+    ${youthWorkArticle}
     ${contactMarkup}
     <div class="detail-grid">${sections}</div>
   `;
@@ -1315,6 +1387,118 @@ function placeDetailNearButton(button) {
   if (group) {
     group.after(themeDetail);
   }
+}
+
+function renderYouthWorkArticle(article) {
+  const lanes = article.lanes
+    .map(
+      (item) => `
+        <article class="youth-lane-card">
+          <span>${item.label}</span>
+          <h5>${item.title}</h5>
+          <p>${item.text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const route = article.route
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const supports = article.supports
+    .map(
+      ([title, text]) => `
+        <article class="youth-support-card">
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const actions = article.actions
+    .map(
+      (item) => `
+        <li>
+          <strong>${item.title}</strong>
+          <span>${item.text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const insight = article.insight.map((item) => `<li>${item}</li>`).join("");
+  const sources = article.sources
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  return `
+    <div class="youth-article">
+      <section class="youth-panel youth-lane-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Work Map</p>
+          <h4>境港で見える仕事の入口</h4>
+          <p>${article.updated}</p>
+        </div>
+        <div class="youth-lane-grid">${lanes}</div>
+      </section>
+
+      <section class="youth-panel youth-route-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Route</p>
+          <h4>若者が関わるまでの5ステップ</h4>
+        </div>
+        <ol class="youth-route-list">${route}</ol>
+      </section>
+
+      <section class="youth-panel youth-support-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Support</p>
+          <h4>使える支援・つながる場所</h4>
+        </div>
+        <div class="youth-support-grid">${supports}</div>
+      </section>
+
+      <section class="youth-panel youth-action-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Action</p>
+          <h4>このテーマで次に作るとよいもの</h4>
+        </div>
+        <ul class="youth-action-list">${actions}</ul>
+      </section>
+
+      <section class="youth-panel youth-insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">考察</p>
+          <h4>働くことを、まちへの参加として見せる</h4>
+        </div>
+        <ul>${insight}</ul>
+      </section>
+
+      <section class="youth-panel youth-source-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Source</p>
+          <h4>参考にした主な情報</h4>
+        </div>
+        <ul class="youth-source-list">${sources}</ul>
+      </section>
+    </div>
+  `;
 }
 
 function renderShoppingArticle(article) {
