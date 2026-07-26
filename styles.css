@@ -2131,6 +2131,29 @@ h3 {
   line-height: 1.6;
 }
 
+.digital-check-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+  border: 1px solid rgba(39, 99, 125, 0.2);
+  border-radius: 999px;
+  padding: 7px 13px;
+  color: #27637d;
+  background: #eef8fc;
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.digital-check-link:hover,
+.digital-check-link:focus-visible {
+  border-color: rgba(39, 99, 125, 0.38);
+  background: #dff1f8;
+  outline: none;
+}
+
 .digital-generation-list,
 .digital-improvement-list,
 .digital-insight-panel ul,

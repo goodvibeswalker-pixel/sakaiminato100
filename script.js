@@ -1165,36 +1165,42 @@ const themeDetails = {
           name: "境港市公式ホームページ",
           role: "制度、手続き、募集、緊急情報、くらしのできごとの基準点。最終的な根拠になるページとして使う。",
           users: "全世代、事業者、転入者、観光前に調べる人",
+          url: "https://www.city.sakaiminato.lg.jp/",
         },
         {
           label: "通知",
           name: "境港市公式LINE",
           role: "市からのお知らせやイベント情報を週1回程度配信。スマホで受け取る入口として最も広く使いやすい。",
           users: "子育て世帯、働く世代、高齢者の家族",
+          url: "https://page.line.me/283lzwrl",
         },
         {
           label: "速報",
           name: "境港市公式X・Facebook",
           role: "お知らせやイベント情報を随時投稿。拡散しやすい情報、直前変更、写真付きの報告に向く。",
           users: "若者、働く世代、地域活動者、市外の関心層",
+          url: "https://www.city.sakaiminato.lg.jp/index.php?view=117234",
         },
         {
           label: "子育て",
           name: "こども家庭センター公式Instagram",
           role: "子育て支援策、イベント、施設紹介、保育園入園などの動画発信。写真・動画で雰囲気が伝わりやすい。",
           users: "妊娠・出産期、未就学児の保護者、移住検討者",
+          url: "https://www.city.sakaiminato.lg.jp/index.php?view=119145",
         },
         {
           label: "防災",
           name: "あんしんトリピーメール",
           role: "防災行政無線が聞き取りづらい場合に、放送内容や災害情報をメールで受け取る補完手段。",
           users: "高齢者、屋内にいる人、家族を見守る人、メール利用者",
+          url: "https://www.city.sakaiminato.lg.jp/index.php?view=106822",
         },
         {
           label: "福祉",
           name: "境港市社会福祉協議会",
           role: "高齢者、障がい、ボランティア、サロン、買物支援、社協だよりなど、地域福祉の実務情報が集まる。",
           users: "高齢者、支援者、自治会、ボランティア",
+          url: "https://sakaiminato-shakyo.jp/",
         },
       ],
       generations: [
@@ -1835,6 +1841,7 @@ function renderDigitalArticle(article) {
           <h5>${item.name}</h5>
           <p>${item.role}</p>
           <strong>${item.users}</strong>
+          <a class="digital-check-link" href="${item.url}" target="_blank" rel="noreferrer">check</a>
         </article>
       `,
     )
