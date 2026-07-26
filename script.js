@@ -1259,9 +1259,102 @@ const themeDetails = {
     category: "公共空間",
     title: "公園と居場所",
     lead: "公園、広場、図書館、公共施設を、世代が交わる居場所として見ます。",
+    publicSpaceArticle: {
+      updated: "確認: 2026年7月27日",
+      places: [
+        {
+          label: "水辺・運動",
+          name: "夕日ヶ丘メモリアルパーク・中海親水護岸",
+          role: "芝生、散策、夕日、飛行機が見える開放的な水辺。市民の散歩、親子の外遊び、観光客の休憩を同時に受け止められる。",
+          check: "駐車場・トイレが確認できるため、長めの滞在やウォーキング拠点にしやすい。",
+        },
+        {
+          label: "運動・遊び",
+          name: "竜ケ山公園・竜ケ山陸上競技場周辺",
+          role: "公園、球場、陸上競技場、市民スポーツ広場がまとまるエリア。遊ぶ、走る、観戦する、歩くを重ねられる。",
+          check: "住宅地や夕日ヶ丘方面とつなぐ歩道、休憩場所、夜間の見通しを確認したい。",
+        },
+        {
+          label: "学び・休憩",
+          name: "境港市民図書館",
+          role: "こども図書、郷土資料、ブラウジング、スタディルーム、コワーキングルームがあり、親子、学生、働く世代、高齢者が使える屋内の居場所。",
+          check: "馬場崎町駅から徒歩6分、市役所・保健相談センターバス停から徒歩1分。天候に左右されにくい。",
+        },
+        {
+          label: "交流・文化",
+          name: "境港市民交流センター みなとテラス",
+          role: "市役所・図書館と同じ上道町3000周辺にある交流拠点。催しの日だけでなく、待ち合わせ、発表、学びの入口として見たい。",
+          check: "図書館、市役所、バス停、駐車場と一体で使えるため、公共施設の回遊を作りやすい。",
+        },
+        {
+          label: "親子",
+          name: "子育て支援センター ひまわり・きらきら",
+          role: "0歳から就学前の親子が無料で利用できる地域子育て拠点。遊び、相談、絵本、芝生の園庭、授乳・おむつ替えの安心がある。",
+          check: "ひまわりは幸神町、きらきらは竹内町。西側・南側の子育て世帯にも居場所の選択肢を見せられる。",
+        },
+        {
+          label: "地区拠点",
+          name: "7つの地区公民館",
+          role: "渡、外江、境、上道、余子、中浜、誠道に設置。講座、地域行事、相談、サークル活動を通じて、高齢者や若者の接点になり得る。",
+          check: "公園だけでなく、歩いて行ける屋内の居場所として地図に重ねると、地域差が見えやすい。",
+        },
+      ],
+      walkable: [
+        {
+          title: "徒歩10〜15分の生活圏で見る",
+          text: "子ども、高齢者、車を使わない人にとっては『市内にある』より『家から無理なく行ける』が重要。町別に公園、公民館、図書館、バス停、トイレを重ねて見る。",
+        },
+        {
+          title: "途中で休める道を含める",
+          text: "目的地だけでなく、道中のベンチ、日陰、信号、横断歩道、夜の照明、歩道の段差まで見る。行ける距離でも、休めない道は高齢者や親子には使いにくい。",
+        },
+        {
+          title: "雨・暑さの日の逃げ場所を残す",
+          text: "夏の暑さや雨の日は屋外公園だけでは居場所になりにくい。図書館、みなとテラス、公民館、子育て支援センターを『屋内の退避先』として見せる。",
+        },
+        {
+          title: "観光動線にも小さな休憩を置く",
+          text: "水木しげるロードや駅前を歩く観光客にも、座れる場所、トイレ、授乳、日陰、荷物を整えられる場所があると回遊しやすくなる。",
+        },
+      ],
+      amenities: [
+        ["トイレ", "子ども連れ、高齢者、観光客にとって滞在時間を決める基本設備。地図ではアイコン表示したい。"],
+        ["ベンチ・日陰", "歩ける距離を伸ばす設備。夏場は木陰、屋根、涼める屋内施設をセットで示す。"],
+        ["照明・見通し", "夕方以降の安全、学生の帰宅、高齢者の散歩に関わる。防犯だけでなく安心感の問題として見る。"],
+        ["バリアフリー", "段差、舗装、車いす、ベビーカー、手すり、駐車場からの動線を現地で確認する。"],
+        ["情報表示", "利用時間、休館日、イベント、災害時の使い方、問い合わせ先がスマホで見えると使いやすい。"],
+      ],
+      users: [
+        ["子ども", "遊具や広場だけでなく、車道との距離、見守りやすさ、夏の日陰、トイレの近さが大切。"],
+        ["親子", "授乳、おむつ替え、雨の日の遊び場、相談できる人がいる場所があると外出しやすい。"],
+        ["学生・若者", "図書館のスタディルーム、コワーキング、文化活動、地域イベントを、学校外の学びの場として見せる。"],
+        ["高齢者", "近い、座れる、話せる、暑さを避けられる、バスで行けることが重要。公民館は孤立を防ぐ入口になる。"],
+        ["観光客", "駅、ロード、港、水辺を歩く途中で、トイレ、休憩、写真スポット、雨宿りが見えると満足度が上がる。"],
+      ],
+      actions: [
+        ["居場所マップを作る", "公園、図書館、公民館、子育て支援センター、トイレ、ベンチ、バス停を一枚の地図に重ねる。"],
+        ["設備をアイコン化する", "トイレ、日陰、ベンチ、授乳、学習席、Wi-Fi、駐車場、バリアフリーを写真付きで確認できるようにする。"],
+        ["日常利用を記録する", "イベント日だけでなく、平日の午前、放課後、夕方、休日に誰がどう使っているかを現地メモで残す。"],
+        ["小さく改善する", "大規模整備だけでなく、ベンチ追加、案内板、日陰、草刈り、夜間照明、トイレ表示など短期改善を積み上げる。"],
+      ],
+      insight: [
+        "公園と居場所は、人口減少時代の『生活の近さ』を測るテーマです。大きな施設が一つあるだけでは、子ども、高齢者、車を持たない人、観光客の使いやすさは十分に見えません。歩いて行ける範囲に、外で遊べる場所、雨の日に入れる場所、座れる場所、相談できる場所があるかを重ねて見る必要があります。",
+        "境港市では、夕日ヶ丘の水辺、竜ケ山周辺の運動施設、市役所・みなとテラス・市民図書館が集まる上道町エリア、ひまわり・きらきらの子育て拠点、7つの地区公民館を組み合わせると、世代ごとの居場所の骨格が見えてきます。課題は、それぞれを別々の施設情報にせず、『今日どこに行けるか』として一目で見せることです。",
+        "特に『歩いて行ける』は距離だけでは決まりません。ベビーカーで通れるか、途中で休めるか、暑い日に逃げ込めるか、夜でも怖くないか、トイレが近いかで体感距離は変わります。地図上の円だけでなく、現地の歩きやすさをメモしていくことが大切です。",
+        "今後は、各テーマの記事に出てくる学校、福祉、観光、防災、交通の場所を、居場所マップに接続するとよいです。避難所にもなる公共施設、通学路沿いの公園、高齢者サロンのある公民館、観光客が休める水辺を重ねることで、公共空間は『余った場所』ではなく、暮らしを支えるインフラとして見えてきます。",
+      ],
+      sources: [
+        ["境港市 公園一覧", "市内都市公園の入口情報と、都市整備課の問い合わせ先を確認。"],
+        ["境港市 施設一覧", "みなとテラス、市民図書館、市民活動センター、子育て支援センター、体育施設などの所在地と連絡先を確認。"],
+        ["境港市民図書館 施設案内", "開館時間、こども図書コーナー、ブラウジング、スタディルーム、コワーキング、アクセスを確認。"],
+        ["境港市 子育て支援センター ひまわり・きらきら", "無料利用、所在地、利用時間、休館日、園庭、授乳・おむつ替え、相談機能を確認。"],
+        ["境港市 地区公民館一覧", "渡、外江、境、上道、余子、中浜、誠道の7館と所在地、電話番号を確認。"],
+        ["国土交通省 夕日ヶ丘地区中海かわまちづくり", "夕日ヶ丘メモリアルパーク周辺の駐車場・トイレ、水辺空間、健康シティー構想を確認。"],
+      ],
+    },
     sections: [
       { heading: "このテーマで伝えること", body: "子どもの遊び場、高齢者の休憩場所、親子の居場所、学生の学習場所、観光客の休憩場所を整理し、公共空間が暮らしの質にどう関わるかを考えます。" },
-      { heading: "見るポイント", items: ["歩いて行ける範囲に安心して過ごせる場所があるか", "トイレ、ベンチ、日陰、照明、バリアフリーが整っているか", "子ども、高齢者、若者、観光客が使いやすいか", "公共施設がイベント時だけでなく日常的に使われているか"] },
+      { heading: "見るポイント", items: ["歩いて行ける範囲に安心して過ごせる場所があるか", "徒歩10〜15分の生活圏に、公園、屋内施設、トイレ、休憩場所が重なっているか", "トイレ、ベンチ、日陰、照明、バリアフリーが整っているか", "子ども、高齢者、若者、観光客が使いやすいか", "公共施設がイベント時だけでなく日常的に使われているか"] },
       { heading: "考察", body: "居場所は人口減少時代の大切なインフラです。大きな施設を新しく作るだけでなく、今ある公園、広場、図書館、公共施設をどう使い直すかが重要です。少し座れる、話せる、学べる、休める場所が増えるほど、まちは暮らしやすくなります。" },
     ],
   },
@@ -1524,6 +1617,9 @@ function renderDetail(theme) {
   const digitalArticle = theme.digitalArticle
     ? renderDigitalArticle(theme.digitalArticle)
     : "";
+  const publicSpaceArticle = theme.publicSpaceArticle
+    ? renderPublicSpaceArticle(theme.publicSpaceArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -1549,6 +1645,7 @@ function renderDetail(theme) {
     ${youthWorkArticle}
     ${healthArticle}
     ${digitalArticle}
+    ${publicSpaceArticle}
     ${contactMarkup}
     <div class="detail-grid">${sections}</div>
   `;
@@ -1941,6 +2038,139 @@ function renderDigitalArticle(article) {
           <h4>参考にした主な情報</h4>
         </div>
         <ul class="digital-source-list">${sources}</ul>
+      </section>
+    </div>
+  `;
+}
+
+function renderPublicSpaceArticle(article) {
+  const places = article.places
+    .map(
+      (item) => `
+        <article class="public-space-place-card">
+          <span>${item.label}</span>
+          <h5>${item.name}</h5>
+          <p>${item.role}</p>
+          <strong>${item.check}</strong>
+        </article>
+      `,
+    )
+    .join("");
+
+  const walkable = article.walkable
+    .map(
+      (item) => `
+        <article class="public-space-walk-card">
+          <h5>${item.title}</h5>
+          <p>${item.text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const amenities = article.amenities
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const users = article.users
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const actions = article.actions
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const insight = article.insight.map((item) => `<li>${item}</li>`).join("");
+  const sources = article.sources
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  return `
+    <div class="public-space-article">
+      <section class="public-space-panel public-space-place-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Places</p>
+          <h4>公園・図書館・公共施設を居場所として見る</h4>
+          <p>${article.updated}</p>
+        </div>
+        <div class="public-space-place-grid">${places}</div>
+      </section>
+
+      <section class="public-space-panel public-space-walk-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Walkable</p>
+          <h4>歩いて行ける範囲を深掘り</h4>
+          <p>距離だけでなく、道中の休憩、暑さ、雨、夜間の安心まで含めて見ます。</p>
+        </div>
+        <div class="public-space-walk-grid">${walkable}</div>
+      </section>
+
+      <section class="public-space-panel public-space-amenity-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Amenity</p>
+          <h4>安心して過ごすための設備</h4>
+        </div>
+        <ul class="public-space-amenity-list">${amenities}</ul>
+      </section>
+
+      <section class="public-space-panel public-space-user-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Users</p>
+          <h4>世代別に見る使いやすさ</h4>
+        </div>
+        <ul class="public-space-user-list">${users}</ul>
+      </section>
+
+      <section class="public-space-panel public-space-action-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Action</p>
+          <h4>次に更新したい具体策</h4>
+        </div>
+        <ol class="public-space-action-list">${actions}</ol>
+      </section>
+
+      <section class="public-space-panel public-space-insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">考察</p>
+          <h4>居場所を暮らしのインフラとして見る</h4>
+        </div>
+        <ul>${insight}</ul>
+      </section>
+
+      <section class="public-space-panel public-space-source-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Source</p>
+          <h4>参考にした主な情報</h4>
+        </div>
+        <ul class="public-space-source-list">${sources}</ul>
       </section>
     </div>
   `;
