@@ -1902,6 +1902,144 @@ h3 {
   line-height: 1.7;
 }
 
+.health-article {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-width: 0;
+  margin-top: 28px;
+}
+
+.health-panel {
+  min-width: 0;
+  border: 1px solid rgba(79, 151, 121, 0.18);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fbfffc;
+}
+
+.health-facility-panel,
+.health-generation-panel,
+.health-insight-panel,
+.health-source-panel {
+  grid-column: span 2;
+}
+
+.health-facility-grid,
+.health-generation-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.health-facility-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.health-generation-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.health-facility-card,
+.health-generation-card {
+  min-width: 0;
+  border: 1px solid rgba(79, 151, 121, 0.15);
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(25, 73, 109, 0.06);
+}
+
+.health-facility-card span {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #e5f6ed;
+  color: #2f765a;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.health-facility-card h5,
+.health-generation-card h5 {
+  margin: 10px 0 8px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.health-facility-card dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.health-facility-card dl div {
+  display: grid;
+  gap: 2px;
+}
+
+.health-facility-card dt {
+  color: #2f765a;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.health-facility-card dd,
+.health-generation-card p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.health-checkup-list,
+.health-walking-list,
+.health-insight-panel ul,
+.health-source-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.health-checkup-list li,
+.health-walking-list li,
+.health-insight-panel li,
+.health-source-list li {
+  min-width: 0;
+  border: 1px solid rgba(79, 151, 121, 0.14);
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.health-checkup-list strong,
+.health-checkup-list span,
+.health-walking-list strong,
+.health-walking-list span,
+.health-source-list strong,
+.health-source-list span {
+  display: block;
+}
+
+.health-checkup-list strong,
+.health-walking-list strong,
+.health-source-list strong {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.health-checkup-list span,
+.health-walking-list span,
+.health-insight-panel li,
+.health-source-list span {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
 .shopping-article {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3590,6 +3728,22 @@ h3 {
 
   .youth-lane-grid,
   .youth-support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .health-article {
+    grid-template-columns: 1fr;
+  }
+
+  .health-facility-panel,
+  .health-generation-panel,
+  .health-insight-panel,
+  .health-source-panel {
+    grid-column: auto;
+  }
+
+  .health-facility-grid,
+  .health-generation-grid {
     grid-template-columns: 1fr;
   }
 

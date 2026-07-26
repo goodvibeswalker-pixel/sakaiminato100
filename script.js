@@ -1059,9 +1059,87 @@ const themeDetails = {
     category: "健康・スポーツ",
     title: "健康づくりと運動",
     lead: "検診、運動、スポーツ、歩く習慣を、暮らしの土台として考えます。",
+    healthArticle: {
+      updated: "確認: 2026年7月27日",
+      facilities: [
+        {
+          label: "屋内運動",
+          name: "市民体育館・第2市民体育館",
+          place: "中野町1900周辺",
+          use: "大体育室、小体育室、武道場など。雨の日や夜間でも、クラブ活動、健康教室、地域スポーツの拠点になる。",
+          contact: "境港市スポーツ協会 0859-42-6770",
+        },
+        {
+          label: "水中運動",
+          name: "市民温水プール",
+          place: "市民が通年利用しやすい温水プール",
+          use: "水温30度前後の温水プール。膝や腰に負担をかけにくい運動、子どもの水泳、高齢者の健康づくりに向く。",
+          contact: "境港スイミングスクール 0859-44-3725",
+        },
+        {
+          label: "屋外スポーツ",
+          name: "市民テニス場・市民スポーツ広場",
+          place: "市内体育施設群",
+          use: "テニス、球技、地域大会、学校・クラブ活動の受け皿。世代を超えたスポーツ交流の場として見たい。",
+          contact: "境港市スポーツ協会 0859-42-6770",
+        },
+        {
+          label: "走る・歩く",
+          name: "竜ケ山球場・竜ケ山陸上競技場",
+          place: "三軒屋町4043周辺",
+          use: "競技、ランニング、学校体育、大会利用の拠点。周辺の竜ケ山公園と合わせると、日常の運動コースにもなる。",
+          contact: "境港市スポーツ協会 0859-42-6770",
+        },
+        {
+          label: "地域利用",
+          name: "渡体育館・幸神体育館",
+          place: "渡町1417番地3 / 小篠津町19番地",
+          use: "地区単位の定期的なスポーツ活動に使いやすい体育館。地域クラブや高齢者団体の継続利用の入口になる。",
+          contact: "渡公民館 0859-45-0903 / 中浜公民館 0859-45-0207",
+        },
+        {
+          label: "学校体育",
+          name: "小・中学校体育館",
+          place: "市内小学校6校・中学校3校",
+          use: "学校開放を通じて、子ども、保護者、地域クラブの活動場所になる。地域の身近なスポーツ拠点として整理したい。",
+          contact: "各学校事務室へ確認",
+        },
+      ],
+      checkups: [
+        ["ヤング健診", "健診を受ける機会がない若い世代が、自分の健康状態を知り、運動習慣をつくる入口。身体計測、血圧、尿検査、血液検査、診察、運動体験など。"],
+        ["健康相談・成人健診", "健診やがん検診の情報は、年齢、保険、予約方法で迷いやすい。対象者別に入口を分け、スマホで見つけやすくすることが大切。"],
+        ["フレイル予防", "境港市版フレイル予防動画では、タオル体操、脳トレ、いきいき百歳体操、口腔体操などを自宅や集会所で使える形にしている。"],
+        ["地域包括支援センター", "高齢者の介護予防、運動機能向上、認知症予防、フレイルチェックなどにつながる相談先。健康づくりと福祉を接続する窓口になる。"],
+      ],
+      generations: [
+        ["子ども", "学校体育、スポーツ少年団、プール、公園遊びを通じて、運動が苦手な子も体を動かせる入口を増やす。"],
+        ["働く世代", "健診、夜間利用できる体育館、短時間ウォーキング、通勤・買い物ついでの歩行を結び、忙しくても続く形にする。"],
+        ["子育て世帯", "親子で使える公園、プール、体育館イベントがあると、運動と居場所づくりが同時に進む。"],
+        ["高齢者", "フレイル予防、いきいき百歳体操、水中運動、歩きやすい道をつなげ、転倒予防と交流をセットにする。"],
+      ],
+      walking: [
+        ["竜ケ山公園・陸上競技場周辺", "公園、競技場、球場が近く、走る・歩く・子どもを遊ばせるを組み合わせやすい。"],
+        ["中海干拓地", "周回約5.4kmのランニング・ウォーキングスポットとして紹介されている。景色と運動を結びやすい。"],
+        ["夕日ヶ丘・中海親水護岸", "夕日ヶ丘メモリアルパークや散策道があり、日常の散歩に向く。景観テーマともつながる。"],
+        ["水木しげるロード周辺", "観光のまち歩きだけでなく、住民の歩く習慣、買い物、交流にもつなげられる。"],
+      ],
+      insight: [
+        "健康づくりは、健診を受ける、運動する、相談する、歩くという行動が別々に見えると続きにくくなります。境港市では、市民体育館、温水プール、地区体育館、学校体育館、竜ケ山周辺の屋外施設があり、暮らしの近くに運動の入口を作れる条件があります。",
+        "特に大切なのは、世代ごとに入口を変えることです。子どもには遊びと学校体育、働く世代には短時間で使える健診と夜間運動、高齢者にはフレイル予防と通いの場、子育て世帯には親子で行ける場所が必要です。同じ施設でも、誰に向けて見せるかで意味が変わります。",
+        "海辺や中海、竜ケ山公園、夕日ヶ丘の散策道は、運動を『努力』ではなく『景色を楽しむ習慣』に変えられる資源です。歩きたくなる道、座れる場所、トイレ、駐車場、夜間の安全、イベント情報まで見えると、健康づくりはまちづくりになります。",
+        "今後は、健診情報、運動施設、ウォーキングコース、地域クラブ、フレイル予防動画を一つの地図やカレンダーで見せると、病気になる前から健康を支える仕組みが伝わりやすくなります。",
+      ],
+      sources: [
+        ["境港市 体育施設の使用時間・使用料金", "市民体育館、第2市民体育館、市民テニス場、竜ケ山球場、竜ケ山陸上競技場、市民スポーツ広場、地区体育館、学校体育館の問い合わせ先を確認。"],
+        ["境港市 ヤング健診の案内", "若い世代向け健診の目的、内容、会場、問い合わせ先を確認。"],
+        ["境港市版フレイル予防実践動画", "自宅、集会所、公民館で使える体操動画と問い合わせ先を確認。"],
+        ["境港市民温水プール", "通年利用、水温30度前後、通常営業時間などを確認。"],
+        ["境港観光ガイド Active Tourism", "中海干拓地、竜ケ山公園・陸上競技場などランニングスポットを確認。"],
+      ],
+    },
     sections: [
       { heading: "このテーマで伝えること", body: "健診、介護予防、スポーツ施設、公園、ウォーキング、学校体育、地域クラブをつなげ、病気になる前から健康を支えるまちの仕組みを整理します。" },
-      { heading: "見るポイント", items: ["健診や健康相談の情報が見つけやすいか", "高齢者、子ども、働く世代が運動しやすい場所があるか", "海辺や公園を歩く習慣に結びつけられるか", "スポーツ団体や学校、地域活動がつながっているか"] },
+      { heading: "見るポイント", items: ["健診や健康相談の情報が見つけやすいか", "どのような運動施設があり、誰が使いやすいか", "高齢者、子ども、働く世代が運動しやすい場所があるか", "海辺や公園を歩く習慣に結びつけられるか", "スポーツ団体や学校、地域活動がつながっているか"] },
       { heading: "考察", body: "健康づくりは医療費の問題だけでなく、毎日の移動、居場所、交流、景観にも関わります。歩きたくなる道、公園、スポーツ施設、健診情報がつながると、健康は個人の努力だけでなく、まち全体で支えるテーマになります。" },
     ],
   },
@@ -1340,6 +1418,9 @@ function renderDetail(theme) {
   const youthWorkArticle = theme.youthWorkArticle
     ? renderYouthWorkArticle(theme.youthWorkArticle)
     : "";
+  const healthArticle = theme.healthArticle
+    ? renderHealthArticle(theme.healthArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -1363,6 +1444,7 @@ function renderDetail(theme) {
     ${shoppingArticle}
     ${housingArticle}
     ${youthWorkArticle}
+    ${healthArticle}
     ${contactMarkup}
     <div class="detail-grid">${sections}</div>
   `;
@@ -1496,6 +1578,131 @@ function renderYouthWorkArticle(article) {
           <h4>参考にした主な情報</h4>
         </div>
         <ul class="youth-source-list">${sources}</ul>
+      </section>
+    </div>
+  `;
+}
+
+function renderHealthArticle(article) {
+  const facilities = article.facilities
+    .map(
+      (item) => `
+        <article class="health-facility-card">
+          <span>${item.label}</span>
+          <h5>${item.name}</h5>
+          <dl>
+            <div>
+              <dt>場所</dt>
+              <dd>${item.place}</dd>
+            </div>
+            <div>
+              <dt>使い方</dt>
+              <dd>${item.use}</dd>
+            </div>
+            <div>
+              <dt>問合せ</dt>
+              <dd>${item.contact}</dd>
+            </div>
+          </dl>
+        </article>
+      `,
+    )
+    .join("");
+
+  const checkups = article.checkups
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const generations = article.generations
+    .map(
+      ([title, text]) => `
+        <article class="health-generation-card">
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const walking = article.walking
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const insight = article.insight.map((item) => `<li>${item}</li>`).join("");
+  const sources = article.sources
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  return `
+    <div class="health-article">
+      <section class="health-panel health-facility-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Facilities</p>
+          <h4>運動できる主な施設</h4>
+          <p>${article.updated}</p>
+        </div>
+        <div class="health-facility-grid">${facilities}</div>
+      </section>
+
+      <section class="health-panel health-checkup-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Checkup</p>
+          <h4>健診・健康相談の入口</h4>
+        </div>
+        <ul class="health-checkup-list">${checkups}</ul>
+      </section>
+
+      <section class="health-panel health-generation-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Generation</p>
+          <h4>世代別に見た運動の入口</h4>
+        </div>
+        <div class="health-generation-grid">${generations}</div>
+      </section>
+
+      <section class="health-panel health-walking-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Walking</p>
+          <h4>歩く習慣につなげたい場所</h4>
+        </div>
+        <ul class="health-walking-list">${walking}</ul>
+      </section>
+
+      <section class="health-panel health-insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">考察</p>
+          <h4>健康を個人の努力から、まちの仕組みにする</h4>
+        </div>
+        <ul>${insight}</ul>
+      </section>
+
+      <section class="health-panel health-source-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Source</p>
+          <h4>参考にした主な情報</h4>
+        </div>
+        <ul class="health-source-list">${sources}</ul>
       </section>
     </div>
   `;
