@@ -1920,13 +1920,15 @@ h3 {
 
 .health-facility-panel,
 .health-generation-panel,
+.health-triathlon-panel,
 .health-insight-panel,
 .health-source-panel {
   grid-column: span 2;
 }
 
 .health-facility-grid,
-.health-generation-grid {
+.health-generation-grid,
+.health-triathlon-grid {
   display: grid;
   gap: 12px;
 }
@@ -1939,8 +1941,13 @@ h3 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.health-triathlon-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .health-facility-card,
-.health-generation-card {
+.health-generation-card,
+.health-triathlon-card {
   min-width: 0;
   border: 1px solid rgba(79, 151, 121, 0.15);
   border-radius: 8px;
@@ -1961,7 +1968,8 @@ h3 {
 }
 
 .health-facility-card h5,
-.health-generation-card h5 {
+.health-generation-card h5,
+.health-triathlon-card h5 {
   margin: 10px 0 8px;
   color: var(--ink);
   font-size: 18px;
@@ -1986,7 +1994,8 @@ h3 {
 }
 
 .health-facility-card dd,
-.health-generation-card p {
+.health-generation-card p,
+.health-triathlon-card p {
   margin: 0;
   color: var(--muted);
   font-weight: 700;
@@ -3737,13 +3746,15 @@ h3 {
 
   .health-facility-panel,
   .health-generation-panel,
+  .health-triathlon-panel,
   .health-insight-panel,
   .health-source-panel {
     grid-column: auto;
   }
 
   .health-facility-grid,
-  .health-generation-grid {
+  .health-generation-grid,
+  .health-triathlon-grid {
     grid-template-columns: 1fr;
   }
 
