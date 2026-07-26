@@ -1299,6 +1299,11 @@ const themeDetails = {
           check: "公園だけでなく、歩いて行ける屋内の居場所として地図に重ねると、地域差が見えやすい。",
         },
       ],
+      mapOverview: [
+        "6カ所全体",
+        "境港市",
+        "夕日ヶ丘、竜ケ山、図書館、みなとテラス、ひまわり、きらきらを市域全体で見る。",
+      ],
       mapPlaces: [
         ["夕日ヶ丘メモリアルパーク", "夕日ヶ丘メモリアルパーク 境港市", "中海沿いの散策、夕日、飛行機が見える水辺の居場所。"],
         ["竜ケ山公園", "竜ケ山公園 境港市", "公園、競技場、球場が近い運動・外遊びの拠点。"],
@@ -1306,7 +1311,6 @@ const themeDetails = {
         ["みなとテラス", "境港市民交流センター みなとテラス", "文化、発表、交流、待ち合わせに使える公共施設。"],
         ["ひまわり", "境港市地域子育て支援センター ひまわり", "幸神町の親子向け地域子育て拠点。"],
         ["きらきら", "境港市地域子育て支援センター きらきら", "竹内町の親子向け地域子育て拠点。"],
-        ["地区公民館", "境港市 地区公民館", "渡、外江、境、上道、余子、中浜、誠道の地区拠点を探す入口。"],
       ],
       walkable: [
         {
@@ -1464,8 +1468,9 @@ function saveBoardPosts(posts) {
   localStorage.setItem(boardStorageKey, JSON.stringify(posts));
 }
 
-function googleMapEmbedUrl(query) {
-  return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+function googleMapEmbedUrl(query, zoom) {
+  const zoomParam = zoom ? `&z=${zoom}` : "";
+  return `https://www.google.com/maps?q=${encodeURIComponent(query)}${zoomParam}&output=embed`;
 }
 
 function googleMapSearchUrl(query) {
@@ -2078,13 +2083,23 @@ function renderDigitalArticle(article) {
 }
 
 function renderPublicSpaceArticle(article) {
-  const initialMap = article.mapPlaces[0];
+  const initialMap = article.mapOverview;
+  const overviewButton = `
+    <button
+      class="public-space-map-button is-active"
+      type="button"
+      data-public-space-map-src="${googleMapEmbedUrl(initialMap[1], 13)}"
+      data-public-space-map-url="${googleMapSearchUrl(initialMap[1])}"
+    >
+      <strong>${initialMap[0]}</strong>
+      <span>${initialMap[2]}</span>
+    </button>
+  `;
   const mapButtons = article.mapPlaces
-    .map(([name, query, note], index) => {
-      const activeClass = index === 0 ? " is-active" : "";
+    .map(([name, query, note]) => {
       return `
         <button
-          class="public-space-map-button${activeClass}"
+          class="public-space-map-button"
           type="button"
           data-public-space-map-src="${googleMapEmbedUrl(query)}"
           data-public-space-map-url="${googleMapSearchUrl(query)}"
@@ -2179,20 +2194,21 @@ function renderPublicSpaceArticle(article) {
       <section class="public-space-panel public-space-map-panel">
         <div class="panel-heading">
           <p class="section-kicker">Google Map</p>
-          <h4>地図上で場所を確認</h4>
-          <p>見たい場所をクリックすると、Googleマップ上の表示が切り替わります。</p>
+          <h4>6カ所全体を地図で確認</h4>
+          <p>初期表示は市域全体が見える広域表示です。見たい場所をクリックすると、Googleマップ上の表示が切り替わります。</p>
         </div>
         <div class="public-space-map-layout">
           <div class="public-space-map-frame">
             <iframe
               data-public-space-map
-              src="${googleMapEmbedUrl(initialMap[1])}"
+              src="${googleMapEmbedUrl(initialMap[1], 13)}"
               title="${initialMap[0]}をGoogleマップで表示"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
           <div class="public-space-map-list">
+            ${overviewButton}
             ${mapButtons}
             <a
               class="public-space-map-open"
