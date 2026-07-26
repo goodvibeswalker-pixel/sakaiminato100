@@ -2218,6 +2218,7 @@ h3 {
 }
 
 .public-space-place-panel,
+.public-space-map-panel,
 .public-space-walk-panel,
 .public-space-action-panel,
 .public-space-insight-panel,
@@ -2282,6 +2283,95 @@ h3 {
   color: #3f7650;
   font-size: 13px;
   line-height: 1.6;
+}
+
+.public-space-map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.public-space-map-frame {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(110, 163, 123, 0.16);
+  border-radius: 8px;
+  background: #eef8ee;
+  aspect-ratio: 16 / 10;
+}
+
+.public-space-map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.public-space-map-list {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-width: 0;
+}
+
+.public-space-map-button {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid rgba(110, 163, 123, 0.16);
+  border-radius: 8px;
+  padding: 12px;
+  color: var(--ink);
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(25, 73, 109, 0.05);
+}
+
+.public-space-map-button.is-active {
+  border-color: rgba(63, 118, 80, 0.38);
+  background: #edf8ed;
+}
+
+.public-space-map-button strong,
+.public-space-map-button span {
+  display: block;
+}
+
+.public-space-map-button strong {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.public-space-map-button span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.public-space-map-open {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(63, 118, 80, 0.2);
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: #3f7650;
+  background: #eef8ee;
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.public-space-map-open:hover,
+.public-space-map-open:focus-visible {
+  border-color: rgba(63, 118, 80, 0.4);
+  background: #dff0df;
+  outline: none;
 }
 
 .public-space-amenity-list,
@@ -4067,6 +4157,7 @@ h3 {
   }
 
   .public-space-place-panel,
+  .public-space-map-panel,
   .public-space-walk-panel,
   .public-space-action-panel,
   .public-space-insight-panel,
@@ -4076,6 +4167,10 @@ h3 {
 
   .public-space-place-grid,
   .public-space-walk-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .public-space-map-layout {
     grid-template-columns: 1fr;
   }
 

@@ -1299,6 +1299,15 @@ const themeDetails = {
           check: "公園だけでなく、歩いて行ける屋内の居場所として地図に重ねると、地域差が見えやすい。",
         },
       ],
+      mapPlaces: [
+        ["夕日ヶ丘メモリアルパーク", "夕日ヶ丘メモリアルパーク 境港市", "中海沿いの散策、夕日、飛行機が見える水辺の居場所。"],
+        ["竜ケ山公園", "竜ケ山公園 境港市", "公園、競技場、球場が近い運動・外遊びの拠点。"],
+        ["境港市民図書館", "境港市民図書館", "学習、読書、親子利用、コワーキングに使える屋内の居場所。"],
+        ["みなとテラス", "境港市民交流センター みなとテラス", "文化、発表、交流、待ち合わせに使える公共施設。"],
+        ["ひまわり", "境港市地域子育て支援センター ひまわり", "幸神町の親子向け地域子育て拠点。"],
+        ["きらきら", "境港市地域子育て支援センター きらきら", "竹内町の親子向け地域子育て拠点。"],
+        ["地区公民館", "境港市 地区公民館", "渡、外江、境、上道、余子、中浜、誠道の地区拠点を探す入口。"],
+      ],
       walkable: [
         {
           title: "徒歩10〜15分の生活圏で見る",
@@ -1453,6 +1462,14 @@ function loadBoardPosts() {
 
 function saveBoardPosts(posts) {
   localStorage.setItem(boardStorageKey, JSON.stringify(posts));
+}
+
+function googleMapEmbedUrl(query) {
+  return `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+}
+
+function googleMapSearchUrl(query) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
 }
 
 function renderBoardPosts(posts) {
@@ -1663,6 +1680,23 @@ function closeDetail(focusTarget) {
   }
   detailPrompt.classList.remove("is-hidden");
   focusTarget?.focus({ preventScroll: true });
+}
+
+function setupPublicSpaceMap() {
+  const frame = themeDetail.querySelector("[data-public-space-map]");
+  const openLink = themeDetail.querySelector("[data-public-space-map-link]");
+  const buttons = themeDetail.querySelectorAll("[data-public-space-map-src]");
+  if (!frame || !buttons.length) return;
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      buttons.forEach((item) => item.classList.remove("is-active"));
+      button.classList.add("is-active");
+      frame.setAttribute("src", button.dataset.publicSpaceMapSrc);
+      frame.setAttribute("title", `${button.textContent.trim()}をGoogleマップで表示`);
+      if (openLink) openLink.setAttribute("href", button.dataset.publicSpaceMapUrl);
+    });
+  });
 }
 
 function placeDetailNearButton(button) {
@@ -2044,6 +2078,24 @@ function renderDigitalArticle(article) {
 }
 
 function renderPublicSpaceArticle(article) {
+  const initialMap = article.mapPlaces[0];
+  const mapButtons = article.mapPlaces
+    .map(([name, query, note], index) => {
+      const activeClass = index === 0 ? " is-active" : "";
+      return `
+        <button
+          class="public-space-map-button${activeClass}"
+          type="button"
+          data-public-space-map-src="${googleMapEmbedUrl(query)}"
+          data-public-space-map-url="${googleMapSearchUrl(query)}"
+        >
+          <strong>${name}</strong>
+          <span>${note}</span>
+        </button>
+      `;
+    })
+    .join("");
+
   const places = article.places
     .map(
       (item) => `
@@ -2122,6 +2174,37 @@ function renderPublicSpaceArticle(article) {
           <p>${article.updated}</p>
         </div>
         <div class="public-space-place-grid">${places}</div>
+      </section>
+
+      <section class="public-space-panel public-space-map-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Google Map</p>
+          <h4>地図上で場所を確認</h4>
+          <p>見たい場所をクリックすると、Googleマップ上の表示が切り替わります。</p>
+        </div>
+        <div class="public-space-map-layout">
+          <div class="public-space-map-frame">
+            <iframe
+              data-public-space-map
+              src="${googleMapEmbedUrl(initialMap[1])}"
+              title="${initialMap[0]}をGoogleマップで表示"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="public-space-map-list">
+            ${mapButtons}
+            <a
+              class="public-space-map-open"
+              href="${googleMapSearchUrl(initialMap[1])}"
+              target="_blank"
+              rel="noreferrer"
+              data-public-space-map-link
+            >
+              Googleマップで開く
+            </a>
+          </div>
+        </div>
       </section>
 
       <section class="public-space-panel public-space-walk-panel">
@@ -3550,6 +3633,7 @@ themeButtons.forEach((button) => {
     detailPrompt.classList.add("is-hidden");
     themeDetail.classList.add("is-visible");
     themeDetail.querySelector(".detail-close")?.addEventListener("click", () => closeDetail(button));
+    setupPublicSpaceMap();
     themeDetail.focus({ preventScroll: true });
   });
 });
