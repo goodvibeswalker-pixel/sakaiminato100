@@ -1157,9 +1157,94 @@ const themeDetails = {
     category: "情報・デジタル",
     title: "デジタルと情報発信",
     lead: "必要な情報が必要な人に届く仕組みと、まちの発信力を見直します。",
+    digitalArticle: {
+      updated: "確認: 2026年7月27日",
+      channels: [
+        {
+          label: "総合",
+          name: "境港市公式ホームページ",
+          role: "制度、手続き、募集、緊急情報、くらしのできごとの基準点。最終的な根拠になるページとして使う。",
+          users: "全世代、事業者、転入者、観光前に調べる人",
+        },
+        {
+          label: "通知",
+          name: "境港市公式LINE",
+          role: "市からのお知らせやイベント情報を週1回程度配信。スマホで受け取る入口として最も広く使いやすい。",
+          users: "子育て世帯、働く世代、高齢者の家族",
+        },
+        {
+          label: "速報",
+          name: "境港市公式X・Facebook",
+          role: "お知らせやイベント情報を随時投稿。拡散しやすい情報、直前変更、写真付きの報告に向く。",
+          users: "若者、働く世代、地域活動者、市外の関心層",
+        },
+        {
+          label: "子育て",
+          name: "こども家庭センター公式Instagram",
+          role: "子育て支援策、イベント、施設紹介、保育園入園などの動画発信。写真・動画で雰囲気が伝わりやすい。",
+          users: "妊娠・出産期、未就学児の保護者、移住検討者",
+        },
+        {
+          label: "防災",
+          name: "あんしんトリピーメール",
+          role: "防災行政無線が聞き取りづらい場合に、放送内容や災害情報をメールで受け取る補完手段。",
+          users: "高齢者、屋内にいる人、家族を見守る人、メール利用者",
+        },
+        {
+          label: "福祉",
+          name: "境港市社会福祉協議会",
+          role: "高齢者、障がい、ボランティア、サロン、買物支援、社協だよりなど、地域福祉の実務情報が集まる。",
+          users: "高齢者、支援者、自治会、ボランティア",
+        },
+      ],
+      generations: [
+        ["10代・20代", "Instagram、X、YouTube、短い動画、地図検索が入口。制度名よりも、写真、動画、体験談、学校やイベントからの導線が効きやすい。"],
+        ["30代・40代", "LINE、検索、Instagram、公式サイトを併用。子育て、仕事、手続き、防災をスマホで短時間に確認できることが重要。"],
+        ["50代・60代", "LINE、公式サイト、Facebook、広報紙、テレビ・新聞を併用。信頼できる根拠ページと、家族が共有しやすいリンクが必要。"],
+        ["70代以上", "広報紙、回覧、電話、窓口、防災行政無線、家族経由の情報が残る。メールやLINEは使える人と使わない人の差が大きいため、紙と人の支援を残す。"],
+      ],
+      flows: [
+        ["防災", "公式サイトの防災情報、あんしんトリピーメール、防災行政無線、ハザードマップを一つの入口にまとめる。災害時は『今見るページ』を固定する。"],
+        ["子育て", "こども家庭センター、Instagram、入園申請、子育て支援センター、預かり制度をつなげる。動画から制度ページへ戻れる導線が必要。"],
+        ["福祉", "市の福祉情報、地域包括支援センター、社協、買物支援、サロン情報を横断できるようにする。高齢者本人だけでなく家族向けにも整理する。"],
+        ["観光", "市公式観光情報、水木しげるロード、イベント、交通、駐車場、飲食、天候を地図と写真でつなぐ。旅行者には現在地から分かる情報が重要。"],
+      ],
+      improvements: [
+        {
+          title: "入口をテーマ別に再編集する",
+          text: "防災、子育て、福祉、観光、手続き、イベントをトップから1タップで見せ、同じ情報を部署別だけで探させない。",
+        },
+        {
+          title: "更新日と対象者を見せる",
+          text: "『いつの情報か』『誰向けか』『何をすればよいか』を冒頭に置くと、古い情報や対象外ページで迷う時間を減らせる。",
+        },
+        {
+          title: "地図・写真・グラフに変換する",
+          text: "学校、避難所、施設、バス停、イベント会場は地図で、人口や観光客数はグラフで見せると直感的に伝わる。",
+        },
+        {
+          title: "紙と人の支援を残す",
+          text: "高齢者やデジタルが苦手な人には、窓口、電話、広報紙、公民館、自治会、家族経由の情報を組み合わせる。",
+        },
+      ],
+      insight: [
+        "境港市の情報発信は、公式ホームページ、LINE、X、Facebook、こども家庭センターInstagram、あんしんトリピーメール、社会福祉協議会など、すでに複数の入口があります。課題は『発信していないこと』よりも、『必要な人が、必要なタイミングで、迷わずたどり着けるか』です。",
+        "総務省の令和6年度調査では、全年代のLINE利用率は91.1%、Instagramは52.6%、Xは43.3%、Facebookは26.8%、YouTubeは80.8%とされています。一方で、速く知る情報は10代から50代でインターネット、60代・70代でテレビが強く、信頼できる情報はテレビや新聞も残ります。境港市の発信も、SNSだけに寄せず、年代ごとの受け取り方を分ける必要があります。",
+        "防災、子育て、福祉、観光は、担当部署が違っても住民や観光客の行動ではつながっています。たとえば子育て世帯は、入園申請だけでなく、通学路、防災、病院、イベント、移動手段も同時に知りたい。情報を部署別に並べるだけではなく、暮らしの場面別に編集することが大切です。",
+        "境港市100のことでは、公式情報をそのまま写すのではなく、地図、写真、グラフ、更新日、考察を加えて『読む情報』から『使える情報』に変える実験ができます。市民が投稿できる掲示板も、公式情報へつなぐ入口として設計すれば、対話型の情報発信になります。",
+      ],
+      sources: [
+        ["境港市SNSアカウント", "LINE、X、Facebookの運用内容と問い合わせ先を確認。"],
+        ["境港市公式ホームページ", "総合情報、くらしのできごと、重要なお知らせ、観光情報の入口を確認。"],
+        ["境港市 こども家庭センター公式Instagram", "子育て支援策、イベント、施設紹介、制度紹介動画などの発信内容を確認。"],
+        ["境港市 防災情報・あんしんトリピーメール", "防災行政無線情報をメールで受け取る補完手段を確認。"],
+        ["境港市社会福祉協議会", "福祉、介護予防、買物支援、ボランティア、社協だよりなどの発信を確認。"],
+        ["総務省 令和6年度情報通信メディアの利用時間と情報行動に関する調査", "年代別のメディア利用、SNS利用率、情報源の傾向を確認。"],
+      ],
+    },
     sections: [
       { heading: "このテーマで伝えること", body: "市公式サイト、SNS、地図、オンライン手続き、観光情報、防災情報、データ公開をつなげ、市民にも観光客にもわかりやすい情報環境を考えます。" },
-      { heading: "見るポイント", items: ["スマホで必要な情報にたどり着けるか", "防災、子育て、福祉、観光の情報が分かれて迷子になっていないか", "写真、地図、グラフで直感的に理解できるか", "高齢者やデジタルが苦手な人への補助があるか"] },
+      { heading: "見るポイント", items: ["スマホで必要な情報にたどり着けるか", "主な情報発信元が一覧でわかるか", "年代別に届きやすい発信源を使い分けているか", "防災、子育て、福祉、観光の情報が分かれて迷子になっていないか", "写真、地図、グラフで直感的に理解できるか", "高齢者やデジタルが苦手な人への補助があるか"] },
       { heading: "考察", body: "情報は出しているだけでは届きません。探しやすい、読みやすい、更新日がわかる、地図で見える、スマホで使えるという条件がそろって初めて役立ちます。境港市100のことも、デジタルの使いやすさを実験する場になります。" },
     ],
   },
@@ -1430,6 +1515,9 @@ function renderDetail(theme) {
   const healthArticle = theme.healthArticle
     ? renderHealthArticle(theme.healthArticle)
     : "";
+  const digitalArticle = theme.digitalArticle
+    ? renderDigitalArticle(theme.digitalArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -1454,6 +1542,7 @@ function renderDetail(theme) {
     ${housingArticle}
     ${youthWorkArticle}
     ${healthArticle}
+    ${digitalArticle}
     ${contactMarkup}
     <div class="detail-grid">${sections}</div>
   `;
@@ -1732,6 +1821,119 @@ function renderHealthArticle(article) {
           <h4>参考にした主な情報</h4>
         </div>
         <ul class="health-source-list">${sources}</ul>
+      </section>
+    </div>
+  `;
+}
+
+function renderDigitalArticle(article) {
+  const channels = article.channels
+    .map(
+      (item) => `
+        <article class="digital-channel-card">
+          <span>${item.label}</span>
+          <h5>${item.name}</h5>
+          <p>${item.role}</p>
+          <strong>${item.users}</strong>
+        </article>
+      `,
+    )
+    .join("");
+
+  const generations = article.generations
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const flows = article.flows
+    .map(
+      ([title, text]) => `
+        <article class="digital-flow-card">
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const improvements = article.improvements
+    .map(
+      (item) => `
+        <li>
+          <strong>${item.title}</strong>
+          <span>${item.text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const insight = article.insight.map((item) => `<li>${item}</li>`).join("");
+  const sources = article.sources
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  return `
+    <div class="digital-article">
+      <section class="digital-panel digital-channel-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Channels</p>
+          <h4>主な情報発信元</h4>
+          <p>${article.updated}</p>
+        </div>
+        <div class="digital-channel-grid">${channels}</div>
+      </section>
+
+      <section class="digital-panel digital-generation-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Generation</p>
+          <h4>年代別に届きやすい発信源</h4>
+        </div>
+        <ul class="digital-generation-list">${generations}</ul>
+      </section>
+
+      <section class="digital-panel digital-flow-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Flow</p>
+          <h4>迷子になりやすい情報をつなぐ</h4>
+        </div>
+        <div class="digital-flow-grid">${flows}</div>
+      </section>
+
+      <section class="digital-panel digital-improvement-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Action</p>
+          <h4>情報を使いやすくする改善案</h4>
+        </div>
+        <ul class="digital-improvement-list">${improvements}</ul>
+      </section>
+
+      <section class="digital-panel digital-insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">考察</p>
+          <h4>発信から、届く設計へ</h4>
+        </div>
+        <ul>${insight}</ul>
+      </section>
+
+      <section class="digital-panel digital-source-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Source</p>
+          <h4>参考にした主な情報</h4>
+        </div>
+        <ul class="digital-source-list">${sources}</ul>
       </section>
     </div>
   `;

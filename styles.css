@@ -2049,6 +2049,135 @@ h3 {
   line-height: 1.7;
 }
 
+.digital-article {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  min-width: 0;
+  margin-top: 28px;
+}
+
+.digital-panel {
+  min-width: 0;
+  border: 1px solid rgba(84, 151, 185, 0.18);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: #fafdff;
+}
+
+.digital-channel-panel,
+.digital-flow-panel,
+.digital-insight-panel,
+.digital-source-panel {
+  grid-column: span 2;
+}
+
+.digital-channel-grid,
+.digital-flow-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.digital-channel-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.digital-flow-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.digital-channel-card,
+.digital-flow-card {
+  min-width: 0;
+  border: 1px solid rgba(84, 151, 185, 0.15);
+  border-radius: 8px;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(25, 73, 109, 0.06);
+}
+
+.digital-channel-card span {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #e8f5fb;
+  color: #27637d;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.digital-channel-card h5,
+.digital-flow-card h5 {
+  margin: 10px 0 8px;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.digital-channel-card p,
+.digital-flow-card p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.digital-channel-card strong {
+  display: block;
+  margin-top: 12px;
+  color: #27637d;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.digital-generation-list,
+.digital-improvement-list,
+.digital-insight-panel ul,
+.digital-source-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.digital-generation-list li,
+.digital-improvement-list li,
+.digital-insight-panel li,
+.digital-source-list li {
+  min-width: 0;
+  border: 1px solid rgba(84, 151, 185, 0.14);
+  border-radius: 8px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.digital-generation-list strong,
+.digital-generation-list span,
+.digital-improvement-list strong,
+.digital-improvement-list span,
+.digital-source-list strong,
+.digital-source-list span {
+  display: block;
+}
+
+.digital-generation-list strong,
+.digital-improvement-list strong,
+.digital-source-list strong {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.digital-generation-list span,
+.digital-improvement-list span,
+.digital-insight-panel li,
+.digital-source-list span {
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
 .shopping-article {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3755,6 +3884,22 @@ h3 {
   .health-facility-grid,
   .health-generation-grid,
   .health-triathlon-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .digital-article {
+    grid-template-columns: 1fr;
+  }
+
+  .digital-channel-panel,
+  .digital-flow-panel,
+  .digital-insight-panel,
+  .digital-source-panel {
+    grid-column: auto;
+  }
+
+  .digital-channel-grid,
+  .digital-flow-grid {
     grid-template-columns: 1fr;
   }
 
