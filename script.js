@@ -1376,9 +1376,70 @@ const themeDetails = {
     category: "歴史・記憶",
     title: "港町の歴史",
     lead: "港、鉄道、商店街、暮らしの記憶を、次の世代へつなげます。",
+    historyArticle: {
+      updated: "確認: 2026年8月8日",
+      timeline: [
+        ["1902年", "山陰初の鉄道開業", "境港に運ばれた鉄道資材を起点に、境港駅から米子方面へ鉄道が伸びた。港は人と物を受け入れる玄関口だった。"],
+        ["1909年", "境線の名称へ", "米子から安来方面への延伸後、境港と米子を結ぶ線区として境線が位置づけられた。"],
+        ["1954年", "境港町が誕生", "境町、渡村、外江町、上道村、余子村、中浜村が合併し、現在の市域の骨格ができた。"],
+        ["1956年", "境港市制施行", "港、漁業、商業、交通を基盤に市としてのまちづくりが始まった。"],
+        ["1973年", "境漁港が特定第3種漁港に", "水産物の流通拠点として全国的にも重要な漁港に位置づけられた。"],
+        ["1993年", "水木しげるロード誕生", "中心商店街に妖怪ブロンズ像を設置し、港町の商店街が観光の通りとして再編集された。"],
+        ["2018年", "水木しげるロード大規模リニューアル", "歩きやすさ、夜間演出、滞在性が高まり、商店街の記憶と観光がさらに重なった。"],
+      ],
+      portLinks: [
+        {
+          title: "港が鉄道を呼び込んだ",
+          text: "境港は天然の良港として資材や物資を受け入れやすく、山陰初の鉄道開業にも深く関わった。港と鉄道は別々の交通ではなく、海から陸へ人と物をつなぐ連続した仕組みだった。",
+        },
+        {
+          title: "鉄道が商店街の軸をつくった",
+          text: "境港駅からお台場へ向かう町筋に店舗が増え、中心商業地が形づくられた。駅、港、商店街が近いことが、買い物、通勤、観光の動線を生んだ。",
+        },
+        {
+          title: "漁港が仕事と暮らしを支えた",
+          text: "まき網、かにかご、沖合底びき網などの漁業と加工、流通が集まり、魚のまちとしての雇用、食文化、商業を支えた。",
+        },
+        {
+          title: "観光が商店街を再編集した",
+          text: "水木しげるロードは、衰退しかけた中心商店街に歩く目的をつくった。古い町筋を壊すのではなく、妖怪という物語を重ねて新しい価値に変えた点が重要。",
+        },
+      ],
+      archiveIdeas: [
+        ["古い写真を集める", "港、市場、駅前、商店街、祭り、学校行事、海辺の暮らしを年代別に集め、現在の場所と並べて見せる。"],
+        ["地図に重ねる", "旧駅舎、商店街の変化、港湾施設、魚市場、旧町村の境界を現在のGoogleマップや古地図に重ねる。"],
+        ["語りを録音する", "漁師、商店主、鉄道利用者、子育て世代、観光に関わった人の声を短い証言として残す。"],
+        ["年表を更新する", "港湾整備、鉄道、商店街、観光、人口、災害を同じ年表に置くと、まちの変化がつながって見える。"],
+      ],
+      memories: [
+        ["商店街", "本町、松ヶ枝町、西本町、新道元町など、中心市街地の通りごとの記憶を残す。店名、看板、商品、祭りの日の風景が教材になる。"],
+        ["地域行事", "祭り、地蔵盆、港のイベント、学校行事は、地域の人が顔を合わせる仕組みでもある。行事の変化は人口や商業の変化を映す。"],
+        ["暮らしの道", "通学路、買い物道、駅へ向かう道、港へ向かう道を記録すると、地図には出にくい生活の動線が見える。"],
+        ["港の仕事", "水揚げ、選別、加工、運搬、販売、食堂、土産物まで、港は一つの職場ではなく多くの仕事の連鎖として伝えられる。"],
+      ],
+      learning: [
+        ["小学生", "昔の写真と今の写真を並べ、どこが変わり、どこが残ったかを探す。地名、駅、港、商店街を身近な場所として学べる。"],
+        ["中高生", "人口、産業、観光、交通のデータを年表に重ね、まちの課題を歴史から考える探究学習にする。"],
+        ["市民", "写真提供、思い出投稿、地図づくり、聞き書きに参加できる形にすると、歴史が一部の資料ではなく共有財産になる。"],
+        ["観光客", "水木しげるロードだけでなく、港、鉄道、商店街の成り立ちを歩きながら知れると、滞在の意味が深くなる。"],
+      ],
+      insight: [
+        "境港の歴史は、港だけ、鉄道だけ、商店街だけで見ると断片になります。港が物資を受け入れ、鉄道が内陸へつなぎ、駅前から商店街が伸び、漁港が仕事と食を支え、1990年代以降は水木しげるロードが観光と商業を結び直しました。この連続性を見せることが、港町の歴史を深く伝える入口です。",
+        "港とまちの関係で大切なのは、港湾施設の歴史だけではありません。市場へ向かう道、朝のにおい、商店の開店時間、駅から歩く観光客、祭りの日の人の流れなど、暮らしの記憶が都市の形を説明します。古い写真や地図を現在の場所と重ねると、まちの変化が一目でわかります。",
+        "商店街は、地域住民の買い物の場から、観光客も歩く場へ意味が変わりました。これは成功だけでなく、地元向けの店と観光向けの店のバランス、空き店舗、後継者、夜間のにぎわいなどの課題も含みます。歴史として記録することで、今後どんな商店街にしたいかを考えやすくなります。",
+        "子どもたちにとって、地域の歴史は暗記する年号ではなく、自分の通学路や家族の仕事、よく行く店、駅や港の風景につながる教材です。境港市100のことでは、写真、地図、年表、聞き書きを少しずつ足し、未来のまちづくりに使える記録へ育てていくことができます。",
+      ],
+      sources: [
+        ["境港市の概要", "市の位置、昭和29年の合併、昭和31年の市制、境漁港・境港の位置づけを確認。"],
+        ["境港観光ガイド 歴史・風土スポット", "山陰鉄道発祥之地碑、1902年の鉄道開業、境線の成り立ちを確認。"],
+        ["JR西日本 鉄道文化財を巡る", "山陰地方初の鉄道開通と御来屋駅の歴史を確認。"],
+        ["中小企業庁 がんばる商店街77選", "明治35年頃からの商店街形成、水木しげるロード整備、中心商店街の変化を確認。"],
+        ["境港市民図書館 市史編さん室", "史料の収集、整理、保存、調査相談、ふるさと教育支援の役割を確認。"],
+      ],
+    },
     sections: [
       { heading: "このテーマで伝えること", body: "境港の港町としての成り立ち、水産業、鉄道、商店街、祭り、古い写真、地域の語りを集め、今の風景がどう形づくられたかを整理します。" },
-      { heading: "見るポイント", items: ["港とまちの発展がどのように結びついてきたか", "古い写真や地図を今の場所と重ねられるか", "商店街や地域行事の記憶を記録できるか", "子どもたちが地域の歴史を学ぶ教材になるか"] },
+      { heading: "見るポイント", items: ["港とまちの発展がどのように結びついてきたか", "港、鉄道、商店街、水産業、観光が時代ごとにどう役割を変えたか", "古い写真や地図を今の場所と重ねられるか", "商店街や地域行事の記憶を記録できるか", "子どもたちが地域の歴史を学ぶ教材になるか"] },
       { heading: "考察", body: "歴史は過去を懐かしむためだけのものではありません。今ある課題も、港、交通、産業、人口の変化の積み重ねとして見ると理解しやすくなります。地域の記憶を記録することは、未来のまちづくりの判断材料になります。" },
     ],
   },
@@ -1642,6 +1703,9 @@ function renderDetail(theme) {
   const publicSpaceArticle = theme.publicSpaceArticle
     ? renderPublicSpaceArticle(theme.publicSpaceArticle)
     : "";
+  const historyArticle = theme.historyArticle
+    ? renderHistoryArticle(theme.historyArticle)
+    : "";
 
   themeDetail.innerHTML = `
     <div class="detail-header">
@@ -1668,6 +1732,7 @@ function renderDetail(theme) {
     ${healthArticle}
     ${digitalArticle}
     ${publicSpaceArticle}
+    ${historyArticle}
     ${contactMarkup}
     <div class="detail-grid">${sections}</div>
   `;
@@ -2270,6 +2335,138 @@ function renderPublicSpaceArticle(article) {
           <h4>参考にした主な情報</h4>
         </div>
         <ul class="public-space-source-list">${sources}</ul>
+      </section>
+    </div>
+  `;
+}
+
+function renderHistoryArticle(article) {
+  const timeline = article.timeline
+    .map(
+      ([year, title, text]) => `
+        <li>
+          <span>${year}</span>
+          <strong>${title}</strong>
+          <p>${text}</p>
+        </li>
+      `,
+    )
+    .join("");
+
+  const portLinks = article.portLinks
+    .map(
+      (item) => `
+        <article class="history-link-card">
+          <h5>${item.title}</h5>
+          <p>${item.text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const archiveIdeas = article.archiveIdeas
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const memories = article.memories
+    .map(
+      ([title, text]) => `
+        <article class="history-memory-card">
+          <h5>${title}</h5>
+          <p>${text}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const learning = article.learning
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  const insight = article.insight.map((item) => `<li>${item}</li>`).join("");
+  const sources = article.sources
+    .map(
+      ([title, text]) => `
+        <li>
+          <strong>${title}</strong>
+          <span>${text}</span>
+        </li>
+      `,
+    )
+    .join("");
+
+  return `
+    <div class="history-article">
+      <section class="history-panel history-timeline-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Timeline</p>
+          <h4>港・鉄道・商店街の流れ</h4>
+          <p>${article.updated}</p>
+        </div>
+        <ol class="history-timeline">${timeline}</ol>
+      </section>
+
+      <section class="history-panel history-link-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Port & Town</p>
+          <h4>港とまちの発展を深掘り</h4>
+          <p>港、鉄道、商店街、水産業、観光を一本の流れとして見ます。</p>
+        </div>
+        <div class="history-link-grid">${portLinks}</div>
+      </section>
+
+      <section class="history-panel history-archive-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Archive</p>
+          <h4>古い写真や地図を今の場所と重ねる</h4>
+        </div>
+        <ul class="history-archive-list">${archiveIdeas}</ul>
+      </section>
+
+      <section class="history-panel history-memory-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Memory</p>
+          <h4>商店街や地域行事の記憶を記録する</h4>
+        </div>
+        <div class="history-memory-grid">${memories}</div>
+      </section>
+
+      <section class="history-panel history-learning-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Learning</p>
+          <h4>子どもたちの教材にする視点</h4>
+        </div>
+        <ul class="history-learning-list">${learning}</ul>
+      </section>
+
+      <section class="history-panel history-insight-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">考察</p>
+          <h4>港町の記憶を未来の判断材料へ</h4>
+        </div>
+        <ul>${insight}</ul>
+      </section>
+
+      <section class="history-panel history-source-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Source</p>
+          <h4>参考にした主な情報</h4>
+        </div>
+        <ul class="history-source-list">${sources}</ul>
       </section>
     </div>
   `;
