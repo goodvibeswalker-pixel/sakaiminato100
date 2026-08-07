@@ -1411,6 +1411,36 @@ const themeDetails = {
         ["語りを録音する", "漁師、商店主、鉄道利用者、子育て世代、観光に関わった人の声を短い証言として残す。"],
         ["年表を更新する", "港湾整備、鉄道、商店街、観光、人口、災害を同じ年表に置くと、まちの変化がつながって見える。"],
       ],
+      photoLinks: [
+        {
+          label: "公的アーカイブ",
+          title: "境港鯖荷揚げ",
+          year: "1954年",
+          text: "鳥取県立公文書館所蔵。昭和29年春、境港市（当時は境町）で撮影された鯖の出荷写真。港の仕事を具体的に見る入口になる。",
+          url: "https://digital-collection.pref.tottori.lg.jp/search/detailLink?cls=arc_c107&pkey=0005180",
+        },
+        {
+          label: "相談先",
+          title: "境港市民図書館 市史編さん室",
+          year: "史料・写真",
+          text: "市史編さん資料、広報部門や各担当課が撮影した写真、市民提供写真、歴史地図を所蔵。利用制限の確認や掲載相談の入口にする。",
+          url: "https://lib.city.sakaiminato.tottori.jp/city-history/",
+        },
+        {
+          label: "所蔵情報",
+          title: "境港市の写真資料・写真集",
+          year: "写真集一覧",
+          text: "『新修境港市史 写真資料編』『境港絵葉書タイムトラベル』『米子・境港・西伯・日野の昭和』など、写真資料を探すためのリスト。",
+          url: "https://crd.ndl.go.jp/reference/entry/index.php?id=2000029094&page=man_view",
+        },
+        {
+          label: "思い出写真",
+          title: "水木しげるロードの思い出写真募集",
+          year: "2021年企画",
+          text: "商店街が水木しげるロードになる以前の写真も対象にしたフォトコンテスト情報。市民の記憶を集める企画例として参考になる。",
+          url: "https://www.atpress.ne.jp/news/252723",
+        },
+      ],
       memories: [
         ["商店街", "本町、松ヶ枝町、西本町、新道元町など、中心市街地の通りごとの記憶を残す。店名、看板、商品、祭りの日の風景が教材になる。"],
         ["地域行事", "祭り、地蔵盆、港のイベント、学校行事は、地域の人が顔を合わせる仕組みでもある。行事の変化は人口や商業の変化を映す。"],
@@ -1435,6 +1465,7 @@ const themeDetails = {
         ["JR西日本 鉄道文化財を巡る", "山陰地方初の鉄道開通と御来屋駅の歴史を確認。"],
         ["中小企業庁 がんばる商店街77選", "明治35年頃からの商店街形成、水木しげるロード整備、中心商店街の変化を確認。"],
         ["境港市民図書館 市史編さん室", "史料の収集、整理、保存、調査相談、ふるさと教育支援の役割を確認。"],
+        ["とっとりデジタルコレクション 境港鯖荷揚げ", "昭和29年春の境港の荷揚げ写真、所蔵館、撮影年月、場所を確認。"],
       ],
     },
     sections: [
@@ -2375,6 +2406,20 @@ function renderHistoryArticle(article) {
     )
     .join("");
 
+  const photoLinks = article.photoLinks
+    .map(
+      (item) => `
+        <article class="history-photo-card">
+          <span>${item.label}</span>
+          <h5>${item.title}</h5>
+          <strong>${item.year}</strong>
+          <p>${item.text}</p>
+          <a href="${item.url}" target="_blank" rel="noreferrer">check</a>
+        </article>
+      `,
+    )
+    .join("");
+
   const memories = article.memories
     .map(
       ([title, text]) => `
@@ -2435,6 +2480,15 @@ function renderHistoryArticle(article) {
           <h4>古い写真や地図を今の場所と重ねる</h4>
         </div>
         <ul class="history-archive-list">${archiveIdeas}</ul>
+      </section>
+
+      <section class="history-panel history-photo-panel">
+        <div class="panel-heading">
+          <p class="section-kicker">Old Photos</p>
+          <h4>昔の写真・資料リンク</h4>
+          <p>利用条件を確認しながら、港、市場、商店街、駅前の昔の姿へたどれる入口を整理します。</p>
+        </div>
+        <div class="history-photo-grid">${photoLinks}</div>
       </section>
 
       <section class="history-panel history-memory-panel">

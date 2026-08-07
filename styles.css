@@ -2447,6 +2447,7 @@ h3 {
 
 .history-timeline-panel,
 .history-link-panel,
+.history-photo-panel,
 .history-memory-panel,
 .history-insight-panel,
 .history-source-panel {
@@ -2502,6 +2503,7 @@ h3 {
 }
 
 .history-link-grid,
+.history-photo-grid,
 .history-memory-grid {
   display: grid;
   gap: 12px;
@@ -2511,11 +2513,16 @@ h3 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.history-photo-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .history-memory-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .history-link-card,
+.history-photo-card,
 .history-memory-card {
   min-width: 0;
   border: 1px solid rgba(164, 132, 87, 0.16);
@@ -2525,20 +2532,68 @@ h3 {
   box-shadow: 0 10px 22px rgba(25, 73, 109, 0.05);
 }
 
+.history-photo-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf0 100%);
+}
+
+.history-photo-card span {
+  display: inline-flex;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #f7ead1;
+  color: #8c641e;
+  font-size: 12px;
+  font-weight: 900;
+}
+
 .history-link-card h5,
+.history-photo-card h5,
 .history-memory-card h5 {
-  margin: 0 0 8px;
+  margin: 10px 0 8px;
   color: var(--ink);
   font-size: 18px;
   line-height: 1.4;
 }
 
 .history-link-card p,
+.history-photo-card p,
 .history-memory-card p {
   margin: 0;
   color: var(--muted);
   font-weight: 700;
   line-height: 1.7;
+}
+
+.history-photo-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #8c641e;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.history-photo-card a {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+  border: 1px solid rgba(140, 100, 30, 0.2);
+  border-radius: 999px;
+  padding: 7px 13px;
+  color: #8c641e;
+  background: #fff4dc;
+  font-size: 13px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.history-photo-card a:hover,
+.history-photo-card a:focus-visible {
+  border-color: rgba(140, 100, 30, 0.4);
+  background: #f8e6c2;
+  outline: none;
 }
 
 .history-archive-list li,
@@ -4339,6 +4394,7 @@ h3 {
 
   .history-timeline-panel,
   .history-link-panel,
+  .history-photo-panel,
   .history-memory-panel,
   .history-insight-panel,
   .history-source-panel {
@@ -4346,6 +4402,7 @@ h3 {
   }
 
   .history-link-grid,
+  .history-photo-grid,
   .history-memory-grid {
     grid-template-columns: 1fr;
   }
